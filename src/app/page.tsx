@@ -1,5 +1,5 @@
 "use client"
-import Image from 'next/image'
+import { DrawerDialogDemo } from '®/components/drawer'
 import { Button } from '®ui/button'
 
 export default function Home() {
@@ -9,16 +9,7 @@ export default function Home() {
       <Button>Click me</Button>
       <Button>Click me</Button>
       <Button>Click me</Button>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
+      <DrawerDialogDemo />
     </>
   )
 }
