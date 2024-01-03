@@ -9,7 +9,7 @@ import { ThemeSwitcher }  from "../ThemeSwitcher";
 
 const Footer = () => {
     return(
-        <footer className="w-full border-t border-border p-2 text-xs sm:text-sm">
+        <footer className="w-full border-t border-border p-2 text-sm">
             <main className="w-full max-w-7xl mx-auto md:space-y-8 my-4 mb-14 sm:mb-6">
             <div className="justify-between items-center hidden md:flex">
             <Link href="/" passHref className="flex items-center gap-1">
