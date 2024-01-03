@@ -1,3 +1,5 @@
+"use client"
+import {NextUIProvider} from "@nextui-org/react";
 import { ThemeProvider } from "®/components/ThemeProvider";
 import { Toaster } from "®ui/sonner";
 import "®/styles/globals.css"
@@ -7,6 +9,7 @@ import Footer from "®/components/footer";
 export function Providers({children}: { children: React.ReactNode }) {
     return (
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <NextUIProvider>
           <div className="relative flex min-h-screen flex-col items-center justify-center" vaul-drawer-wrapper="">
                   <Navbar />
                   <main className="flex w-full flex-1 flex-col">
@@ -16,6 +19,7 @@ export function Providers({children}: { children: React.ReactNode }) {
                   </main>
                 <Footer />
             </div>
+            </NextUIProvider>
             <Toaster />
         </ThemeProvider>
 
