@@ -17,7 +17,7 @@ export function LegalLinks() {
     return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
-        <Link href={``} className="flex items-center gap-1">Legal<ChevronDown className={`h-4 w-4 transition-transform transform ${open ? "rotate-180" : ""}`} /></Link>
+        <Link href={``} className="flex items-center gap-1 LinkText">Legal<ChevronDown className={`h-4 w-4 transition-transform transform ${open ? "rotate-180" : ""}`} /></Link>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuGroup>
@@ -55,7 +55,7 @@ export function LegalLinks() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Link href={``} className="flex items-center gap-1">Legal<ChevronDown className={`h-4 w-4 transition-transform transform ${open ? "rotate-180" : ""}`} /></Link>
+        <Link href={``} className="flex items-center gap-1 LinkText">Legal<ChevronDown className={`h-4 w-4 transition-transform transform ${open ? "rotate-180" : ""}`} /></Link>
       </DrawerTrigger>
       <DrawerContent>
       <Listbox aria-label="Legal Links"  className="mt-2">

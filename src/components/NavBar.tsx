@@ -1,5 +1,6 @@
 "use client"
 
+import { Image } from "@nextui-org/react"
 import Link from "next/link"
 import { SiteLogo, SiteTitle } from "®/config/site"
 import { Avatar, AvatarFallback, AvatarImage } from "®ui/avatar"
@@ -10,10 +11,7 @@ const Navbar = () => {
         <nav className="NavBar">
             <div className="flex justify-between">
             <Link href='/' aria-label="RDRIVE Logo" passHref>
-            <Avatar>
-                    <AvatarImage src={SiteLogo} alt={SiteTitle} />
-                    <AvatarFallback>R</AvatarFallback>
-            </Avatar>
+            <Image src={SiteLogo} alt={SiteTitle} isBlurred width={40} height={40}/>
             </Link>
             <Link href="" aria-label="Login">
             <Avatar>

@@ -1,35 +1,42 @@
 "use client"
 
-import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "®ui/dropdown-menu"
-import { Button } from "®ui/button"
-
+import { Tab, Tabs } from '@nextui-org/react';
+import { useTheme } from "next-themes";
+import { BsFillSunFill, BsMoon } from 'react-icons/bs';
+import { RiComputerLine } from 'react-icons/ri';
 
 export function ThemeSwitcher() {
-  const { setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
+  const handleThemeChange = (selectedTheme: string) => {
+    setTheme(selectedTheme);
+  };
+  const tabs = [
+    {
+      theme: 'light',
+      icon: <BsFillSunFill />,
+    },
+    {
+        theme: 'system',
+        icon: <RiComputerLine />,
+      },
+    {
+      theme: 'dark',
+      icon: <BsMoon />,
+    },
+  ];
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
+    <Tabs
+    aria-label="Theme Switcher"
+    variant="light"
+    radius="full"
+    selectedKey={theme}
+    onSelectionChange={(selectedTheme) => handleThemeChange(selectedTheme as string)}
+    classNames={{ tabContent: 'group-data-[selected=true]:text-none text-black dark:text-white'}}
+  >
+    {tabs.map((item) => (
+      <Tab key={item.theme} title={item.icon} aria-label={item.theme}/>
+    ))}
+  </Tabs>
+  );
 }
