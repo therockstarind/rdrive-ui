@@ -9,8 +9,8 @@ import { ThemeSwitcher }  from "../ThemeSwitcher";
 
 const Footer = () => {
     return(
-        <footer className="w-full border-t border-border p-2 text-sm">
-            <main className="w-full max-w-7xl mx-auto md:space-y-8 my-4 mb-14">
+        <footer className="w-full border-t border-border p-2 text-xs sm:text-sm">
+            <main className="w-full max-w-7xl mx-auto md:space-y-8 my-4 mb-14 sm:mb-6">
             <div className="justify-between items-center hidden md:flex">
             <Link href="/" passHref className="flex items-center gap-1">
             <Image src={SiteLogo} alt={SiteTitle} isBlurred width={40} height={40}/>
@@ -18,7 +18,7 @@ const Footer = () => {
             </Link>
             <ThemeSwitcher />
             </div>    
-            <ul className="grid grid-cols-2 md:flex justify-between">
+            <ul className="grid grid-cols-2 gap-2 md:flex justify-between">
                 <li className="hidden md:flex"><SocialFooter /></li>
             <FooterLinks />
             </ul>
