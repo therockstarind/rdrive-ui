@@ -16,7 +16,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-background text-popover-foreground",
+      "flex w-full flex-col overflow-hidden rounded-md bg-background text-popover-foreground",
       className
     )}
     {...props}
@@ -61,7 +61,7 @@ const CommandList = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
 >(({ className, ...props }, ref) => (
-  <ScrollArea className={cn("overflow-y-auto overflow-x-hidden pr-2", className)} type="always">
+  <ScrollArea className={cn("h-[60vh] sm:h-[45vh] pr-2", className)} type="always">
   <CommandPrimitive.List
     ref={ref}
     {...props}

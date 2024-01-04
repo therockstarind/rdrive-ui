@@ -28,15 +28,15 @@ export default function SearchBar({
     command()
   }, [])
   const Content = (
-    <>
+    <div className="mt-2">
       <Search runCommand={runCommand} />
       <Footer setOpen={setOpen} />
-    </>
+    </div>
   );
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl lg:max-w-3xl p-0 gap-0 h-[50vh]">
+        <DialogContent className="max-w-2xl lg:max-w-3xl p-0 gap-0">
             {Content}
         </DialogContent>
       </Dialog>
@@ -45,7 +45,7 @@ export default function SearchBar({
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerContent showDiv={false} className="h-[55vh] overflow-hidden">
+      <DrawerContent showDiv={false}>
       {Content}
       </DrawerContent>
     </Drawer>
@@ -90,7 +90,7 @@ function Search({ runCommand }: {runCommand: any}) {
               <CommandShortcut>D</CommandShortcut>
             </CommandItem>
           </CommandGroup>
-        </CommandList>
+    </CommandList>
   </Command>
   )
 }
