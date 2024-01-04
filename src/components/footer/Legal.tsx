@@ -19,7 +19,7 @@ export function LegalLinks() {
       <DropdownMenuTrigger asChild>
         <Link href={``} className="flex items-center gap-1 LinkText">Legal<ChevronDown className={`h-4 w-4 transition-transform transform ${open ? "rotate-180" : ""}`} /></Link>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="w-48 bg-background">
         <DropdownMenuGroup>
         <Link href="/about" passHref>
           <DropdownMenuItem>

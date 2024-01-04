@@ -1,8 +1,8 @@
 "use client"
 
 import { Tab, Tabs } from '@nextui-org/react';
+import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from "next-themes";
-import { BsFillSunFill, BsMoon } from 'react-icons/bs';
 import { RiComputerLine } from 'react-icons/ri';
 
 export function ThemeSwitcher() {
@@ -13,15 +13,15 @@ export function ThemeSwitcher() {
   const tabs = [
     {
       theme: 'light',
-      icon: <BsFillSunFill />,
+      icon: <SunIcon className="h-4 w-4" />,
     },
     {
         theme: 'system',
-        icon: <RiComputerLine />,
+        icon: <RiComputerLine className="h-4 w-4"/>,
       },
     {
       theme: 'dark',
-      icon: <BsMoon />,
+      icon: <MoonIcon className="h-4 w-4" />,
     },
   ];
 
