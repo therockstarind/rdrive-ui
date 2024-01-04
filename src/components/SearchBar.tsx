@@ -1,6 +1,6 @@
 "use client"
 
-import { Kbd } from "@nextui-org/react"
+import { Kbd, Tooltip } from "@nextui-org/react"
 import { ArrowDown, ArrowUp, ArrowUpLeftFromCircle, CornerDownLeft, MoonIcon, SunIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
@@ -36,7 +36,7 @@ export default function SearchBar({
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-3xl p-0 gap-0">
+        <DialogContent className="max-w-2xl lg:max-w-3xl p-0 gap-0 h-[50vh]">
             {Content}
         </DialogContent>
       </Dialog>
@@ -45,7 +45,7 @@ export default function SearchBar({
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerContent showDiv={false}>
+      <DrawerContent showDiv={false} className="h-[55vh] overflow-hidden">
       {Content}
       </DrawerContent>
     </Drawer>
@@ -56,7 +56,7 @@ function Search({ runCommand }: {runCommand: any}) {
     const { setTheme } = useTheme();
     const router = useRouter();
   return (
-    <Command className="h-[55vh]">
+    <Command>
     <CommandInput placeholder="Type a command or search..."/>
     <CommandList>
       <CommandEmpty>No results found.</CommandEmpty>
@@ -98,11 +98,11 @@ function Search({ runCommand }: {runCommand: any}) {
 function Footer({ setOpen }: {setOpen: any}) {
   return (
     <div className="border-t border-border flex justify-between items-center p-2 cursor-default">
-          <Button variant="outline" size="icon" className="h-6 w-6" onClick={() => setOpen(false)}><ArrowUpLeftFromCircle className="w-3 h-3"/></Button>
+          <Tooltip content="ESC" placement="bottom"><Button variant="outline" size="icon" className="h-6 w-6" onClick={() => setOpen(false)}><ArrowUpLeftFromCircle className="w-3 h-3"/></Button></Tooltip>
           <div className="flex gap-3 items-center">
-          <Button variant="outline" size="icon" className="h-6 w-6"><ArrowUp className="w-4 h-4"/></Button>
-          <Button variant="outline" size="icon" className="h-6 w-6"><ArrowDown className="w-4 h-4"/></Button>
-          <Button variant="outline" size="icon" className="h-6 w-6"><CornerDownLeft className="w-4 h-4"/></Button>
+          <Tooltip content="UP" placement="bottom"><Button variant="outline" size="icon" className="h-6 w-6"><ArrowUp className="w-4 h-4"/></Button></Tooltip>
+          <Tooltip content="Down" placement="bottom"><Button variant="outline" size="icon" className="h-6 w-6"><ArrowDown className="w-4 h-4"/></Button></Tooltip>
+          <Tooltip content="Enter" placement="bottom"><Button variant="outline" size="icon" className="h-6 w-6"><CornerDownLeft className="w-4 h-4"/></Button></Tooltip>
           </div>   
     </div>
   )

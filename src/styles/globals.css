@@ -63,7 +63,7 @@
   @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3;
 }
 .FolderCard {
-  @apply  w-full border border-border bg-transparent items-center p-4 md:p-10;
+  @apply  w-full border border-border bg-transparent items-center p-4 lg:p-10;
 }
 /* vaul shouldScaleBackground */
 .element {
