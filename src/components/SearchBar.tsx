@@ -1,7 +1,7 @@
 "use client"
 
 import { Kbd } from "@nextui-org/react"
-import { MoonIcon, SunIcon } from "lucide-react"
+import { ArrowDown, ArrowUp, ArrowUpLeftFromCircle, CornerDownLeft, MoonIcon, SunIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
 import * as React from "react"
@@ -12,6 +12,7 @@ import { useMediaQuery } from "®/hooks/use-media-query"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "®ui/command"
 import { Dialog, DialogContent } from "®ui/dialog"
 import { Drawer, DrawerContent } from "®ui/drawer"
+import { Button } from "./ui/button"
 
 
 export default function SearchBar({
@@ -45,7 +46,7 @@ export default function SearchBar({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerContent showDiv={false}>
-        {Content}
+      {Content}
       </DrawerContent>
     </Drawer>
   )
@@ -63,7 +64,7 @@ function Search({ runCommand }: {runCommand: any}) {
         {linksConfig.searchList.map((links) => ( 
     <CommandItem onSelect={() => runCommand(() => router.push(`${links.href}`))}> 
         <div className="text-lg mr-2">{links.icon && <links.icon/>}</div>
-         <div>
+        <div>
             <h1 className="line-clamp-1">{links.title}</h1>
             <p className="text-xs text-muted-foreground line-clamp-1">{links.description}</p>
         </div>
@@ -75,17 +76,17 @@ function Search({ runCommand }: {runCommand: any}) {
           <CommandGroup heading="Theme">
             <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
               <SunIcon className="mr-2 h-4 w-4" />
-              Light
+                <h1>Change Theme to  Light</h1>
               <CommandShortcut>L</CommandShortcut>
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("system"))}>
               <RiComputerLine className="mr-2 h-4 w-4" />
-              System
+                <h1>Change Theme to  System</h1>
               <CommandShortcut>S</CommandShortcut>
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
               <MoonIcon className="mr-2 h-4 w-4" />
-              Dark
+              <h1>Change Theme to  Dark</h1>
               <CommandShortcut>D</CommandShortcut>
             </CommandItem>
           </CommandGroup>
@@ -96,12 +97,12 @@ function Search({ runCommand }: {runCommand: any}) {
 
 function Footer({ setOpen }: {setOpen: any}) {
   return (
-    <div className="border-t border-border flex justify-between items-center p-2 cursor-default h-10">
-        <div><Kbd keys={["escape"]} onClick={() => setOpen(false)}></Kbd></div>
+    <div className="border-t border-border flex justify-between items-center p-2 cursor-default">
+          <Button variant="outline" size="icon" className="h-6 w-6" onClick={() => setOpen(false)}><ArrowUpLeftFromCircle className="w-3 h-3"/></Button>
           <div className="flex gap-3 items-center">
-            <Kbd keys={["up"]}></Kbd>
-            <Kbd keys={["down"]}></Kbd>
-            <Kbd keys={["enter"]}></Kbd>
+          <Button variant="outline" size="icon" className="h-6 w-6"><ArrowUp className="w-4 h-4"/></Button>
+          <Button variant="outline" size="icon" className="h-6 w-6"><ArrowDown className="w-4 h-4"/></Button>
+          <Button variant="outline" size="icon" className="h-6 w-6"><CornerDownLeft className="w-4 h-4"/></Button>
           </div>   
     </div>
   )

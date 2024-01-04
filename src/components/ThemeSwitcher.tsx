@@ -3,11 +3,17 @@
 import { Tab, Tabs } from '@nextui-org/react';
 import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from "next-themes";
+import { useHotkeys } from 'react-hotkeys-hook';
 import { RiComputerLine } from 'react-icons/ri';
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
-  const handleThemeChange = (selectedTheme: string) => {
+  // Switch between dark and light mode using the key.
+  useHotkeys('d', () => setTheme('dark'), [setTheme]);
+  useHotkeys('l', () => setTheme('light'), [setTheme]);
+  useHotkeys('s', () => setTheme('system'), [setTheme]);
+
+  const ThemeChange = (selectedTheme: string) => {
     setTheme(selectedTheme);
   };
   const tabs = [
@@ -31,7 +37,7 @@ export function ThemeSwitcher() {
     variant="light"
     radius="full"
     selectedKey={theme}
-    onSelectionChange={(selectedTheme) => handleThemeChange(selectedTheme as string)}
+    onSelectionChange={(selectedTheme) => ThemeChange(selectedTheme as string)}
     classNames={{ tabContent: 'group-data-[selected=true]:text-none text-black dark:text-white'}}
   >
     {tabs.map((item) => (
