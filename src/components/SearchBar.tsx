@@ -27,17 +27,11 @@ export default function SearchBar({
     setOpen(false)
     command()
   }, [])
-  const Content = (
-    <div className="mt-2">
-      <Search runCommand={runCommand} />
-      <Footer setOpen={setOpen} />
-    </div>
-  );
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-2xl lg:max-w-3xl p-0 gap-0">
-            {Content}
+                  <Search runCommand={runCommand} setOpen={setOpen} />
         </DialogContent>
       </Dialog>
     )
@@ -46,13 +40,15 @@ export default function SearchBar({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerContent showDiv={false}>
-      {Content}
+        <div className="mt-1">
+        <Search runCommand={runCommand} setOpen={setOpen} />
+        </div>
       </DrawerContent>
     </Drawer>
   )
 }
 
-function Search({ runCommand }: {runCommand: any}) {
+function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
     const { setTheme } = useTheme();
     const router = useRouter();
   return (
@@ -76,21 +72,31 @@ function Search({ runCommand }: {runCommand: any}) {
           <CommandGroup heading="Theme">
             <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
               <SunIcon className="mr-2 h-4 w-4" />
-                <h1>Change Theme to  Light</h1>
+                  <div>
+                    <h1 className="line-clamp-1">Light</h1>
+                    <p className="text-xs text-muted-foreground line-clamp-1">Change Theme to Light</p>
+                </div>
               <CommandShortcut>L</CommandShortcut>
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("system"))}>
               <RiComputerLine className="mr-2 h-4 w-4" />
-                <h1>Change Theme to  System</h1>
+                <div>
+                    <h1 className="line-clamp-1">System</h1>
+                    <p className="text-xs text-muted-foreground line-clamp-1">Change Theme to System</p>
+                </div>
               <CommandShortcut>S</CommandShortcut>
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
               <MoonIcon className="mr-2 h-4 w-4" />
-              <h1>Change Theme to  Dark</h1>
+                <div>
+                    <h1 className="line-clamp-1">Dark</h1>
+                    <p className="text-xs text-muted-foreground line-clamp-1">Change Theme to Dark</p>
+                </div>
               <CommandShortcut>D</CommandShortcut>
             </CommandItem>
           </CommandGroup>
     </CommandList>
+    <Footer setOpen={setOpen} />
   </Command>
   )
 }

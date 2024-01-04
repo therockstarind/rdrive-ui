@@ -1,8 +1,10 @@
 "use client"
-import FolderGridLayout from '®/components/FolderGridLayout'
+import { VercelCMDK } from '®/components/vercel'
 
 export default function Home() {
   return (
-    <FolderGridLayout />
+    <div className='mx-auto w-full'>
+     <VercelCMDK />
+    </div>
   )
 }

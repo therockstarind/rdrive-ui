@@ -3,6 +3,7 @@ import {NextUIProvider} from "@nextui-org/react";
 import { ThemeProvider } from "®/components/ThemeProvider";
 import { Toaster } from "®ui/sonner";
 import "®/styles/globals.css"
+import "®/styles/vercel.css"
 import Navbar from "®/components/NavBar";
 import Footer from "®/components/footer";
 import { TooltipProvider } from "®/components/ui/tooltip";
