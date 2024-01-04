@@ -30,8 +30,8 @@ const Navbar = () => {
             <Avatar><AvatarImage src={siteConfig.logo} alt={siteConfig.name} /></Avatar>
             </Link>
             <Button variant="outline" onClick={() => setOpen(true)} className="relative w-full max-w-sm LinkText bg-transparent">
-            <LiaSearchSolid  className="pointer-events-none absolute left-3" size={20} />
-            <h1 className="line-clamp-1 text-center">{title}</h1>
+            <LiaSearchSolid  className="mr-1" size={20} />
+            <h1 className="truncate text-center">{title}</h1>
             </Button>
             <SearchBar open={open} setOpen={setOpen}/>
             <Link href="" aria-label="Login">

@@ -1,6 +1,6 @@
 "use client"
 
-import { Kbd, Tooltip } from "@nextui-org/react"
+import { Kbd, Listbox, ListboxItem, Tooltip } from "@nextui-org/react"
 import { ArrowDown, ArrowUp, ArrowUpLeftFromCircle, CornerDownLeft, MoonIcon, SunIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
@@ -54,7 +54,9 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
   return (
     <Command>
     <CommandInput placeholder="Type a command or search..."/>
-    <CommandList>
+    <Listbox variant="light" className="p-0" classNames={{list: 'outline-0',}}>
+        <ListboxItem key={""} className="p-0 data-[focus-visible=true]:outline-0 outline-0" classNames={{title: 'notruncate'}}>
+        <CommandList>
       <CommandEmpty>No results found.</CommandEmpty>
       <CommandGroup heading="Suggestions">
         {linksConfig.searchList.map((links) => ( 
@@ -68,7 +70,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
     </CommandItem>
           ))}
     </CommandGroup>
-        <CommandSeparator />
+        {/* <CommandSeparator /> */}
           <CommandGroup heading="Theme">
             <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
               <SunIcon className="mr-2 h-4 w-4" />
@@ -96,6 +98,8 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
             </CommandItem>
           </CommandGroup>
     </CommandList>
+        </ListboxItem>
+      </Listbox>
     <Footer setOpen={setOpen} />
   </Command>
   )
