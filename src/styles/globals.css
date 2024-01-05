@@ -59,7 +59,7 @@
 
 /* Our CSS */
 .NavBar{
-  @apply w-full fixed bottom-0 sm:sticky sm:top-0 justify-center items-center bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md border-t md:border-t-0 md:border-b border-border  select-none p-2 z-40;
+  @apply w-full fixed bottom-0 md:sticky md:top-0 justify-center items-center bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md border-t md:border-t-0 md:border-b border-border  select-none p-2 z-40;
 }
 .LinkText {
   @apply text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white;
@@ -68,10 +68,10 @@
   @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3;
 }
 .FolderCard {
-  @apply  w-full border border-border bg-transparent items-center p-4 lg:p-10;
+  @apply  w-full border border-border bg-transparent items-center p-4 lg:p-10 shadow-none;
 }
 .FolderImageCard {
-  @apply  w-full border border-border bg-transparent items-center p-6;
+  @apply  w-full border border-border bg-transparent items-center p-6 shadow-none;
 }
 /* vaul shouldScaleBackground */
 .element {

@@ -29,7 +29,7 @@ const Navbar = () => {
             <Link href='/' aria-label="RDRIVE Logo" passHref>
             <Avatar src={siteConfig.logo} alt={siteConfig.name} fallback="R"/>
             </Link>
-            <Button variant="outline" onClick={() => setOpen(true)} className="relative w-full max-w-sm LinkText bg-transparent">
+            <Button variant="outline" onClick={() => setOpen(true)} className="relative w-full max-w-sm LinkText bg-transparent overflow-hidden">
             <LiaSearchSolid  className="mr-1" size={20} />
             <h1 className="truncate text-center">{title}</h1>
             </Button>
