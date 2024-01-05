@@ -35,7 +35,7 @@ const Navbar = () => {
             </Button>
             <SearchBar open={open} setOpen={setOpen}/>
             <Link href="" aria-label="Login">
-            <Avatar src={siteConfig.logo} alt="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop" fallback="R" className="visible-outline"/>
+            <Avatar src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop" alt="" fallback="R"/>
             </Link>
             </div>
         </nav>
