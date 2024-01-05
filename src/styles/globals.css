@@ -70,6 +70,9 @@
 .FolderCard {
   @apply  w-full border border-border bg-transparent items-center p-4 lg:p-10;
 }
+.FolderImageCard {
+  @apply  w-full border border-border bg-transparent items-center p-6;
+}
 /* vaul shouldScaleBackground */
 .element {
   background: none !important;

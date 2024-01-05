@@ -44,7 +44,7 @@ const FolderGridLayout = () => {
         <AnimatedDiv variants={FadeContainer} className="FolderCardLayout">
             {FolderItems.map((card, index) => (
               <motion.div key={index} variants={fromLeftVariant}>
-                <Card key={index} className="FolderCard borderRadius" shadow="none" isHoverable isPressable onPress={() => router.push('/privacy')} aria-label={card.title}>
+                <Card key={index} className="FolderCard borderRadius" shadow="none" isHoverable isPressable onPress={() => router.push('/Xiaomi-12-Pro-(Dimensity-Edition)')} aria-label={card.title}>
                     <div className="h-40 flex justify-center items-center mb-2"   >
                         <Image src={card.img} alt={card.title} isBlurred className="mx-auto my-10 h-40 object-center object-contain rounded-none"/>
                     </div>
