@@ -61,7 +61,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
       <CommandGroup heading="Suggestions">
         {linksConfig.searchList.map((links) => ( 
     <CommandItem onSelect={() => runCommand(() => router.push(`${links.href}`))}> 
-        <div className="text-lg mr-2">{links.icon && <links.icon/>}</div>
+        <div className="text-xl mr-2">{links.icon && <links.icon/>}</div>
         <div>
             <h1 className="line-clamp-1">{links.title}</h1>
             <p className="text-xs text-muted-foreground line-clamp-1">{links.description}</p>
@@ -73,7 +73,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
         {/* <CommandSeparator /> */}
           <CommandGroup heading="Theme">
             <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
-              <SunIcon className="mr-2 h-4 w-4" />
+              <SunIcon className="mr-2 h-5 w-5" />
                   <div>
                     <h1 className="line-clamp-1">Light</h1>
                     <p className="text-xs text-muted-foreground line-clamp-1">Change Theme to Light</p>
@@ -81,7 +81,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
               <CommandShortcut>L</CommandShortcut>
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("system"))}>
-              <RiComputerLine className="mr-2 h-4 w-4" />
+              <RiComputerLine className="mr-2 h-5 w-5" />
                 <div>
                     <h1 className="line-clamp-1">System</h1>
                     <p className="text-xs text-muted-foreground line-clamp-1">Change Theme to System</p>
@@ -89,7 +89,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
               <CommandShortcut>S</CommandShortcut>
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
-              <MoonIcon className="mr-2 h-4 w-4" />
+              <MoonIcon className="mr-2 h-5 w-5" />
                 <div>
                     <h1 className="line-clamp-1">Dark</h1>
                     <p className="text-xs text-muted-foreground line-clamp-1">Change Theme to Dark</p>
