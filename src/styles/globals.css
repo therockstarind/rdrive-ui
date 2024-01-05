@@ -58,8 +58,8 @@
 
 
 /* Our CSS */
-.NavBar{
-  @apply w-full fixed bottom-0 md:sticky md:top-0 justify-center items-center bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md border-t md:border-t-0 md:border-b border-border  select-none p-2 z-40;
+.Navbar {
+  @apply w-full bottom-0 md:top-0 z-40 justify-center items-center bg-white bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md border-t md:border-t-0 md:border-b border-border dark:bg-black select-none;
 }
 .LinkText {
   @apply text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white;
@@ -89,11 +89,14 @@
 a:focus-visible{
   outline-color: hsl(var(--ring)) !important;
 }
-::-webkit-scrollbar {
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body::-webkit-scrollbar {
   width: 0px;
   height: 0px;
 }
-
 .notruncate {
   white-space: normal !important;
   overflow: visible !important;

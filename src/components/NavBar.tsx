@@ -8,7 +8,7 @@ import { LiaSearchSolid } from "react-icons/lia"
 import { siteConfig } from "®/config/site"
 import { Button } from "®ui/button"
 import SearchBar from "./SearchBar"
-import { Avatar } from "@radix-ui/themes"
+import { Avatar, Flex } from "@radix-ui/themes"
 
 
 const Navbar = () => {
@@ -24,8 +24,8 @@ const Navbar = () => {
       }
     }
     return(
-        <nav className="NavBar">
-            <div className="flex justify-between gap-4 items-center">
+      <Flex position={{initial: 'fixed', sm: 'sticky' }} p="2" className="Navbar" aria-label="NavBar">
+            <Flex align="center" justify="between" gap="4" className="w-full">
             <Link href='/' aria-label="RDRIVE Logo" passHref>
             <Avatar src={siteConfig.logo} alt={siteConfig.name} fallback="R"/>
             </Link>
@@ -37,8 +37,8 @@ const Navbar = () => {
             <Link href="" aria-label="Login">
             <Avatar src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop" alt="" fallback="R"/>
             </Link>
-            </div>
-        </nav>
+            </Flex>
+        </Flex>
     )
 }
 export default Navbar;
