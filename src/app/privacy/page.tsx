@@ -1,10 +1,8 @@
 "use client"
-import { VercelCMDK } from '®/components/vercel'
+import FolderListLayout from '®/components/FolderListLayout.tsx'
 
 export default function Home() {
   return (
-    <div className='mx-auto w-full'>
-     <VercelCMDK />
-    </div>
+     <FolderListLayout />
   )
 }
