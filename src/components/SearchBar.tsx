@@ -1,6 +1,6 @@
 "use client"
 
-import { Kbd, Listbox, ListboxItem, Tooltip } from "@nextui-org/react"
+import { Listbox, ListboxItem, Tooltip } from "@nextui-org/react"
 import { ArrowDown, ArrowUp, ArrowUpLeftFromCircle, CornerDownLeft, MoonIcon, SunIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
@@ -9,7 +9,7 @@ import { Dispatch, SetStateAction } from "react"
 import { RiComputerLine } from "react-icons/ri"
 import { linksConfig } from "®/config/links"
 import { useMediaQuery } from "®/hooks/use-media-query"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "®ui/command"
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandShortcut } from "®ui/command"
 import { Dialog, DialogContent } from "®ui/dialog"
 import { Drawer, DrawerContent } from "®ui/drawer"
 import { Button } from "./ui/button"
@@ -54,8 +54,8 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
   return (
     <Command>
     <CommandInput placeholder="Type a command or search..."/>
-    <Listbox variant="light" className="p-0" classNames={{list: 'outline-0',}}>
-        <ListboxItem key={""} className="p-0 data-[focus-visible=true]:outline-0 outline-0" classNames={{title: 'notruncate'}}>
+    <Listbox variant="light" className="p-0">
+        <ListboxItem key={""} className="p-0" classNames={{title: 'notruncate'}}>
         <CommandList>
       <CommandEmpty>No results found.</CommandEmpty>
       <CommandGroup heading="Suggestions">

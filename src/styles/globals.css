@@ -70,8 +70,16 @@
   background: none !important;
 }
 
-body *:focus {
-  @apply !outline-ring;
+.data-\[focus-visible\=true\]\:outline-focus[data-focus-visible=true] {
+  outline-color: hsl(var(--ring)) !important;
+}
+
+:focus-visible\:\!ring-ring:focus-visible {
+  outline-color: hsl(var(--ring)) !important;
+}
+
+a:focus-visible{
+  outline-color: hsl(var(--ring)) !important;
 }
 ::-webkit-scrollbar {
   width: 0px;

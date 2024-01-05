@@ -5,7 +5,7 @@ import { FiShare } from 'react-icons/fi';
 import { fromRightVariant } from "®/lib/FramerMotionVariants";
 import AnimatedHeading from "../FramerMotion/AnimatedHeading";
 import { Button, ButtonGroup, Divider } from "@nextui-org/react";
-import { Eye } from "lucide-react";
+import { Eye } from "../icons";
 
 const LikeShare = () => {
     const hover = 'border border-border rounded-full'
@@ -13,7 +13,7 @@ const LikeShare = () => {
       <AnimatedHeading variants={fromRightVariant}>  
         <Flex gap="3" align="center" justify="center" display={{ initial: 'flex', sm: 'none'}}>
         <Button variant="light"  className={`${hover}`}>
-              3 Views
+            <Eye />  3
           </Button>
           <Button variant="light"  className={`${hover}`}>
             <FiShare size={20} /> Share
@@ -51,7 +51,7 @@ const LikeShare = () => {
             <FiShare size={20} /> Share
           </Button>
           <Button variant="light" className={`${hover} p-0`}>
-            <Eye className="w-5 h-5"/> 3
+            <Eye /> 3
           </Button> 
         </Flex>
     </AnimatedHeading>
