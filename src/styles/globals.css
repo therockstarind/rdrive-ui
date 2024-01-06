@@ -106,3 +106,12 @@ body::-webkit-scrollbar {
   overflow: visible !important;
   text-overflow: clip !important;
 }
+.rt-TabsTrigger:where(:focus-visible) :where(.rt-TabsTriggerInner) {
+  outline: 2px solid hsl(var(--ring)) !important;
+}
+.rt-TabsTrigger:where([data-state='active'])::before {
+  background-color: hsl(var(--ring)) !important;
+}
+.rt-TabsContent:where(:focus-visible) {
+  outline: 2px solid hsl(var(--ring)) !important;
+}

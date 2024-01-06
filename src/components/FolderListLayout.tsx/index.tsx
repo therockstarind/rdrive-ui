@@ -6,6 +6,7 @@ import AnimatedDiv from "../FramerMotion/AnimatedDiv";
 import Header from "./Header";
 import ImageCard from "./ImageCard";
 import FolderList from "./FolderList";
+import FolderTab from "./FolderTab";
 
 const FolderListLayout = () => {
     return (
@@ -20,6 +21,7 @@ const FolderListLayout = () => {
                 {/* List & Readme & Comment */}
                 <Flex width="100%" mx="auto" direction="column">
                     <FolderList />
+                    <FolderTab />
                 </Flex>
                 {/* List Image & Details */}
                 <Flex direction="column" gap="2">
