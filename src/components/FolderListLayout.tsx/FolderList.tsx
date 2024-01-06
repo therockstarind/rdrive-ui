@@ -132,8 +132,8 @@ return (
     <Command>
       <Flex justify="between" mb="2" m="1" align="center">
       <Author />
-      <div className="border border-border rounded-md max-w-36 sm:max-w-full">
-      <CommandInput placeholder="Go to file"/>
+      <div className="GoToFile">
+      <CommandInput placeholder="Go to file" className="h-8"/>
       </div>
       </Flex>
         <CommandList className="border border-border rounded-md h-60 sm:h-64 md:h-80 lg:h-92 pr-1">

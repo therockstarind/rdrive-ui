@@ -7,7 +7,7 @@ const ImageCard = () => {
 return (
   // <AnimatedDiv variants={popUpFromBottomForText}>
   <Card className="FolderImageCard bg-content1-none"  isHoverable isPressable  aria-label="Xiaomi-12-Pro-(Dimensity-Edition)">
-            <Flex display="flex" justify="center" align="center" className="h-52 w-52 mx-auto">
+            <Flex display="flex" justify="center" align="center" className="h-44 w-44 sm:h-52 sm:w-52 mx-auto">
               <Image
                 src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1666344481.20013313.png"
                 alt="Xiaomi-12-Pro-(Dimensity-Edition)"
