@@ -56,7 +56,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
     <CommandInput placeholder="Type a command or search..."/>
     <Listbox variant="light" className="p-0">
         <ListboxItem key={""} className="p-0" classNames={{title: 'notruncate'}}>
-        <CommandList>
+        <CommandList className="border-t border-border">
       <CommandEmpty>No results found.</CommandEmpty>
       <CommandGroup heading="Suggestions">
         {linksConfig.searchList.map((links) => ( 
@@ -101,7 +101,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
         </ListboxItem>
       </Listbox>
     <Footer setOpen={setOpen} />
-  </Command>
+    </Command>
   )
 }
 

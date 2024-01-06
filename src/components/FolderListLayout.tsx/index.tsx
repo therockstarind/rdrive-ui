@@ -5,6 +5,7 @@ import { FadeContainer } from "®/lib/FramerMotionVariants";
 import AnimatedDiv from "../FramerMotion/AnimatedDiv";
 import Header from "./Header";
 import ImageCard from "./ImageCard";
+import FolderList from "./FolderList";
 
 const FolderListLayout = () => {
     return (
@@ -17,8 +18,8 @@ const FolderListLayout = () => {
             {/* Container */}
             <Flex width="100%" direction={{ initial: "column-reverse", sm: "row" }} gap="4">
                 {/* List & Readme & Comment */}
-                <Flex width="100%" direction="column">
-                    File List
+                <Flex width="100%" mx="auto" direction="column">
+                    <FolderList />
                 </Flex>
                 {/* List Image & Details */}
                 <Flex direction="column" gap="2">
