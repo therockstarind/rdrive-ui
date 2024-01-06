@@ -89,9 +89,6 @@
 a:focus-visible{
   outline-color: hsl(var(--ring)) !important;
 }
-:focus-within{
-  outline-color: hsl(var(--ring)) !important;
-}
 .GoToFile {
   @apply  border border-border rounded-md max-w-36 sm:max-w-full focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 dark:focus-within:ring-offset-black;
 }
