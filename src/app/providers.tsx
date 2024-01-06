@@ -18,7 +18,7 @@ export function Providers({children}: { children: React.ReactNode }) {
           <TooltipProvider>
           <div className="flex min-h-screen flex-col items-center justify-center" vaul-drawer-wrapper="">
                   <Navbar />
-                  <main className="flex w-full flex-1 flex-col overflow-x-hidden">
+                  <main className="flex w-full flex-1 flex-col overflow-x-clip">
                     <div className="w-full max-w-7xl items-center justify-center mx-auto p-2 sm:p-4 gap-4">
                       {children}
                     </div>
