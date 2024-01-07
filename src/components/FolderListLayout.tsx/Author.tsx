@@ -1,7 +1,6 @@
 "use client"
 
 import { Avatar, Box, Text } from "@radix-ui/themes"
-import Link from "next/link"
 import * as React from "react"
 import { useMediaQuery } from "®/hooks/use-media-query"
 import { Drawer, DrawerContent, DrawerTrigger } from "®ui/drawer"
@@ -19,7 +18,7 @@ export function Author() {
                 <User />
             </HoverCardTrigger>
             <HoverCardContent>
-                User Details
+                <User />
             </HoverCardContent>
         </HoverCard>
     )
@@ -27,20 +26,19 @@ export function Author() {
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        <User />
+      <DrawerTrigger>
+          <User />
       </DrawerTrigger>
       <DrawerContent>
-      User Details
+        <User />
       </DrawerContent>
     </Drawer>
   )
 }
 
-function User() {
+const User = () => {
     return (
-        <div className="p-1">
-        <Link href={''} className="flex gap-2 items-center">
+        <main className="p-1 flex gap-2 items-center">
         <Avatar size="3" src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop" fallback="T" />
         <Box>
           <Text as="div" size="3" weight="bold">
@@ -50,7 +48,6 @@ function User() {
             Software & Hardware
           </Text>
         </Box>
-        </Link>
-      </div>
+        </main>
     )
   }
