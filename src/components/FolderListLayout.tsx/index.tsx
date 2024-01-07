@@ -1,12 +1,13 @@
 "use client"
 
-import { Flex, Separator } from "@radix-ui/themes";
+import { Flex, Grid, Separator } from "@radix-ui/themes";
 import { FadeContainer } from "®/lib/FramerMotionVariants";
 import AnimatedDiv from "../FramerMotion/AnimatedDiv";
 import Header from "./Header";
 import ImageCard from "./ImageCard";
 import FolderList from "./FolderList";
 import FolderTab from "./FolderTab";
+import YouTube from "../MDX/Components/YouTube";
 
 const FolderListLayout = () => {
     return (
@@ -28,7 +29,10 @@ const FolderListLayout = () => {
                     <ImageCard />
                     <Flex display={{initial: 'flex', sm: 'none'}}>
                         <Header />
-                    </Flex>
+                    </Flex> 
+                    <Grid display={{initial: 'none', sm: 'grid'}} className="sticky top-[57px] z-40">
+                        <YouTube id="PV08KlJeKuQ" title="How to Flash" />
+                    </Grid> 
                 </Flex>
             </Flex>
         </AnimatedDiv>

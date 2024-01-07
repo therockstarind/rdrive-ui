@@ -1,5 +1,7 @@
 "use client"
 
+import YouTube from "../MDX/Components/YouTube"
+
 export function ReadmeDemo() {
     return (
       <div>
@@ -28,6 +30,12 @@ export function ReadmeDemo() {
           "After all," he said, "everyone enjoys a good joke, so it's only fair
           that they should pay for the privilege."
         </blockquote>
+
+        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl my-6">
+          How To Flash
+        </h1>
+
+        <YouTube id="PV08KlJeKuQ" />
         <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
           The Joke Tax
         </h3>
