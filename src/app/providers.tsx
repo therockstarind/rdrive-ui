@@ -4,7 +4,7 @@ import { ThemeProvider } from "®/components/ThemeProvider";
 import { Theme } from '@radix-ui/themes';
 import { Toaster } from "®ui/sonner";
 import "®/styles/globals.css"
-import "®/styles/vercel.css"
+import "®/styles/mdx.css"
 import '@radix-ui/themes/styles.css'
 import Navbar from "®/components/NavBar";
 import Footer from "®/components/footer";

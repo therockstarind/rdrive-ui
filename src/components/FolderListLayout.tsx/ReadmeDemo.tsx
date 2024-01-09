@@ -1,7 +1,5 @@
 "use client"
 
-import YouTube from "../MDX/Components/YouTube"
-
 export function ReadmeDemo() {
     return (
       <div>
@@ -35,7 +33,6 @@ export function ReadmeDemo() {
           How To Flash
         </h1>
 
-        <YouTube id="PV08KlJeKuQ" />
         <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
           The Joke Tax
         </h3>

@@ -7,7 +7,7 @@ import Header from "./Header";
 import ImageCard from "./ImageCard";
 import FolderList from "./FolderList";
 import FolderTab from "./FolderTab";
-import YouTube from "../MDX/Components/YouTube";
+import YouTube from "../markdown/YouTube";
 
 const FolderListLayout = () => {
     return (

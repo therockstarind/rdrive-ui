@@ -1,8 +1,8 @@
 "use client"
 import { Avatar, Box, Checkbox, Flex, Tabs, Text, TextArea } from "@radix-ui/themes"
 import { BookOpen, MessageSquareText } from "lucide-react"
+import Markdown from "../markdown"
 import { Card } from "../ui/card"
-import { ReadmeDemo } from "./ReadmeDemo"
 
 const FolderTab = () => {
     return (
@@ -16,7 +16,7 @@ const FolderTab = () => {
                 </Box>
                 <Box mx={{initial: '4', md: '6'}} my="4">
                     <Tabs.Content value="readme">
-                        <ReadmeDemo />
+                    <Markdown src="/sample.md" />
                     </Tabs.Content>
 
                     <Tabs.Content value="comments">
