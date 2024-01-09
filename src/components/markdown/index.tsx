@@ -13,6 +13,8 @@ import Code from './Code';
 import Link from 'next/link';
 import { Card } from '../ui/card';
 import { MarkdownSkeleton } from '../Skeleton';
+import AnimatedHeading from '../FramerMotion/AnimatedHeading';
+import { fromLeftVariant } from '®/lib/FramerMotionVariants';
   
 interface MarkdownProps {
     src: string;
@@ -72,6 +74,7 @@ const components = {
   YouTube,
   img: IMG,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <AnimatedHeading variants={fromLeftVariant}>
       <h1
         className={cn(
           "mdx-heading font-heading mt-2 scroll-link text-4xl lg:text-5xl font-bold lg:font-extrabold ",
@@ -79,8 +82,10 @@ const components = {
         )}
         {...props}
       />
+      </AnimatedHeading>
     ),
     h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <AnimatedHeading variants={fromLeftVariant}>
       <h2
         className={cn(
           "mdx-heading font-heading mt-12 scroll-link pb-2 text-3xl font-bold tracking-tight first:mt-0",
@@ -88,8 +93,10 @@ const components = {
         )}
         {...props}
       />
+      </AnimatedHeading>
     ),
     h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <AnimatedHeading variants={fromLeftVariant}>
       <h3
         className={cn(
           "mdx-heading font-heading mt-8 scroll-link text-2xl font-bold tracking-tight",
@@ -97,8 +104,10 @@ const components = {
         )}
         {...props}
       />
+      </AnimatedHeading>
     ),
     h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <AnimatedHeading variants={fromLeftVariant}>
       <h4
         className={cn(
           "mdx-heading font-heading mt-8 scroll-link text-xl font-bold tracking-tight",
@@ -106,6 +115,7 @@ const components = {
         )}
         {...props}
       />
+      </AnimatedHeading>
     ),
     h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
       <h5
