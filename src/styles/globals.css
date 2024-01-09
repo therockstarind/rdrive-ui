@@ -159,3 +159,22 @@ code[data-theme*=' '] span {
 .scroll-link{
   @apply scroll-m-14 md:scroll-m-40;
 }
+
+table{
+  @apply w-full my-4;
+}
+
+thead{
+  @apply [&>tr]:h-12 [&>tr>th]:py-0 [&>tr>th]:align-middle [&>tr>th]:bg-default/10 dark:[&>tr>th]:bg-default/30 [&>tr>th]:text-center [&>tr>th]:pl-2;
+}
+
+tbody{
+  @apply bg-background;
+}
+
+th{
+  @apply border border-border text-xl;
+}
+td{
+  @apply  p-2 text-center max-w-[200px] border border-border whitespace-normal break-normal;
+}

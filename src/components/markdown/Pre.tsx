@@ -12,8 +12,8 @@ const Pre = ({ children }: { children?: ReactElement | undefined }) => {
   };
 
   return (
-<main className="border border-gray-400/30 !rounded-md my-4">
-  <div className="flex items-center justify-between px-4 my-2">
+<main className="border border-border !rounded-md my-4">
+  <div className="flex items-center justify-between px-4 py-2 bg-default/10 dark:bg-default/30">
     {getClassName() && (
       <div className="flex items-center">
         <CodeTitle lang={getClassName()} />
@@ -30,7 +30,7 @@ const Pre = ({ children }: { children?: ReactElement | undefined }) => {
       </Snippet>
     </div>
   </div>
-  <div className="border-b border-gray-400/30" />
+  <div className="border-b border-border" />
     <pre className="overflow-auto">
     <ScrollArea type="always">
         {children}

@@ -8,6 +8,20 @@ The king thought long and hard, and finally came up with [a brilliant plan](#): 
 
 > "After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."
 
+<table>
+  <tbody>
+    <tr>
+      <td>[![Open Setting](https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Settings-icon.png)](https://cutt.ly/xP6PdRP)</td>
+      <td>[![Google Search](https://icon-library.com/images/google-search-icon/google-search-icon-23.jpg)](https://cutt.ly/rArZdsK)</td>
+      <td>[![Galaxy Store](https://i.pinimg.com/originals/b1/47/47/b147478668fcb07bd72b253f178e3a01.png)](https://www.samsung.com/vn/apps/galaxy-store/)</td>
+    </tr>
+    <tr>
+      <td>Open Setting</td>
+      <td>Google Search</td>
+      <td>Galaxy Store</td>
+    </tr>
+  </tbody>
+</table>
 
 ### The Joke Tax
 
@@ -29,11 +43,32 @@ And then, one day, the people of the kingdom discovered that the jokes left by J
 
 The people of the kingdom, feeling uplifted by the laughter, started to tell jokes and puns again, and soon the entire kingdom was in on the joke.
 
-| King's Treasury | People's happiness |
-| --------------- | ------------------- |
-| Empty           | Overflowing         |
-| Modest          | Satisfied           |
-| Full            | Ecstatic            |
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John Doe</td>
+      <td>30</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td>Jane Doe</td>
+      <td>25</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Foo Bar</td>
+      <td>35</td>
+      <td>Australia</td>
+    </tr>
+  </tbody>
+</table>
 
 The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax. Jokester was declared a hero, and the kingdom lived happily ever after.
 
