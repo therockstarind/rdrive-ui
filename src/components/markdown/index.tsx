@@ -12,7 +12,6 @@ import { cn } from '®/lib/utils';
 import Code from './Code';
 import Link from 'next/link';
 import { Card } from '../ui/card';
-import { Terminal } from 'lucide-react';
   
 const components = {
     pre: Pre,
@@ -21,7 +20,7 @@ const components = {
     h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h1
           className={cn(
-            "font-heading mt-2 scroll-m-20 text-4xl font-bold",
+            "mdx-heading font-heading mt-2 scroll-link text-4xl font-bold",
             className
           )}
           {...props}
@@ -30,7 +29,7 @@ const components = {
       h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h2
           className={cn(
-            "font-heading mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0",
+            "mdx-heading font-heading mt-12 scroll-link pb-2 text-2xl font-semibold tracking-tight first:mt-0",
             className
           )}
           {...props}
@@ -39,7 +38,7 @@ const components = {
       h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h3
           className={cn(
-            "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
+            "mdx-heading font-heading mt-8 scroll-link text-xl font-semibold tracking-tight",
             className
           )}
           {...props}
@@ -48,7 +47,7 @@ const components = {
       h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h4
           className={cn(
-            "font-heading mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
+            "mdx-heading font-heading mt-8 scroll-link text-lg font-semibold tracking-tight",
             className
           )}
           {...props}
@@ -57,7 +56,7 @@ const components = {
       h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h5
           className={cn(
-            "mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
+            "mdx-heading mt-8 scroll-link text-lg font-semibold tracking-tight",
             className
           )}
           {...props}
@@ -66,9 +65,15 @@ const components = {
       h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h6
           className={cn(
-            "mt-8 scroll-m-20 text-base font-semibold tracking-tight",
+            "mdx-heading mt-8 scroll-link text-base font-semibold tracking-tight",
             className
           )}
+          {...props}
+        />
+      ),
+      a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
+        <a
+          className={cn("underline decoration-wavy decoration-[hsl(var(--ring))] underline-offset-4", className)}
           {...props}
         />
       ),
@@ -88,10 +93,10 @@ const components = {
         <li className={cn("mt-2", className)} {...props} />
       ),
       blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-        <Card className={cn("p-2 flex items-center mt-4 italic", className)}>
-           <Terminal className="h-5 w-5 ml-1 mr-4" />
+        <Card className={cn("p-2 my-4", className)}>
+
         <blockquote
-        className={cn(className)}
+        className={cn("border-l-2 border-border ml-1 pl-4 italic",className)}
           {...props}
         />
         </Card>

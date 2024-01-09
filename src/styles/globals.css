@@ -143,3 +143,19 @@ code[data-theme*=' '],
 code[data-theme*=' '] span {
     @apply text-[var(--shiki-light)] bg-[var(--shiki-light-bg)] dark:text-[var(--shiki-dark)] dark:bg-[var(--shiki-dark-bg)]
 }
+
+.header-anchor .anchor {
+  visibility: hidden;
+}
+
+.header-anchor:hover .anchor {
+  visibility: visible;
+  padding-left: 5px;
+}
+.mdx-heading a {
+  text-decoration: none;
+}
+
+.scroll-link{
+  @apply scroll-m-14 md:scroll-m-40;
+}
