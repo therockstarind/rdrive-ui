@@ -161,7 +161,7 @@ code[data-theme*=' '] span {
 }
 
 table{
-  @apply w-full my-4;
+  @apply w-full my-6;
 }
 
 thead{
@@ -176,5 +176,5 @@ th{
   @apply border border-border text-xl;
 }
 td{
-  @apply  p-2 text-center max-w-[200px] border border-border whitespace-normal break-normal;
+  @apply p-4 text-center max-w-[200px] border border-border whitespace-normal break-normal;
 }
