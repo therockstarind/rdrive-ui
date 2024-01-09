@@ -11,6 +11,8 @@ import IMG from './Image';
 import { cn } from '®/lib/utils';
 import Code from './Code';
 import Link from 'next/link';
+import { Card } from '../ui/card';
+import { Terminal } from 'lucide-react';
   
 const components = {
     pre: Pre,
@@ -86,10 +88,13 @@ const components = {
         <li className={cn("mt-2", className)} {...props} />
       ),
       blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
+        <Card className={cn("p-2 flex items-center mt-4 italic", className)}>
+           <Terminal className="h-5 w-5 ml-1 mr-4" />
         <blockquote
-          className={cn("mt-6 border-l-2 pl-6 italic", className)}
+        className={cn(className)}
           {...props}
         />
+        </Card>
       ),
       hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
         <hr className="my-4 md:my-8" {...props} />
