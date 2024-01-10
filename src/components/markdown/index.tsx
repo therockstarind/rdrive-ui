@@ -15,12 +15,14 @@ import { Card } from '../ui/card';
 import { MarkdownSkeleton } from '../Skeleton';
 import AnimatedHeading from '../FramerMotion/AnimatedHeading';
 import { fromLeftVariant } from '®/lib/FramerMotionVariants';
-  
-interface MarkdownProps {
-    src: string;
-  }
+import { TOC } from '®/hooks/toc';
 
-const Markdown: FC<MarkdownProps> = ({ src }) => {
+type MarkdownProps = {
+  src: string;
+  TOCGenerated?: (toc: { id: string; title: string; }[]) => void;
+};
+
+const Markdown: FC<MarkdownProps> = ({ src, TOCGenerated }) => {
   const [mdxSource, setMdxSource] = useState<any>(null);
 
   const Options = {
@@ -35,23 +37,30 @@ const Markdown: FC<MarkdownProps> = ({ src }) => {
     fetch(src)
       .then(response => response.text())
       .then(mdContent => {
+        // Here we can still generate the TOC but not store it in the state
+        // Instead, we call TOCGenerated callback
+        const toc = TOC(mdContent);
+        if (TOCGenerated) {
+          TOCGenerated(toc);
+        }
+
         return serialize(mdContent, {
           mdxOptions: {
             rehypePlugins: [
-                rehypeSlug,
-                [
-                    rehypeAutolinkHeadings,
-                    {
-                        behavior: 'wrap',
-                        properties: { className: 'header-anchor' },
-                        content: {
-                            type: 'element',
-                            tagName: 'span',
-                            properties: { className: ['anchor'] },
-                            children: [{ type: 'text', value: '#' }],
-                        },
-                    },
-                ],
+              rehypeSlug,
+              [
+                rehypeAutolinkHeadings,
+                {
+                  behavior: 'wrap',
+                  properties: { className: 'header-anchor' },
+                  content: {
+                    type: 'element',
+                    tagName: 'span',
+                    properties: { className: ['anchor'] },
+                    children: [{ type: 'text', value: '#' }],
+                  },
+                },
+              ],
               [rehypePrettyCode as any, Options],
             ],
             development: process.env.NODE_ENV === "development"
@@ -60,7 +69,7 @@ const Markdown: FC<MarkdownProps> = ({ src }) => {
       })
       .then(mdx => setMdxSource(mdx))
       .catch(error => console.error('Error fetching markdown:', error));
-  }, [src]);
+  }, [src, TOCGenerated]);
 
   if (!mdxSource) return <MarkdownSkeleton />;
 
