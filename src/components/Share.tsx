@@ -33,7 +33,7 @@ export function Share() {
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger>
+      <DrawerTrigger asChild>
       <Button variant="light" className="border border-border rounded-full" >
             <FiShare size={20} /> Share
         </Button>
