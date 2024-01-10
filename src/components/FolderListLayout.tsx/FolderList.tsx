@@ -7,6 +7,7 @@ import { MdInstallDesktop } from "react-icons/md";
 import { SiApple } from "react-icons/si";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "®ui/command";
 import { Author } from "./Author";
+import React from "react";
 
 
 const List = [
@@ -143,8 +144,9 @@ return (
         <CommandList className="h-60 sm:h-64 md:h-80 lg:h-92 pr-1">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup>
-          {List.map((list: any) => (
-            <><CommandItem className="my-1">
+          {List.map((list, index) => (
+          <React.Fragment key={list.title + index}>
+            <CommandItem className="my-1">
               <div className="text-[28px] md:text-2xl mr-2.5">{list.icon}</div>
               {/* Mobile View */}
               <Grid display={{ initial: 'grid', md: 'none' }} align="center">
@@ -162,7 +164,8 @@ return (
                 </div>
               </Flex>
               <CommandShortcut><Flex gap="1" align="center" justify="center"><Text size="2">{list.download}</Text><ArrowDownToLine className="w-4 h-4" /></Flex></CommandShortcut>
-            </CommandItem><CommandSeparator /></>
+            </CommandItem><CommandSeparator />
+            </React.Fragment>
             ))}
           </CommandGroup>
         </CommandList>

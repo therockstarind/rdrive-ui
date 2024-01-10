@@ -8,3 +8,5 @@ videos/*
 !videos/*.js
 !videos/*.ts
 public/_next-video
+public/sw.js
+public/workbox-2e6be583.js

@@ -9,7 +9,7 @@ export default function AnimatedHeading({
   infinity,
 }: AnimatedTAGProps) {
   return (
-    <motion.h1
+    <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: !infinity }}
@@ -17,6 +17,6 @@ export default function AnimatedHeading({
       className={className}
     >
       {children}
-    </motion.h1>
+    </motion.div>
   );
 }

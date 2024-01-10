@@ -3,6 +3,7 @@
 import { Image } from "@nextui-org/react";
 import { Flex } from "@radix-ui/themes";
 import Video from 'next-video';
+import Markdown from "./markdown";
 
 type PreviewProps = {
   src: string;
@@ -30,4 +31,21 @@ const VideoPreview = ({ src, title, width, height }: PreviewProps) => {
     );
 };
 
-export { ImagePreview, VideoPreview };
+const MarkdownPreview = ({ src }: PreviewProps) => {
+    return (
+        <div className="m-1">
+                <Markdown src={src} />
+        </div>
+    );
+};
+
+// const PDFPreview = ({ src }: PreviewProps) => {
+//     const pdfPath = encodeURIComponent(src)
+//       const url = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${pdfPath}`
+    
+//     return (
+//         <iframe src={url} frameBorder="0" width="100%" height="100%"></iframe>
+//     );
+// };
+
+export { ImagePreview, VideoPreview, MarkdownPreview };

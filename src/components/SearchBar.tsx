@@ -55,7 +55,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
     <Command>
     <CommandInput placeholder="Type a command or search..."/>
     <Listbox variant="light" className="p-0">
-        <ListboxItem key={""} className="p-0" classNames={{title: 'notruncate'}}>
+        <ListboxItem key="" className="p-0" classNames={{title: 'notruncate'}}>
         <CommandList className="border-t border-border">
       <CommandEmpty>No results found.</CommandEmpty>
       <CommandGroup heading="Suggestions">

@@ -33,7 +33,7 @@ export default function Preview({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerContent>
-      <ScrollArea type="always" className="p-2 overflow-scroll">
+      <ScrollArea type="always" className="p-2 overflow-y-scroll">
             {children}
       </ScrollArea>
       </DrawerContent>
