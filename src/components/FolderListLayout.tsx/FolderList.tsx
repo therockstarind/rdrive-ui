@@ -130,13 +130,17 @@ const List = [
 const FolderList = () => {
 return (
     <Command>
-      <Flex justify="between" mb="2" m="1" align="center">
-      <Author />
+      <Flex justify="end" mt="1" mb="4" mx="2" align="center">
       <div className="GoToFile">
       <CommandInput placeholder="Go to file" className="h-8"/>
       </div>
       </Flex>
-        <CommandList className="border border-border rounded-md h-60 sm:h-64 md:h-80 lg:h-92 pr-1">
+      <Grid className="border border-border rounded-md">
+        <Flex className="bg-default/10 dark:bg-default/30 border-b border-border" justify="between" px="2" align="center" p="1">
+            <Author />
+            <Text as="p" size="2" color="gray">15 items</Text>
+          </Flex>
+        <CommandList className="h-60 sm:h-64 md:h-80 lg:h-92 pr-1">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup>
           {List.map((list: any) => (
@@ -162,6 +166,7 @@ return (
             ))}
           </CommandGroup>
         </CommandList>
+        </Grid>
     </Command>
 )
 }

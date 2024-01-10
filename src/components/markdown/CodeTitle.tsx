@@ -17,6 +17,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { AiOutlineFileText, AiOutlineFolderOpen } from "react-icons/ai";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaUserCircle } from "react-icons/fa";
+import { BookText } from 'lucide-react';
 
 type Props = {
   lang: string;
@@ -94,6 +95,10 @@ export default function CodeTitle({ lang }: Props) {
       Icon = RiLockPasswordFill;
       Title = "Password";
     break;
+    case "txt":
+      Icon = BookText;
+      Title = "Text";
+    break;    
     default:
       Icon = BsFileEarmarkCodeFill;
       Title = "Code";
