@@ -2,11 +2,10 @@ import { Metadata, Viewport } from 'next'
 import { cn } from '®/lib/utils'
 import { Providers } from './providers'
 import { siteConfig } from '®/config/site'
-import { fontSans } from '®/lib/fonts'
 
 export const metadata: Metadata = {
   title: `${siteConfig.name}`,
-  description: 'Tota Tola',
+  description: `${siteConfig.description}`,
   applicationName: `${siteConfig.name}`,
   manifest: '/manifest.json',
   appleWebApp: {
@@ -39,11 +38,11 @@ export const metadata: Metadata = {
   },
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "Rock Star",
+      url: "https://rockstar.bio",
     },
   ],
-  creator: "shadcn",
+  creator: "Rock Star",
 
 }
 
@@ -62,12 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased element",
-          fontSans.className
-        )}
-      >
+      <body className={cn("min-h-screen bg-background antialiased element")}>
         <Providers>
           {children}
         </Providers>

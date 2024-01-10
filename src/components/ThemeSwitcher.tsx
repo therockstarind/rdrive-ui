@@ -38,7 +38,7 @@ export function ThemeSwitcher() {
     radius="full"
     selectedKey={theme}
     onSelectionChange={(selectedTheme) => ThemeChange(selectedTheme as string)}
-    classNames={{ cursor: 'bg-default-100 dark:bg-default-100', tabContent: 'group-data-[selected=true]:text-none text-black dark:text-white'}}
+    classNames={{ cursor: 'bg-default/10 dark:bg-default/30', tabContent: 'group-data-[selected=true]:text-none text-black dark:text-white'}}
   >
     {tabs.map((item) => (
       <Tab key={item.theme} title={item.icon} aria-label={item.theme}/>

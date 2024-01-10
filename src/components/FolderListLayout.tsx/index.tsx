@@ -18,7 +18,7 @@ const FolderListLayout = () => {
             <Separator size="4" />
             </Flex>
             {/* Container */}
-            <Flex width="100%" direction={{ initial: "column-reverse", sm: "row" }} gap="2">
+            <Flex width="100%" direction={{ initial: "column-reverse", sm: "row" }} gap={{initial: '2', md: '4'}}>
                 {/* List & Readme & Comment */}
                 <Flex width="100%" mx="auto" direction="column" gap="2">
                     <FolderList />

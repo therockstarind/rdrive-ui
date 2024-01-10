@@ -2,12 +2,15 @@
 
 import { Button, Image } from "@nextui-org/react"
 import { Flex } from "@radix-ui/themes"
+import { Bug } from "lucide-react"
 import * as React from "react"
+import { IoMdShareAlt } from "react-icons/io";
 import { FiShare } from "react-icons/fi"
 import { toast } from "sonner"
 import { useMediaQuery } from "®/hooks/use-media-query"
 import { Dialog, DialogContent, DialogTrigger } from "®ui/dialog"
 import { Drawer, DrawerContent, DrawerFooter, DrawerTrigger } from "®ui/drawer"
+import { MdBugReport, MdOutlineBugReport } from "react-icons/md"
 
 
 export function Share() {
@@ -51,15 +54,15 @@ export function Share() {
 
 const Content = () => {
     return (
-        <Image src="https://rdrive.org/api/og/?path=/Apple/MacBook/MacBook-Pro-(M1-Max-14-inch-2021)/" alt="" className="border border-border"/>
+        <Image src="https://rdrive.org/api/og/?path=/Apple/MacBook/MacBook-Pro-(M1-Max-14-inch-2021)/" alt="" width="1280" height="640" className="border border-border"/>
     )
 }
 
 const ShareButton = () => {    
     return (
         <Flex justify="between" align="center" className="space-x-4">
-           <Button variant="light" className="w-full border border-border" onPress={shareCurrentUrl} >Share</Button> 
-           <Button variant="light" className="w-full border border-border" onPress={reportOnWhatsApp}>Report</Button> 
+           <Button variant="light" className="w-full border border-border" onPress={shareCurrentUrl} ><IoMdShareAlt size={20}/> Share</Button> 
+           <Button variant="light" className="w-full border border-border" onPress={reportOnWhatsApp}><MdOutlineBugReport size={20}/>Report</Button> 
         </Flex>
     )
 }
