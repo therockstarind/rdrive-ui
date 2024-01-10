@@ -8,8 +8,8 @@ type PreviewProps = {
   src: string;
   title?: string;
   alt?: string;
-  width?: string;
-  height?: string;
+  width?: number;
+  height?: number;
 };
 
 const ImagePreview = ({ src, alt, width, height }: PreviewProps) => {
