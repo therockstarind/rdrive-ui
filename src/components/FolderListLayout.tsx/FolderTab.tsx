@@ -1,10 +1,10 @@
 "use client"
-import { Avatar, Box, Checkbox, DropdownMenu, Flex, Tabs, Text, TextArea } from "@radix-ui/themes"
-import { BookOpen, List, MessageSquareText } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { Avatar, Box, Checkbox, Flex, Tabs, Text, TextArea } from "@radix-ui/themes"
+import { BookOpen, MessageSquareText } from "lucide-react"
 import { useState } from "react"
-import Markdown from "../markdown"
 import { Card } from "®ui/card"
+import Markdown from "../markdown"
+import Toc from "../markdown/Toc"
 
 type TocItem = {
     id: string;
@@ -13,7 +13,6 @@ type TocItem = {
   
 const FolderTab = () => {
     const [toc, setToc] = useState<TocItem[]>([]);
-    const router = useRouter();
     return (
         <Card className="my-4 bg-background">
             <Tabs.Root defaultValue="readme">
@@ -23,27 +22,7 @@ const FolderTab = () => {
                         <Tabs.Trigger value="readme"><BookOpen className="w-5 h-5 mr-2"/> README</Tabs.Trigger>
                         <Tabs.Trigger value="comments"><MessageSquareText className="w-5 h-5 mr-2"/> Comments</Tabs.Trigger>
                     </Tabs.List>
-                    <DropdownMenu.Root>
-                        <DropdownMenu.Trigger>
-                            <List className="h-5 w-5 LinkText" />
-                        </DropdownMenu.Trigger>
-                        <DropdownMenu.Content size="2" side="bottom" align="end" sideOffset={18}>
-                            {toc.map((item, index) => (
-                                index === 0 ? (
-                                    <>
-                                        <DropdownMenu.Item key={index} onSelect={() => router.push(`#${item.id}`)}>
-                                            <Text size="5">{item.title}</Text>
-                                        </DropdownMenu.Item>
-                                        <DropdownMenu.Separator />
-                                    </>
-                                ) : (
-                                    <DropdownMenu.Item key={index} onSelect={() => router.push(`#${item.id}`)}>
-                                        {item.title}
-                                    </DropdownMenu.Item>
-                                )
-                            ))}
-                        </DropdownMenu.Content>
-                    </DropdownMenu.Root>
+                    <Toc toc={toc} />
                     </div>
                 </div>
                 <Box mx={{initial: '4', md: '6'}} my="4">
