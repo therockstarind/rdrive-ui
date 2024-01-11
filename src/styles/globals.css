@@ -95,6 +95,7 @@ a:focus-visible{
 
 * {
   -webkit-tap-highlight-color: transparent;
+  min-width: 0;
 }
 
 body::-webkit-scrollbar {
