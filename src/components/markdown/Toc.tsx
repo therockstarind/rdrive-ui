@@ -20,7 +20,7 @@ const Toc: React.FC<TocItem> = ({ toc }) => {
                 <List className="h-5 w-5 LinkText" />
                 </Link>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content size="2" side="bottom" align="end" sideOffset={18} className="!bg-background" color="ruby">
+            <DropdownMenu.Content size="2" side="bottom" align="end" sideOffset={18} className="!bg-background !max-h-[40dvh]" color="ruby">
                 {toc.map((item, index) => (
                     index === 0 ? (
                         <>
