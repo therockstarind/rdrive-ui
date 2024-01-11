@@ -3,6 +3,7 @@ import React from 'react';
 import { DropdownMenu, Text } from '@radix-ui/themes';
 import { List } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 type TocItem = {
     toc: {
@@ -15,20 +16,22 @@ const Toc: React.FC<TocItem> = ({ toc }) => {
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger>
+                <Link href='#' className="hover:bg-accent p-1 rounded-md">
                 <List className="h-5 w-5 LinkText" />
+                </Link>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content size="2" side="bottom" align="end" sideOffset={18}>
+            <DropdownMenu.Content size="2" side="bottom" align="end" sideOffset={18} className="!bg-background" color="ruby">
                 {toc.map((item, index) => (
                     index === 0 ? (
                         <>
                             <DropdownMenu.Item key={index} onSelect={() => router.push(`#${item.id}`)}>
-                                <Text size="5">{item.title}</Text>
+                                <Text size="5" className="max-w-60 md:max-w-80 truncate">{item.title}</Text>
                             </DropdownMenu.Item>
                             <DropdownMenu.Separator />
                         </>
                     ) : (
                         <DropdownMenu.Item key={index} onSelect={() => router.push(`#${item.id}`)}>
-                            {item.title}
+                            <Text className="max-w-60 md:max-w-80 truncate">{item.title}</Text>
                         </DropdownMenu.Item>
                     )
                 ))}

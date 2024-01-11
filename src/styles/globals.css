@@ -178,3 +178,7 @@ th{
 td{
   @apply p-4 text-center max-w-[200px] border border-border whitespace-normal break-normal;
 }
+
+.rt-ScrollAreaThumb {
+  background-color: hsl(var(--ring)) !important;
+}

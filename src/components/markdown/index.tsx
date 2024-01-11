@@ -8,14 +8,14 @@ import rehypePrettyCode from "rehype-pretty-code";
 import Pre from './Pre';
 import YouTube from './YouTube';
 import IMG from './Image';
-import { cn } from '®/lib/utils';
+import { cn, generateTOC } from '®/lib/utils';
 import Code from './Code';
 import Link from 'next/link';
 import { Card } from '../ui/card';
 import { MarkdownSkeleton } from '../Skeleton';
 import AnimatedHeading from '../FramerMotion/AnimatedHeading';
 import { fromLeftVariant } from '®/lib/FramerMotionVariants';
-import { TOC } from '®/hooks/toc';
+
 
 type MarkdownProps = {
   src: string;
@@ -39,7 +39,7 @@ const Markdown: FC<MarkdownProps> = ({ src, TOCGenerated }) => {
       .then(mdContent => {
         // Here we can still generate the TOC but not store it in the state
         // Instead, we call TOCGenerated callback
-        const toc = TOC(mdContent);
+        const toc = generateTOC(mdContent);
         if (TOCGenerated) {
           TOCGenerated(toc);
         }
@@ -86,7 +86,7 @@ const components = {
     <AnimatedHeading variants={fromLeftVariant}>
       <h1
         className={cn(
-          "mdx-heading font-heading mt-2 scroll-link text-4xl lg:text-5xl font-bold lg:font-extrabold ",
+          "mdx-heading font-heading mt-6 scroll-link text-4xl lg:text-5xl font-bold lg:font-extrabold ",
           className
         )}
         {...props}
@@ -97,7 +97,7 @@ const components = {
       <AnimatedHeading variants={fromLeftVariant}>
       <h2
         className={cn(
-          "mdx-heading font-heading mt-12 scroll-link pb-2 text-3xl font-bold tracking-tight first:mt-0",
+          "mdx-heading font-heading mt-8 scroll-link text-3xl font-bold tracking-tight",
           className
         )}
         {...props}
@@ -152,7 +152,7 @@ const components = {
     ),
     p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
       <p
-        className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
+        className={cn("leading-7 [&:not(:first-child)]:mt-4", className)}
         {...props}
       />
     ),

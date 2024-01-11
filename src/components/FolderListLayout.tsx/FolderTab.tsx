@@ -13,16 +13,17 @@ type TocItem = {
   
 const FolderTab = () => {
     const [toc, setToc] = useState<TocItem[]>([]);
+    const [readmeTab, setReadmeTab] = useState('readme');
     return (
         <Card className="my-4 bg-background">
-            <Tabs.Root defaultValue="readme">
+            <Tabs.Root defaultValue="readme" onValueChange={setReadmeTab}>
                 <div className="sticky top-0 md:top-[57px] z-40">
                     <div className="flex bg-background border-b border-border justify-between items-center overflow-hidden my-1 px-4">
                     <Tabs.List size="2" className="!shadow-none">
-                        <Tabs.Trigger value="readme"><BookOpen className="w-5 h-5 mr-2"/> README</Tabs.Trigger>
+                        <Tabs.Trigger value="readme"><BookOpen className="w-5 h-5 mr-2"/> README </Tabs.Trigger>
                         <Tabs.Trigger value="comments"><MessageSquareText className="w-5 h-5 mr-2"/> Comments</Tabs.Trigger>
                     </Tabs.List>
-                    <Toc toc={toc} />
+                    {readmeTab === 'readme' && <Toc toc={toc} />}
                     </div>
                 </div>
                 <Box mx={{initial: '4', md: '6'}} my="4">
