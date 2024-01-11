@@ -21,7 +21,7 @@ const AppBar = () => {
 
     return (
       <nav className="fixed bottom-2 sm:bottom-1 z-50 w-full left-1/2 right-1/2 transform -translate-x-1/2 flex flex-col max-w-lg p-1">
-        <div className="flex h-16 justify-between items-center border border-border rounded-md bg-gradient-to-b from-white to-gray-200 dark:from-black dark:to-gray-800 p-4 gap-4 md:gap-0">
+        <div className="flex h-16 justify-between items-center border border-border rounded-md bg-white/70 dark:bg-black/70  backdrop-blur-xl p-4 gap-4 md:gap-0">
           <Link href='/' aria-label="RDRIVE Logo" passHref>
             <Avatar src={siteConfig.logo} alt={siteConfig.name} fallback="R"/>
           </Link>

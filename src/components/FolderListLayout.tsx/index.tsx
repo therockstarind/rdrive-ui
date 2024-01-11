@@ -25,7 +25,7 @@ const FolderListLayout = () => {
                     <FolderTab />
                 </Flex>
                 {/* List Image & Details */}
-                <Flex className="md:w-1/4 md:mx-auto justify-center" direction="column" gap="2">
+                <Flex className="md:w-1/4 md:mx-auto" direction="column" gap="2">
                     <ImageCard />
                     <Flex display={{initial: 'flex', sm: 'none'}}>
                         <Header />

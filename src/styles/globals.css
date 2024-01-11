@@ -180,3 +180,7 @@ td{
 .rt-ScrollAreaThumb {
   background-color: hsl(var(--ring)) !important;
 }
+
+.rt-AvatarRoot:where(.rt-variant-soft) :where(.rt-AvatarFallback) {
+@apply !bg-default/10 dark:!bg-default/30 !text-[hsl(var(--ring))]
+}
