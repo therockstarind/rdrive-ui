@@ -6,7 +6,7 @@ import { Toaster } from "®ui/sonner";
 import "®/styles/globals.css"
 import "®/styles/mdx.css"
 import '@radix-ui/themes/styles.css'
-import Navbar from "®/components/NavBar";
+import AppBar from "®/components/AppBar";
 import Footer from "®/components/footer";
 import { TooltipProvider } from "®/components/ui/tooltip";
 
@@ -18,11 +18,11 @@ export function Providers({children}: { children: React.ReactNode }) {
           <TooltipProvider>
             <div vaul-drawer-wrapper="">
               <div className="relative flex min-h-screen flex-col bg-background">
-                  <Navbar />
                   <main className="flex-1 max-w-7xl overflow-x-clip mx-auto p-2 sm:p-4 gap-4">
                       {children}
                   </main>
                 <Footer />
+                <AppBar />
               </div>
             </div>
             </TooltipProvider>

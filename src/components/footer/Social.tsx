@@ -18,7 +18,7 @@ const SocialFooter = () => {
       ];
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-5">
       {socialIcons.map(({ href, icon, title }, index) => (
         <Link href={href} target='_blank' rel='noopener noreferrer' key={index} aria-label={title}>
           {icon}

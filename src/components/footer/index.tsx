@@ -21,15 +21,20 @@ const Footer = () => {
         e.preventDefault();
     });
     return(
-        <footer className="w-full border-t border-border p-2 text-sm">
-            <main className="w-full max-w-7xl mx-auto md:space-y-8 my-4 mb-14 md:mb-6">
+        <footer className="w-full border-t border-border p-4 md:p-2 text-sm">
+            <main className="w-full max-w-7xl mx-auto md:space-y-8 my-4 mb-20 md:mb-6"> 
+            <ul className="grid grid-cols-2 gap-2 md:flex justify-between">
+                <li className="hidden md:flex"><SocialFooter /></li>
+            <FooterLinks />
+            </ul>
+
             <div className="justify-between items-center hidden md:flex">
             <Link href="/" passHref className="flex items-center gap-1">
             <Image src={siteConfig.logo} alt={siteConfig.name} isBlurred width={40} height={40}/>
             <p className="LinkText">&copy; {new Date().getFullYear()}</p>
             </Link>
             <div className="flex items-center">
-            <Button className="bg-transparent LinkText border-none gap-2 rounded-full" variant="outline" onClick={openSearch}>
+            <Button className="bg-transparent LinkText border-none gap-2 rounded-full hidden lg:flex" variant="outline" onClick={openSearch}>
                             Command Menu
                             <Kbd>{os === 'windows' ? 'Ctrl' : '⌘'}</Kbd>
                             <Kbd>K</Kbd>
@@ -37,11 +42,8 @@ const Footer = () => {
             <SearchBar open={open} setOpen={setOpen}/>
             <ThemeSwitcher />
             </div>
-            </div>    
-            <ul className="grid grid-cols-2 gap-2 md:flex justify-between">
-                <li className="hidden md:flex"><SocialFooter /></li>
-            <FooterLinks />
-            </ul>
+            </div>   
+
             <div className="justify-between items-center flex md:hidden">
             <SocialFooter />
             <ThemeSwitcher />

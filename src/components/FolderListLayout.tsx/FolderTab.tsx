@@ -17,7 +17,7 @@ const FolderTab = () => {
     return (
         <Card className="my-4 bg-background">
             <Tabs.Root defaultValue="readme" onValueChange={setReadmeTab}>
-                <div className="sticky top-0 md:top-[57px] z-40">
+                <div className="sticky top-0 z-50">
                     <div className="flex bg-background border-b border-border justify-between items-center overflow-hidden my-1 px-4">
                     <Tabs.List size="2" className="!shadow-none">
                         <Tabs.Trigger value="readme"><BookOpen className="w-5 h-5 mr-2"/> README </Tabs.Trigger>

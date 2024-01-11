@@ -58,9 +58,6 @@
 
 
 /* Our CSS */
-.Navbar {
-  @apply w-full bottom-0 md:top-0 z-40 justify-center items-center bg-white bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md border-t md:border-t-0 md:border-b border-border dark:bg-black select-none;
-}
 .LinkText {
   @apply text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white;
 }
