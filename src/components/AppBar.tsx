@@ -1,6 +1,6 @@
 "use client"
 
-import { Avatar as UserAvatar } from "@nextui-org/react";
+import { Button, Avatar as UserAvatar } from "@nextui-org/react";
 import { Avatar } from "@radix-ui/themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,7 +8,7 @@ import React, { useMemo } from "react";
 import { LiaSearchSolid } from "react-icons/lia";
 import { siteConfig } from "®/config/site";
 import SearchBar from "./SearchBar";
-import { Button } from "®ui/button";
+
 
 const AppBar = () => {
   const [open, setOpen] = React.useState(false)
@@ -24,13 +24,13 @@ const AppBar = () => {
           <Link href='/' aria-label="RDRIVE Logo" passHref>
             <Avatar src={siteConfig.logo} alt={siteConfig.name} fallback="R"/>
           </Link>
-          <Button variant="outline" onClick={() => setOpen(true)} className="LinkText bg-transparent max-w-full overflow-hidden">
+          <Button variant="light" className="border border-border overflow-hidden rounded-md LinkText" onPress={() => setOpen(true)}>
             <LiaSearchSolid  className="mr-1" size={20} />
             <h1 className="truncate text-center">{title}</h1>
             </Button>
             <SearchBar open={open} setOpen={setOpen}/>
           <Link href="" aria-label="Login">
-          <UserAvatar isBordered className="ring-[hsl(var(--ring))]" src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop" />
+          <UserAvatar isBordered className="ring-[hsl(var(--ring))] bg-default/10 dark:bg-default/30" src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop" />
           </Link>
         </div>
       </nav>

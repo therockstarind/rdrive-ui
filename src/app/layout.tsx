@@ -2,6 +2,11 @@ import { Metadata, Viewport } from 'next'
 import { cn } from '®/lib/utils'
 import { Providers } from './providers'
 import { siteConfig } from '®/config/site'
+import { Inter } from 'next/font/google'
+import { fontSans } from '®/lib/fonts'
+
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans",})
 
 export const metadata: Metadata = {
   title: `${siteConfig.name}`,
@@ -61,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={cn("min-h-screen bg-background antialiased element")}>
+      <body className={cn(`min-h-screen bg-background antialiased element ${fontSans.className}`)}>
         <Providers>
           {children}
         </Providers>

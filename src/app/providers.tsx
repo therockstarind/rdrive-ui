@@ -19,7 +19,7 @@ export function Providers({children}: { children: React.ReactNode }) {
             <div vaul-drawer-wrapper="">
               <div className="flex min-h-screen flex-col items-center justify-center bg-background">
                   <main className="flex w-full flex-1 flex-col">
-                    <div className="mx-auto w-full max-w-7xl p-2 my-2">
+                    <div className="mx-auto w-full max-w-7xl p-2 my-2 overflow-clip">
                       {children}
                     </div>
                   </main>

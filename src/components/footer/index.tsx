@@ -3,12 +3,11 @@
 import Link from "next/link";
 import FooterLinks from "./Link";
 import SocialFooter from "./Social";
-import { Image, Kbd } from "@nextui-org/react";
+import { Button, Image, Kbd } from "@nextui-org/react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { ThemeSwitcher }  from "../ThemeSwitcher";
 import { siteConfig } from "®/config/site";
 import useDeviceOS from "®/hooks/useDeviceOS";
-import { Button } from "®ui/button";
 import React from "react";
 import SearchBar from "../SearchBar";
 
@@ -34,10 +33,10 @@ const Footer = () => {
             <p className="LinkText">&copy; {new Date().getFullYear()}</p>
             </Link>
             <div className="flex items-center">
-            <Button className="bg-transparent LinkText border-none gap-2 rounded-full hidden lg:flex" variant="outline" onClick={openSearch}>
+            <Button className="overflow-hidden rounded-full LinkText gap-2 hidden lg:flex" variant="light" onPress={openSearch}>
                             Command Menu
-                            <Kbd>{os === 'windows' ? 'Ctrl' : '⌘'}</Kbd>
-                            <Kbd>K</Kbd>
+                            <Kbd className="bg-background border border-border shadow-none">{os === 'windows' ? 'Ctrl' : '⌘'}</Kbd>
+                            <Kbd className="bg-background border border-border shadow-none">K</Kbd>
             </Button>
             <SearchBar open={open} setOpen={setOpen}/>
             <ThemeSwitcher />
