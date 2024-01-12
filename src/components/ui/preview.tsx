@@ -1,4 +1,3 @@
-// Import React and other required components
 import * as React from "react";
 import { Dispatch, SetStateAction } from "react";
 import { useMediaQuery } from "®/hooks/use-media-query";
