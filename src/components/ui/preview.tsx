@@ -1,8 +1,9 @@
 "use client"
 
-import * as React from "react";
 import { Dispatch, SetStateAction } from "react";
 import { useMediaQuery } from "®/hooks/use-media-query";
+import { getExtension } from "®/utils/getFileIcon";
+import { getPreviewType } from "®/utils/getPreviewType";
 import { Dialog, DialogContent } from "®ui/dialog";
 import { Drawer, DrawerContent } from "®ui/drawer";
 import { ImagePreview, MarkdownPreview, VideoPreview } from "../FilePreview";
@@ -15,23 +16,21 @@ type PreviewProps = {
   title?: string;
   width?: number | string;
   height?: number | string;
-  type: 'img' | 'video' | 'md';
 };
 
-export default function Preview({ open, setOpen, src, title, width, height, type }: PreviewProps) {
+export default function Preview({ open, setOpen, src, title, width, height }: PreviewProps) {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  // Function to render the correct preview based on type
+  const previewType = getPreviewType(getExtension(src))
+
   const Preview = () => {
-    switch (type) {
-      case 'img':
+    switch (previewType) {
+      case 'image':
         return <ImagePreview src={src} title={title} width={width} height={height} />;
       case 'video':
         return <VideoPreview src={src} title={title} width={width} height={height} />;
-      case 'md':
+      case 'markdown':
         return <MarkdownPreview src={src} />;
-      default:
-        return null;
     }
   };
 
