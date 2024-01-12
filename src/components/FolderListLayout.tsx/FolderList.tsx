@@ -83,23 +83,18 @@ return (
           {List.map((list, index) => (
           <React.Fragment key={list.title + index}>
             <CommandItem className="my-1" onSelect={() => SelectItem(list)}>
-              <div className="text-lg mr-2.5">{list.icon}</div>
-              {/* Mobile View */}
-              <Grid display={{ initial: 'grid', md: 'none' }} align="center">
-                <Text size="2" className="truncate">{list.title}</Text>
-                <Flex className="text-xs text-muted-foreground" gap="2" align="center"><Text>{list.date}</Text>•<Text>{list.size}</Text></Flex>
-              </Grid>
-              {/* Desktop View */}
-              <Flex align="center" display={{ initial: 'none', md: 'flex' }} className="w-full">
-                <Flex className="w-2/3">
-                  <Text size="3" className="line-clamp-1">{list.title}</Text>
-                </Flex>
-                <div className="w-1/3 text-nowrap font-mono text-xs text-muted-foreground flex justify-between px-8">
-                  <Text>{list.date}</Text>
-                  <Text>{list.size}</Text>
+            <div className='flex flex-1 items-center gap-4' >
+                <div className="text-lg">{list.icon}</div>
+                    <div className="flex flex-col sm:flex-row flex-1 sm:gap-2 sm:items-center">
+                    <div className="flex-1 line-clamp-1 text-base">{list.title}</div>
+                        <div className="flex gap-2 sm:gap-6 sm:font-mono text-xs text-nowrap text-muted-foreground line-clamp-1">
+                            <div>{list.size}</div>
+                            <div>•</div>
+                            <div>{list.date}</div>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-1">{list.download}<ArrowDownToLine className="w-4 h-4" /></div>
                 </div>
-              </Flex>
-              <CommandShortcut><Flex gap="1" align="center" justify="center"><Text size="2">{list.download}</Text><ArrowDownToLine className="w-4 h-4" /></Flex></CommandShortcut>
             </CommandItem><CommandSeparator />
             </React.Fragment>
             ))}

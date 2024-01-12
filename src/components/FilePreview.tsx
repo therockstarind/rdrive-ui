@@ -8,16 +8,15 @@ import Markdown from "./markdown";
 type PreviewProps = {
   src: string;
   title?: string;
-  alt?: string;
   width?: number | string;
   height?: number | string;
 };
 
-const ImagePreview = ({ src, alt, width, height }: PreviewProps) => {
+const ImagePreview = ({ src, title, width, height }: PreviewProps) => {
     return (
         <Flex align="center" justify='center' direction="column" className="space-y-3">
-            <Image src={src} alt={alt} width={width} height={height}/>
-            <h1 className="text-2xl md:text-3xl line-clamp-1">{alt}</h1>
+            <Image src={src} alt={title} width={width} height={height}/>
+            <h1 className="text-2xl md:text-3xl line-clamp-1">{title}</h1>
         </Flex>
     );
 };

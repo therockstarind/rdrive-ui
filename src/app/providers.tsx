@@ -18,7 +18,7 @@ export function Providers({children}: { children: React.ReactNode }) {
           <TooltipProvider>
             <div vaul-drawer-wrapper="">
               <div className="relative flex min-h-screen flex-col bg-background">
-                  <main className="flex-1 max-w-7xl overflow-x-clip mx-auto p-2 sm:p-4 gap-4">
+                  <main className="flex-1 overflow-x-clip p-2 sm:p-6">
                       {children}
                   </main>
                 <Footer />

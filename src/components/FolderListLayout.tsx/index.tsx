@@ -20,12 +20,12 @@ const FolderListLayout = () => {
             {/* Container */}
             <Flex direction={{ initial: "column-reverse", sm: "row" }} gap={{initial: '2', md: '4'}}>
                 {/* List & Readme & Comment */}
-                <Flex className="md:w-3/4 md:mx-auto" direction="column" gap="2">
+                <Flex className="md:w-3/4" direction="column" gap="2">
                     <FolderList />
                     <FolderTab />
                 </Flex>
                 {/* List Image & Details */}
-                <Flex className="md:w-1/4 md:mx-auto" direction="column" gap="2">
+                <Flex className="md:w-1/4" direction="column" gap="2">
                     <ImageCard />
                     <Flex display={{initial: 'flex', sm: 'none'}}>
                         <Header />
