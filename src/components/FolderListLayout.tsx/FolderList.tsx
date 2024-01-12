@@ -1,134 +1,70 @@
 "use client";
 import { Flex, Grid, Text } from "@radix-ui/themes";
 import { ArrowDownToLine } from "lucide-react";
-import { BsFillRecordCircleFill } from "react-icons/bs";
-import { FaArchive, FaFolder } from "react-icons/fa";
-import { MdInstallDesktop } from "react-icons/md";
-import { SiApple } from "react-icons/si";
+import React, { useState } from "react";
+import { BsImage } from "react-icons/bs";
+import { FaMarkdown, FaVideo } from "react-icons/fa";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "®ui/command";
+import Preview from "®ui/preview";
 import { Author } from "./Author";
-import React from "react";
 
+type ListItem = {
+  href: string;
+  title: string;
+  size: string;
+  date: string;
+  download: string;
+  icon: JSX.Element;
+  width: number | string;
+  height: number | string;
+  type: string;
+};
 
-const List = [
+const List: ListItem[] = [
   {
-    href: '/Apps',
-    title: 'Apple',
-    size: '42.89 GB',
-    date: '24 Dec 2022',
+    href: '/images/lyra.png',
+    title: 'Lyra',
+    size: '8 MB',
+    date: '12 Jan 2024',
     download: '0',
-    icon: <FaFolder  />,
+    icon: <BsImage />,
+    width: '',
+    height: '',
+    type: 'img',
   },
   {
-    href: '/Games',
-    title: 'FRP-Files',
-    size: '122.79 GB',
-    date: '24 Dec 2022',
+    href: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    title: 'Big Buck Bunny',
+    size: '122.79 MB',
+    date: '12 Jan 2024',
     download: '0',
-    icon: <FaFolder  />,
+    icon: <FaVideo  />,
+    width: '',
+    height: '',
+    type: 'video',
   },
   {
-    href: '/FRP',
-    title: 'Pixel-Rom',
-    size: '21.89 GB',
-    date: '24 Dec 2022',
+    href: '/sample.md',
+    title: 'Sample',
+    size: '1.89 MB',
+    date: '12 Jan 2024',
     download: '0',
-    icon: <FaFolder  />,
-  },
-  {
-    href: '/Drivers',
-    title: 'ice-eea-global-images-V13-0-3-0-SGMEUXM-20220915-0000-00-12-0-dc6cb84563.zip',
-    size: '2.89 GB',
-    date: '24 Dec 2022',
-    download: '5',
-    icon: <FaArchive  />,
-  },
-  {
-    href: '/Flash-Tool',
-    title: 'Windows-11.iso',
-    size: '11.89 GB',
-    date: '24 Dec 2022',
-    download: '9',
-    icon: <BsFillRecordCircleFill  />,
-  },
-  {
-    href: '/iCloud',
-    title: 'iRemovel-Pro.pkg',
-    size: '5.98 GB',
-    date: '24 Dec 2022',
-    download: '0',
-    icon: <SiApple  />,
-  },
-  {
-    href: '/service-center-price-list',
-    title: 'Office.exe',
-    size: '8.80 GB',
-    date: '24 Dec 2022',
-    download: '8',
-    icon: <MdInstallDesktop  />,
-  },
-  {
-    href: '/sponsor',
-    title: 'Chrome.exe',
-    size: '1.89 GB',
-    date: '24 Dec 2022',
-    download: '3',
-    icon: <MdInstallDesktop  />,
-  },
-  {
-    href: '/sponsor',
-    title: 'AFTool BBKG 5 1 28 MTK + Qulcm By Rock Star.rar',
-    size: '1.89 GB',
-    date: '24 Dec 2022',
-    download: '3',
-    icon: <MdInstallDesktop  />,
-  },
-  {
-    href: '/sponsor',
-    title: 'DFU Flash Tool v2 03.zip',
-    size: '1.89 GB',
-    date: '24 Dec 2022',
-    download: '3',
-    icon: <MdInstallDesktop  />,
-  },  {
-    href: '/sponsor',
-    title: 'flashtool 0 9 22 3 windows.zip',
-    size: '1.89 GB',
-    date: '24 Dec 2022',
-    download: '3',
-    icon: <MdInstallDesktop  />,
-  },  {
-    href: '/sponsor',
-    title: 'FRP Motorola 2017.rar',
-    size: '1.89 GB',
-    date: '24 Dec 2022',
-    download: '3',
-    icon: <MdInstallDesktop  />,
-  },  {
-    href: '/sponsor',
-    title: 'Miracle Box 2 58 crack By Rock Star.zip',
-    size: '1.89 GB',
-    date: '24 Dec 2022',
-    download: '3',
-    icon: <MdInstallDesktop  />,
-  },  {
-    href: '/sponsor',
-    title: 'MTK GAME OVER TOOL 2022.7z',
-    size: '1.89 GB',
-    date: '24 Dec 2022',
-    download: '3',
-    icon: <MdInstallDesktop  />,
-  },  {
-    href: '/sponsor',
-    title: 'Qpst By Rock Star.rar',
-    size: '1.89 GB',
-    date: '24 Dec 2022',
-    download: '3',
-    icon: <MdInstallDesktop  />,
+    icon: <FaMarkdown  />,
+    width: '',
+    height: '',
+    type: 'md',
   },
 ];
 
 const FolderList = () => {
+  const [open, setOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<ListItem | null>(null);
+
+  const SelectItem = (item: ListItem) => {
+    setSelectedItem(item);
+    setOpen(true);
+  };
+
 return (
     <Command>
       <Flex justify="end" mt="1" mb="4" mx="2" align="center">
@@ -141,16 +77,16 @@ return (
             <Author />
             <Text as="p" size="2" color="gray">15 items</Text>
           </Flex>
-        <CommandList className="h-60 sm:h-64 md:h-80 lg:h-92 pr-1">
+        <CommandList className="h-full max-h-60 sm:max-h-64 md:max-h-80 lg:max-h-92 pr-1">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup>
           {List.map((list, index) => (
           <React.Fragment key={list.title + index}>
-            <CommandItem className="my-1">
-              <div className="text-[28px] md:text-2xl mr-2.5">{list.icon}</div>
+            <CommandItem className="my-1" onSelect={() => SelectItem(list)}>
+              <div className="text-lg mr-2.5">{list.icon}</div>
               {/* Mobile View */}
               <Grid display={{ initial: 'grid', md: 'none' }} align="center">
-                <Text size="2" className="line-clamp-1">{list.title}</Text>
+                <Text size="2" className="truncate">{list.title}</Text>
                 <Flex className="text-xs text-muted-foreground" gap="2" align="center"><Text>{list.date}</Text>•<Text>{list.size}</Text></Flex>
               </Grid>
               {/* Desktop View */}
@@ -158,7 +94,7 @@ return (
                 <Flex className="w-2/3">
                   <Text size="3" className="line-clamp-1">{list.title}</Text>
                 </Flex>
-                <div className="w-1/3 text-nowrap font-mono text-xs text-muted-foreground mx-auto flex justify-around">
+                <div className="w-1/3 text-nowrap font-mono text-xs text-muted-foreground flex justify-between px-8">
                   <Text>{list.date}</Text>
                   <Text>{list.size}</Text>
                 </div>
@@ -170,6 +106,7 @@ return (
           </CommandGroup>
         </CommandList>
         </Grid>
+        {selectedItem && (<Preview  open={open}  setOpen={setOpen}  src={selectedItem.href}  title={selectedItem.title}  width={selectedItem.width}  height={selectedItem.height} type={selectedItem.type} />)}
     </Command>
 )
 }

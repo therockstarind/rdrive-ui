@@ -1,15 +1,14 @@
 "use client"
 
+import { Avatar as UserAvatar } from "@nextui-org/react";
 import { Avatar } from "@radix-ui/themes";
-import {Avatar as UserAvatar} from "@nextui-org/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
+import { LiaSearchSolid } from "react-icons/lia";
 import { siteConfig } from "®/config/site";
-import React from "react";
-import { Button } from "./ui/button";
 import SearchBar from "./SearchBar";
-import { LiaSearchSolid } from "react-icons/lia"
+import { Button } from "®ui/button";
 
 const AppBar = () => {
   const [open, setOpen] = React.useState(false)
@@ -30,7 +29,7 @@ const AppBar = () => {
             <h1 className="truncate text-center">{title}</h1>
             </Button>
             <SearchBar open={open} setOpen={setOpen}/>
-          <Link href="/" aria-label="Login">
+          <Link href="" aria-label="Login">
           <UserAvatar isBordered className="ring-[hsl(var(--ring))]" src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop" />
           </Link>
         </div>

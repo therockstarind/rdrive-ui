@@ -9,8 +9,8 @@ type PreviewProps = {
   src: string;
   title?: string;
   alt?: string;
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
 };
 
 const ImagePreview = ({ src, alt, width, height }: PreviewProps) => {
@@ -39,13 +39,5 @@ const MarkdownPreview = ({ src }: PreviewProps) => {
     );
 };
 
-// const PDFPreview = ({ src }: PreviewProps) => {
-//     const pdfPath = encodeURIComponent(src)
-//       const url = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${pdfPath}`
-    
-//     return (
-//         <iframe src={url} frameBorder="0" width="100%" height="100%"></iframe>
-//     );
-// };
 
 export { ImagePreview, VideoPreview, MarkdownPreview };
