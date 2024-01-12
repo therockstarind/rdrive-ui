@@ -75,7 +75,7 @@ return (
       <Grid className="border border-border rounded-md">
         <Flex className="bg-default/10 dark:bg-default/30 border-b border-border" justify="between" px="2" align="center" p="1">
             <Author />
-            <Text as="p" size="2" color="gray">15 items</Text>
+            <Text as="p" size="2" color="gray">{List.length} items</Text>
           </Flex>
         <CommandList className="h-full max-h-60 sm:max-h-64 md:max-h-80 lg:max-h-92 pr-1">
           <CommandEmpty>No results found.</CommandEmpty>
