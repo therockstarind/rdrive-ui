@@ -17,7 +17,7 @@ type ListItem = {
   icon: JSX.Element;
   width: number | string;
   height: number | string;
-  type: string;
+  type: 'img' | 'video' | 'md';
 };
 
 const List: ListItem[] = [
