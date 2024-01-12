@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import AnimatedDiv from "./FramerMotion/AnimatedDiv";
 import { FadeContainer, fromLeftVariant } from "®/lib/FramerMotionVariants";
 import { motion } from "framer-motion";
+import { siteConfig } from "®/config/site";
 
 const FolderItems  = [
     {
@@ -14,7 +15,7 @@ const FolderItems  = [
     {
       href: '/',
       title: 'Asus',
-      img: 'https://cdn.worldvectorlogo.com/logos/asus-logo.svg',
+      img: '',
     },
     {
       href: '/',
@@ -39,14 +40,13 @@ const FolderItems  = [
 ];
 const FolderGridLayout = () => {
     const router = useRouter();
-
     return(
         <AnimatedDiv variants={FadeContainer} className="FolderCardLayout">
             {FolderItems.map((card, index) => (
               <motion.div key={index} variants={fromLeftVariant}>
                 <Card key={index} className="FolderCard borderRadius" shadow="none" isHoverable isPressable onPress={() => router.push('/Xiaomi-12-Pro-(Dimensity-Edition)')} aria-label={card.title}>
                     <div className="h-40 flex justify-center items-center mb-2"   >
-                        <Image src={card.img} alt={card.title} isBlurred className="mx-auto my-10 h-40 object-center object-contain rounded-none"/>
+                        <Image src={card.img || siteConfig.fallback } alt={card.title} isBlurred className="mx-auto my-10 h-40 object-center object-contain rounded-none"/>
                     </div>
                     <h1 className="text-center line-clamp-1">{card.title}</h1>
                 </Card>
