@@ -25,7 +25,7 @@ const ImagePreview = ({ src, alt, width, height }: PreviewProps) => {
 const VideoPreview = ({ src, title, width, height }: PreviewProps) => {
     return (
         <Flex align="center" justify='center' direction="column" gap="2" className="space-y-3">
-                <Video className="border border-border rounded-md p-1" src={src} width={width} height={height} accentColor="hsl(var(--ring))" poster="/images/lyra.png" blurDataURL="" />
+                <Video className="border border-border rounded-md p-1" src={src} accentColor="hsl(var(--ring))" poster="/images/lyra.png" blurDataURL="" /> {/* width={width} height={height} */}
                 <h1 className="text-2xl md:text-3xl line-clamp-1">{title}</h1>
         </Flex>
     );
