@@ -1,43 +1,59 @@
 "use client"
-import React from 'react';
-import { DropdownMenu, Text } from '@radix-ui/themes';
+import { Listbox, ListboxItem } from '@nextui-org/react';
 import { List } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import React from 'react';
+import { Popover, PopoverContent, PopoverTrigger } from '®ui/popover';
+import { ScrollArea } from '®ui/scroll-area';
 
 type TocItem = {
-    toc: {
-        id: string;
-        title: string;
-    }[];
-  };
+  toc: {
+    id: string;
+    title: string;
+  }[];
+};
+
 const Toc: React.FC<TocItem> = ({ toc }) => {
-    const router = useRouter();
-    return (
-        <DropdownMenu.Root>
-            <DropdownMenu.Trigger>
-                <Link href='#' className="hover:bg-accent p-1 rounded-md">
-                <List className="h-5 w-5 LinkText" />
-                </Link>
-            </DropdownMenu.Trigger>
-            <DropdownMenu.Content size="2" side="bottom" align="end" sideOffset={18} className="!bg-background !max-h-[40dvh]" color="ruby">
-                {toc.map((item, index) => (
-                    index === 0 ? (
-                        <>
-                            <DropdownMenu.Item key={index} onSelect={() => router.push(`#${item.id}`)}>
-                                <Text size="5" className="max-w-60 md:max-w-80 truncate">{item.title}</Text>
-                            </DropdownMenu.Item>
-                            <DropdownMenu.Separator />
-                        </>
-                    ) : (
-                        <DropdownMenu.Item key={index} onSelect={() => router.push(`#${item.id}`)}>
-                            <Text className="max-w-60 md:max-w-80 truncate">{item.title}</Text>
-                        </DropdownMenu.Item>
-                    )
-                ))}
-            </DropdownMenu.Content>
-        </DropdownMenu.Root>
-    );
+  const router = useRouter();
+
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <List className="h-5 w-5 LinkText" />
+      </PopoverTrigger>
+      <PopoverContent side="bottom" align="end" sideOffset={18} className="p-0">
+        <ScrollArea className="h-[40dvh]" type="always">
+          <Listbox items={toc} aria-label="Table of Content" className="pr-4 mb-1 overflow-x-hidden">
+            {toc.map((item, index) => (
+                 index === 0 ? (
+              <ListboxItem
+                key={index}
+                variant="faded"
+                textValue={item.title} 
+                showDivider
+                onPress={() => router.push(`#${item.id}`)}
+              >
+                <h1 className="text-xl !max-w-60 md:max-w-80 !truncate">
+                  {item.title}
+                </h1>
+              </ListboxItem>
+                ):(
+             <ListboxItem
+                    key={index}
+                    variant="faded"
+                    textValue={item.title} 
+                    onPress={() => router.push(`#${item.id}`)}
+                  >
+                    <h1 className="!max-w-60 md:max-w-80 !truncate">
+                      {item.title}
+                    </h1>
+             </ListboxItem>
+            )))}
+          </Listbox>
+        </ScrollArea>
+      </PopoverContent>
+    </Popover>
+  );
 };
 
 export default Toc;
