@@ -15,6 +15,7 @@ import { Card } from '../ui/card';
 import { MarkdownSkeleton } from '../Skeleton';
 import AnimatedHeading from '../FramerMotion/AnimatedHeading';
 import { fromLeftVariant } from '®/lib/FramerMotionVariants';
+import useSmoothScrolling from '®/hooks/useSmoothScrolling';
 
 
 type MarkdownProps = {
@@ -32,7 +33,7 @@ const Markdown: FC<MarkdownProps> = ({ src, TOCGenerated }) => {
     },
     showLineNumbers: true,
   };
-
+  
   useEffect(() => {
     fetch(src)
       .then(response => response.text())
@@ -71,6 +72,8 @@ const Markdown: FC<MarkdownProps> = ({ src, TOCGenerated }) => {
       .catch(error => console.error('Error fetching markdown:', error));
   }, [src, TOCGenerated]);
 
+  useSmoothScrolling('a[href^="#"]', mdxSource);
+
   if (!mdxSource) return <MarkdownSkeleton />;
 
   return <MDXRemote className="mdx" {...mdxSource} components={components} />;
@@ -86,7 +89,7 @@ const components = {
     <AnimatedHeading variants={fromLeftVariant}>
       <h1
         className={cn(
-          "mdx-heading font-heading mt-6 scroll-link text-4xl lg:text-5xl font-bold lg:font-extrabold ",
+          "mdx-heading font-heading mt-6 text-4xl lg:text-5xl font-bold lg:font-extrabold ",
           className
         )}
         {...props}
@@ -97,7 +100,7 @@ const components = {
       <AnimatedHeading variants={fromLeftVariant}>
       <h2
         className={cn(
-          "mdx-heading font-heading mt-8 scroll-link text-3xl font-bold tracking-tight",
+          "mdx-heading font-heading mt-8 text-3xl font-bold tracking-tight",
           className
         )}
         {...props}
@@ -108,7 +111,7 @@ const components = {
       <AnimatedHeading variants={fromLeftVariant}>
       <h3
         className={cn(
-          "mdx-heading font-heading mt-8 scroll-link text-2xl font-bold tracking-tight",
+          "mdx-heading font-heading mt-8 text-2xl font-bold tracking-tight",
           className
         )}
         {...props}
@@ -119,7 +122,7 @@ const components = {
       <AnimatedHeading variants={fromLeftVariant}>
       <h4
         className={cn(
-          "mdx-heading font-heading mt-8 scroll-link text-xl font-bold tracking-tight",
+          "mdx-heading font-heading mt-8 text-xl font-bold tracking-tight",
           className
         )}
         {...props}
@@ -129,7 +132,7 @@ const components = {
     h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
       <h5
         className={cn(
-          "mdx-heading mt-8 scroll-link text-xl font-bold tracking-tight",
+          "mdx-heading mt-8 text-xl font-bold tracking-tight",
           className
         )}
         {...props}
@@ -138,7 +141,7 @@ const components = {
     h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
       <h6
         className={cn(
-          "mdx-heading mt-8 scroll-link text-xl font-bold tracking-tight",
+          "mdx-heading mt-8 text-xl font-bold tracking-tight",
           className
         )}
         {...props}

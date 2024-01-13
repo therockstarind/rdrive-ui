@@ -93,11 +93,16 @@ a:focus-visible{
 * {
   -webkit-tap-highlight-color: transparent;
   min-width: 0;
+  scroll-margin-top: 56px;
 }
 
 body::-webkit-scrollbar {
   width: 0px;
   height: 0px;
+}
+html {
+  overflow-x: hidden;
+  scroll-behavior: auto;
 }
 .notruncate {
   white-space: normal !important;
@@ -154,10 +159,6 @@ code[data-theme*=' '] span {
   text-decoration: none;
 }
 
-.scroll-link{
-  @apply scroll-m-14 md:scroll-m-40;
-}
-
 table{
   @apply w-full my-6;
 }
@@ -183,4 +184,8 @@ td{
 
 .rt-AvatarRoot:where(.rt-variant-soft) :where(.rt-AvatarFallback) {
 @apply !bg-default/10 dark:!bg-default/30 !text-[hsl(var(--ring))]
+}
+
+.lock-scroll {
+  overflow: hidden !important;
 }

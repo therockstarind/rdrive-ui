@@ -91,7 +91,7 @@ return (
           {List.map((list, index) => (
           <React.Fragment key={list.title + index}>
             <CommandItem className="my-1" onSelect={() => SelectItem(list)}>
-            <div className='flex flex-1 items-center gap-4' >
+            <div className='flex flex-1 items-center gap-4'>
                 <div className="text-lg"><FileIcon name={list.href} /></div>
                     <div className="flex flex-col sm:flex-row flex-1 sm:gap-2 sm:items-center">
                     <div className="flex-1 line-clamp-1 text-base">{list.title}</div>

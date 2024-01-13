@@ -9,8 +9,10 @@ import '@radix-ui/themes/styles.css'
 import AppBar from "®/components/AppBar";
 import Footer from "®/components/footer";
 import { TooltipProvider } from "®/components/ui/tooltip";
+import useSmoothScrolling from "®/hooks/useSmoothScrolling";
 
 export function Providers({children}: { children: React.ReactNode }) {
+  useSmoothScrolling('a[href^="#"]', []);
     return (
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <NextUIProvider>

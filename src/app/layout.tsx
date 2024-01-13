@@ -1,9 +1,9 @@
 import { Metadata, Viewport } from 'next'
+import { Inter } from 'next/font/google'
+import { siteConfig } from '®/config/site'
+import { fontSans } from '®/lib/fonts'
 import { cn } from '®/lib/utils'
 import { Providers } from './providers'
-import { siteConfig } from '®/config/site'
-import { Inter } from 'next/font/google'
-import { fontSans } from '®/lib/fonts'
 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans",})
