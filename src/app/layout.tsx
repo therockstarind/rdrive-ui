@@ -13,37 +13,36 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
     title: `${siteConfig.name}`,
-    // startUpImage: [],
+    startupImage: ['/icons/rdrive.png'],
+  },  
+  openGraph: {
+    type: "website",
+    siteName: `${siteConfig.name}`,
+    title: {
+      default: `${siteConfig.name}`,
+      template: '',
+    },
+    description: '',
   },
-  // openGraph: {
-  //   type: "website",
-  //   siteName: `${siteConfig.name}`,
-  //   title: {
-  //     default: `${siteConfig.name}`,
-  //     template: '',
-  //   },
-  //   description: '',
-  // },
-  // twitter: {
-  //   card: "summary",
-  //   title: {
-  //     default: `${siteConfig.name}`,
-  //     template: '',
-  //   },
-  //   description: '',
-  // },
-  // icons: {
-  //   icon: '/favicon.ico',
-  //   shortcut: '',
-  //   apple: "/icons/icon-512x512.png",
-  // },
-  // authors: [
-  //   {
-  //     name: "Rock Star",
-  //     url: "https://rockstar.bio",
-  //   },
-  // ],
-  // creator: "Rock Star",
+  twitter: {
+    card: "summary",
+    title: {
+      default: `${siteConfig.name}`,
+      template: '',
+    },
+    description: '',
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: "/icons/icon-512x512.png",
+  },
+  authors: [
+    {
+      name: "Rock Star",
+      url: "https://rockstar.bio",
+    },
+  ],
+  creator: "Rock Star",
 
 }
 
