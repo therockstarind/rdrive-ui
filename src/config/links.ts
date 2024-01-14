@@ -1,3 +1,4 @@
+import { HiPencilSquare } from "react-icons/hi2";
 import { BsApple, BsFillUnlockFill, BsUsbSymbol } from 'react-icons/bs';
 import { FaRupeeSign } from 'react-icons/fa';
 import { MdPhonelinkSetup } from 'react-icons/md';
@@ -16,6 +17,12 @@ export const linksConfig: LinksConfig = {
             title: 'Apps',
             description: 'Download apps for Android, MacOS, Windows, and Linux',
             icon: TbApps,
+          },
+          {
+            href: '/blogs',
+            title: 'Blogs',
+            description: 'This section contains blog posts about various topics related to web development.',
+            icon: HiPencilSquare,
           },
           {
             href: '/Games',

@@ -6,6 +6,11 @@ import { LegalLinks } from "./Legal";
 
 const FooterLinks = () => {
     const FooterLinks: { href: string; title: string; tooltip: string;}[] = [
+      {
+        href: '/blogs',
+        title: 'Blogs',
+        tooltip: `This section contains blog posts about various topics related to web development.`,
+      },
         {
           href: '/FRP',
           title: 'FRP',

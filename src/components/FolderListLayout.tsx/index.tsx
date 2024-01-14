@@ -1,6 +1,6 @@
 "use client"
 
-import { Flex, Grid, Separator } from "@radix-ui/themes";
+import { Flex, Grid, Separator, Text } from "@radix-ui/themes";
 import { FadeContainer } from "®/lib/FramerMotionVariants";
 import AnimatedDiv from "../FramerMotion/AnimatedDiv";
 import Header from "./Header";
@@ -8,7 +8,6 @@ import ImageCard from "./ImageCard";
 import FolderList from "./FolderList";
 import FolderTab from "./FolderTab";
 import YouTube from "../markdown/YouTube";
-import { BlogCard } from "../blog/card";
 
 const FolderListLayout = () => {
     return (
@@ -25,8 +24,8 @@ const FolderListLayout = () => {
                     <FolderList />
                     <FolderTab />
                     <Grid display={{initial: 'grid', sm: 'none'}} gap="3">
-                        <YouTube id="PV08KlJeKuQ" title="How to Flash" />
-                        <BlogCard />
+                        <YouTube id="PV08KlJeKuQ" />
+                        {/* <BlogCard /> */}
                     </Grid> 
                 </Flex>
                 {/* List Image & Details */}
@@ -36,8 +35,14 @@ const FolderListLayout = () => {
                         <Header />
                     </Flex> 
                     <Grid display={{initial: 'none', sm: 'grid'}} className="sticky top-0.5 z-40" gap="3">
-                        <YouTube id="PV08KlJeKuQ" title="How to Flash" />
-                        <BlogCard />
+                        <Grid gap="2">
+                            {/* <Text as="label" size="5" weight="bold" ml="3">Blog</Text> */}
+                            {/* <BlogCard /> */}
+                        </Grid>
+                        <Grid gap="2">
+                            {/* <Text as="label" size="5" weight="bold" ml="3">Video</Text> */}
+                            <YouTube id="PV08KlJeKuQ" />
+                        </Grid>
                     </Grid> 
                 </Flex>
             </Flex>

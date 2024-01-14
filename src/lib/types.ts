@@ -4,7 +4,8 @@ import { ComponentType } from "react";
 
 /* Custom Animated Components types */
 export type AnimatedTAGProps = {
-    variants: Variants;
+    variants: Variants
+    mobileVariants?: Variants
     className?: string;
     children: React.ReactNode;
     infinity?: boolean;

@@ -4,13 +4,22 @@ import { Avatar, Flex, Grid, Text } from "@radix-ui/themes"
 import { Timer } from "lucide-react"
 import { Card, CardDescription, CardTitle } from "../ui/card"
 
-export function BlogCard() {
+type CardItem = {
+    id?: string;
+    title?: string;
+    description?: string;
+    img?: string;
+    date?: number;
+    time?: number;
+};
+
+const BlogCard: React.FC<CardItem> = ({ title, description, img, date, time  }) => {
   return (
     <Card className="p-2">
-      <Image src="https://cdn.gtricks.com/2023/03/3-ways-to-easily-turn-off-talkback-on-android-720x340.jpg" alt="" />
+      <Image src={img} alt={title} width="1280" height="640" isBlurred/>
       <div>
-          <CardTitle className="text-lg line-clamp-2">How to Enable/Disable TalkBack on Xiaomi 12 Pro</CardTitle>
-          <CardDescription className="line-clamp-3">First and foremost, open the Settings application, which you can find on the Home Screen or in the Main Menu.</CardDescription>
+          <CardTitle className="text-lg line-clamp-2">{title}</CardTitle>
+          <CardDescription className="line-clamp-3">{description}</CardDescription>
       </div>
       <div className="flex justify-between items-center">
         <Flex  className="flex gap-2 items-center" mt="2">
@@ -31,3 +40,5 @@ export function BlogCard() {
     </Card>
   )
 }
+
+export default BlogCard

@@ -84,7 +84,7 @@ dependencies:
     specifier: ^4.4.4
     version: 4.4.4(react-dom@18.2.0)(react@18.2.0)
   react-icons:
-    specifier: ^5.0.0
+    specifier: ^5.0.1
     version: 5.0.1(react@18.2.0)
   rehype-autolink-headings:
     specifier: ^7.1.0
