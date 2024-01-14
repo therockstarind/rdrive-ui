@@ -60,7 +60,7 @@ const Content = () => {
 
 const ShareButton = () => {    
     return (
-        <Flex justify="between" align="center" className="space-x-4">
+        <Flex justify="between" align="center" className="gap-6 mx-1 sm:mx-4">
            <Button variant="light" className="w-full border border-border" onPress={shareCurrentUrl} ><IoMdShareAlt size={20}/> Share</Button> 
            <Button variant="light" className="w-full border border-border" onPress={reportOnWhatsApp}><MdOutlineBugReport size={20}/>Report</Button> 
         </Flex>

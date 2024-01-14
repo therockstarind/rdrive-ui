@@ -18,7 +18,7 @@ const FolderTab = () => {
     useSmoothScrolling('a[href^="#"]', toc);
     
     return (
-        <Card className="my-4 bg-background">
+        <Card className="bg-background">
             <Tabs.Root defaultValue="readme" onValueChange={setReadmeTab}>
                 <div className="sticky top-0 z-50 flex-1 items-center">
                     <div className="flex bg-background border-b border-border justify-between items-center overflow-hidden my-1 px-4">

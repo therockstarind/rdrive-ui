@@ -8,6 +8,7 @@ import ImageCard from "./ImageCard";
 import FolderList from "./FolderList";
 import FolderTab from "./FolderTab";
 import YouTube from "../markdown/YouTube";
+import { BlogCard } from "../blog/card";
 
 const FolderListLayout = () => {
     return (
@@ -18,20 +19,25 @@ const FolderListLayout = () => {
             <Separator size="4" />
             </Flex>
             {/* Container */}
-            <Flex direction={{ initial: "column-reverse", sm: "row" }} gap={{initial: '2', md: '4'}}>
+            <Flex direction={{ initial: "column-reverse", sm: "row" }} gap={{initial: '2', md: '3'}}>
                 {/* List & Readme & Comment */}
-                <Flex className="md:w-3/4" direction="column" gap="2">
+                <Flex className="md:w-3/4" direction="column" gap="3">
                     <FolderList />
                     <FolderTab />
+                    <Grid display={{initial: 'grid', sm: 'none'}} gap="3">
+                        <YouTube id="PV08KlJeKuQ" title="How to Flash" />
+                        <BlogCard />
+                    </Grid> 
                 </Flex>
                 {/* List Image & Details */}
-                <Flex className="md:w-1/4" direction="column" gap="2">
+                <Flex className="md:w-1/4" direction="column" gap="3">
                     <ImageCard />
                     <Flex display={{initial: 'flex', sm: 'none'}}>
                         <Header />
                     </Flex> 
-                    <Grid display={{initial: 'none', sm: 'grid'}} className="sticky top-0 z-40">
+                    <Grid display={{initial: 'none', sm: 'grid'}} className="sticky top-0.5 z-40" gap="3">
                         <YouTube id="PV08KlJeKuQ" title="How to Flash" />
+                        <BlogCard />
                     </Grid> 
                 </Flex>
             </Flex>
