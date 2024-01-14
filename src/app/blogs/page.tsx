@@ -1,4 +1,6 @@
 "use client"
+import { Pagination } from "@nextui-org/react"
+import { Flex, Grid } from "@radix-ui/themes"
 import AnimatedDiv from "®/components/FramerMotion/AnimatedDiv"
 import AnimatedVariant from "®/components/FramerMotion/AnimatedVariant"
 import BlogCard from "®/components/blog/card"
@@ -45,10 +47,31 @@ const Demo = [
         description: `First and foremost, open the Settings application, which you can find on the Home Screen or in the Main Menu.`,
         img: "https://cdn.editorji.com/kDdiF2jbJ7.jpg",
     },
+    {
+        title: "Demo 9",
+        description: `First and foremost, open the Settings application, which you can find on the Home Screen or in the Main Menu.`,
+        img: "https://worldpodcasts.com/wp-content/uploads/2020/09/galaxyzfold2_mysticbronze-1280x640.jpg",
+    },
+    {
+        title: "Demo 10",
+        description: `First and foremost, open the Settings application, which you can find on the Home Screen or in the Main Menu.`,
+        img: "https://worldpodcasts.com/wp-content/uploads/2022/02/PXL_20220216_230801515-1280x640.jpg",
+    },
+    {
+        title: "Demo 11",
+        description: `First and foremost, open the Settings application, which you can find on the Home Screen or in the Main Menu.`,
+        img: "https://worldpodcasts.com/wp-content/uploads/2020/09/27_galaxys20fe_cloud_lavender_handson-1280x640.jpg",
+    },
+    {
+        title: "Demo 12",
+        description: `First and foremost, open the Settings application, which you can find on the Home Screen or in the Main Menu.`,
+        img: "https://cdn.editorji.com/zzPy827dWP.jpg",
+    },
 ]
 
 export default function Blog() {
   return (
+    <Grid gap="5">
     <AnimatedDiv variants={FadeContainer} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {Demo.map((card, index) => (
         <AnimatedVariant key={index} variants={fromLeftVariant} mobileVariants={fromTopVariant}>
@@ -56,5 +79,18 @@ export default function Blog() {
         </AnimatedVariant>
         ))}
      </AnimatedDiv>
+     <Flex justify="center">
+     <Pagination
+      total={5}
+      classNames={{
+        base: "",
+        wrapper: "rounded-full border border-border p-2",
+        item: "text-sm bg-transparent rounded-full p-0",
+        cursor:
+          "bg-gradient-to-b shadow-lg from-default-500 to-default-800 dark:from-default-300 dark:to-default-100 text-white rounded-full p-0 font-bold",
+      }}
+      />
+      </Flex>
+    </Grid>
   )
 }

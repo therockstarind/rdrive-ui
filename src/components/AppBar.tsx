@@ -24,7 +24,7 @@ const AppBar = () => {
           <Link href='/' aria-label="RDRIVE Logo" passHref>
             <Avatar src={siteConfig.logo} alt={siteConfig.name} fallback="R"/>
           </Link>
-          <Button variant="light" className="border border-border overflow-hidden rounded-md LinkText" onPress={() => setOpen(true)}>
+          <Button variant="light" className="border border-[hsl(var(--ring))] overflow-hidden rounded-md LinkText" onPress={() => setOpen(true)}>
             <LiaSearchSolid  className="mr-1" size={20} />
             <h1 className="truncate text-center">{title}</h1>
             </Button>
