@@ -1,8 +1,8 @@
 "use client"
-import { Image } from "@nextui-org/react"
+import { Card, Image } from "@nextui-org/react"
 import { Avatar, Flex, Grid, Text } from "@radix-ui/themes"
 import { Timer } from "lucide-react"
-import { Card, CardDescription, CardTitle } from "../ui/card"
+import { CardDescription, CardTitle } from "../ui/card"
 
 type CardItem = {
     id?: string;
@@ -15,13 +15,13 @@ type CardItem = {
 
 const BlogCard: React.FC<CardItem> = ({ title, description, img, date, time  }) => {
   return (
-    <Card className="p-2">
+    <Card className="p-2 border border-border gap-1.5" isHoverable shadow="none">
       <Image src={img} alt={title} width="1280" height="640" isBlurred/>
-      <div>
+      <Grid mx="2">
           <CardTitle className="text-lg line-clamp-2">{title}</CardTitle>
           <CardDescription className="line-clamp-3">{description}</CardDescription>
-      </div>
-      <div className="flex justify-between items-center">
+      </Grid>
+      <Flex justify="between" align="center" mx="2">
         <Flex  className="flex gap-2 items-center" mt="2">
         <Avatar radius="full" src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop" fallback="T" />
         <Grid>
@@ -36,7 +36,7 @@ const BlogCard: React.FC<CardItem> = ({ title, description, img, date, time  }) 
         <Flex align="center" gap="1" className="text-sm text-muted-foreground">
           <Timer className="w-5 h-5"/>5 min
         </Flex>  
-      </div>
+      </Flex>
     </Card>
   )
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import { Listbox, ListboxItem, Tooltip } from "@nextui-org/react"
+import { Kbd, Listbox, ListboxItem, Tooltip } from "@nextui-org/react"
 import { ArrowDown, ArrowUp, ArrowUpLeftFromCircle, CornerDownLeft, MoonIcon, SunIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
@@ -66,7 +66,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
             <h1 className="line-clamp-1">{links.title}</h1>
             <p className="text-xs text-muted-foreground line-clamp-1">{links.description}</p>
         </div>
-      <CommandShortcut>{links.title.charAt(0).toUpperCase()}</CommandShortcut>
+      <CommandShortcut><Kbd className="bg-background border border-border shadow-none text-xs">{links.title.charAt(0).toUpperCase()}</Kbd></CommandShortcut>
     </CommandItem>
           ))}
     </CommandGroup>
@@ -78,7 +78,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
                     <h1 className="line-clamp-1">Light</h1>
                     <p className="text-xs text-muted-foreground line-clamp-1">Change Theme to Light</p>
                 </div>
-              <CommandShortcut>L</CommandShortcut>
+              <CommandShortcut><Kbd className="bg-background border border-border shadow-none text-xs">L</Kbd></CommandShortcut>
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("system"))}>
               <RiComputerLine className="mr-2 h-5 w-5" />
@@ -86,7 +86,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
                     <h1 className="line-clamp-1">System</h1>
                     <p className="text-xs text-muted-foreground line-clamp-1">Change Theme to System</p>
                 </div>
-              <CommandShortcut>S</CommandShortcut>
+              <CommandShortcut><Kbd className="bg-background border border-border shadow-none text-xs">S</Kbd></CommandShortcut>
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
               <MoonIcon className="mr-2 h-5 w-5" />
@@ -94,7 +94,7 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
                     <h1 className="line-clamp-1">Dark</h1>
                     <p className="text-xs text-muted-foreground line-clamp-1">Change Theme to Dark</p>
                 </div>
-              <CommandShortcut>D</CommandShortcut>
+              <CommandShortcut><Kbd className="bg-background border border-border shadow-none text-xs">D</Kbd></CommandShortcut>
             </CommandItem>
           </CommandGroup>
     </CommandList>
