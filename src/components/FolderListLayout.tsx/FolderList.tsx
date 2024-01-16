@@ -61,7 +61,7 @@ const List: ListItem[] = [
 const FolderList = () => {
   const [open, setOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<ListItem | null>(null);
-  const router = useRouter(); // If you're using Next.js
+  const router = useRouter();
 
   const SelectItem = (item: ListItem) => {
     const previewType = getPreviewType(getExtension(item.href))
