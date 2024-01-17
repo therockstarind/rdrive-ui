@@ -2,14 +2,14 @@
 import Link from "next/link";
 import React from "react";
 import { LegalLinks } from "./Legal";
-import { Tooltip } from "@nextui-org/react";
+import { Tooltip } from "../ui/tooltip";
 
 const FooterLinks = () => {
     const FooterLinks: { href: string; title: string; tooltip: string;}[] = [
       {
         href: '/blogs',
         title: 'Blogs',
-        tooltip: `Blog posts about various topics related to web development.`,
+        tooltip: `Topics related to Tech & Web Development.`,
       },
         {
           href: '/FRP',

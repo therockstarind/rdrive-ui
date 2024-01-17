@@ -1,37 +1,47 @@
 "use client"
 
-import { Button, Avatar as UserAvatar } from "@nextui-org/react";
-import { Avatar } from "@radix-ui/themes";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useMemo } from "react";
-import { LiaSearchSolid } from "react-icons/lia";
-import { siteConfig } from "®/config/site";
+import { Button } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
+import React, { ReactElement } from "react";
+import { BsAndroid2 } from "react-icons/bs";
+import { FaUserCircle } from "react-icons/fa";
+import { GoSearch } from "react-icons/go";
+import { IoGameController } from "react-icons/io5";
+import { SiApple } from "react-icons/si";
+import { TbApps } from "react-icons/tb";
+import { cn } from "®/lib/utils";
 import SearchBar from "./SearchBar";
+import { Tooltip } from "®ui//tooltip";
 
 
+type ButtonProps = {
+  className?: string
+  children?: ReactElement;
+  tooltip: string;
+  onPress?: any;
+};
+
+const BarButton: React.FC<ButtonProps> = ({ children, tooltip, className, onPress }) => (
+  <Tooltip content={tooltip}>
+    <Button isIconOnly radius="full" onPress={onPress} className={cn("bg-default/20 dark:bg-default/40 hover:bg-default/40 dark:hover:bg-default/70 border border-border",className)}>
+      <div className="text-xl">{children}</div>
+    </Button>
+  </Tooltip>
+);
 const AppBar = () => {
   const [open, setOpen] = React.useState(false)
-    const pathname = usePathname();
-    const title = useMemo(() => {
-        const segments = pathname.split('/').filter(segment => segment !== '');
-        return segments.length === 0 ? "Android" : segments.join(' / ');
-    }, [pathname]);
+  const router = useRouter();
 
     return (
-      <nav className="fixed bottom-3 sm:bottom-0.5 z-50 w-full left-1/2 right-1/2 transform -translate-x-1/2 flex flex-col max-w-lg p-1">
-        <div className="flex h-16 justify-between items-center border border-border rounded-md bg-white/70 dark:bg-black/70  backdrop-blur-xl p-4 gap-4 md:gap-0">
-          <Link href='/' aria-label="RDRIVE Logo" passHref>
-            <Avatar src={siteConfig.logo} alt={siteConfig.name} fallback="R"/>
-          </Link>
-          <Button variant="light" className="border border-[hsl(var(--ring))] overflow-hidden rounded-md LinkText" onPress={() => setOpen(true)}>
-            <LiaSearchSolid  className="mr-1" size={20} />
-            <h1 className="truncate text-center">{title}</h1>
-            </Button>
+      <nav className="fixed bottom-3 sm:bottom-1.5  justify-center mx-auto max-w-auto z-50">
+        <div className="flex gap-2 border border-border p-1.5 rounded-full bg-white/70 dark:bg-black/70 backdrop-blur-md items-center">
+            <BarButton tooltip="Android" children={<BsAndroid2 />} onPress={() => router.push('/')} />
+            <BarButton tooltip="Apps" children={<TbApps />} onPress={() => router.push('/Apps')}/>
+            <BarButton tooltip="Games" children={<IoGameController />} onPress={() => router.push('/Games')} />
+            <BarButton tooltip="Apple" children={<SiApple />} onPress={() => router.push('/Apple')} />
+            <BarButton tooltip="Search" children={<GoSearch />} onPress={() => setOpen(true)}/>
+            <BarButton tooltip="Login" children={<FaUserCircle />} onPress={() => router.push('/blogs')} />
             <SearchBar open={open} setOpen={setOpen}/>
-          <Link href="" aria-label="Login">
-          <UserAvatar isBordered className="ring-[hsl(var(--ring))] bg-default/10 dark:bg-default/30" src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop" />
-          </Link>
         </div>
       </nav>
     );

@@ -1,5 +1,5 @@
 "use client"
-import FolderListLayout from '®/components/FolderListLayout.tsx'
+import FolderListLayout from '®/components/FolderListLayout'
 
 export default function Home() {
   return (
