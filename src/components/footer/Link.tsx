@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { Tooltip, TooltipContent, TooltipTrigger } from "®ui/tooltip";
 import { LegalLinks } from "./Legal";
+import { Tooltip } from "@nextui-org/react";
 
 const FooterLinks = () => {
     const FooterLinks: { href: string; title: string; tooltip: string;}[] = [
       {
         href: '/blogs',
         title: 'Blogs',
-        tooltip: `This section contains blog posts about various topics related to web development.`,
+        tooltip: `Blog posts about various topics related to web development.`,
       },
         {
           href: '/FRP',
@@ -59,15 +59,10 @@ const FooterLinks = () => {
         <React.Fragment key={index} >
         {index === FooterLinks.length - 1 &&<LegalLinks />}
         <li>
-        <Tooltip>
-            <TooltipTrigger asChild>
+        <Tooltip content={tooltip}>
                 <Link href={href} aria-label={tooltip} className="LinkText">
                     {title}
                 </Link>
-            </TooltipTrigger>
-            <TooltipContent sideOffset={10}>
-            <p>{tooltip}</p>
-            </TooltipContent>
         </Tooltip>
         </li>
     </React.Fragment>

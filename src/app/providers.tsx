@@ -1,27 +1,28 @@
 "use client"
-import {NextUIProvider} from "@nextui-org/react";
-import { ThemeProvider } from "®/components/ThemeProvider";
+import { NextUIProvider } from "@nextui-org/react";
 import { Theme } from '@radix-ui/themes';
-import { Toaster } from "®ui/sonner";
-import "®/styles/globals.css"
-import "®/styles/mdx.css"
-import '@radix-ui/themes/styles.css'
+import '@radix-ui/themes/styles.css';
+import { useRouter } from "next/navigation";
 import AppBar from "®/components/AppBar";
+import { ThemeProvider } from "®/components/ThemeProvider";
 import Footer from "®/components/footer";
-import { TooltipProvider } from "®/components/ui/tooltip";
 import useSmoothScrolling from "®/hooks/useSmoothScrolling";
+import "®/styles/globals.css";
+import "®/styles/mdx.css";
+import { Toaster } from "®ui/sonner";
 
 export function Providers({children}: { children: React.ReactNode }) {
+  const router = useRouter();
   useSmoothScrolling('a[href^="#"]', []);
     return (
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <NextUIProvider>
+      <NextUIProvider navigate={router.push}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Theme>
-          <TooltipProvider>
             <div vaul-drawer-wrapper="">
-              <div className="flex min-h-screen flex-col items-center justify-center bg-background">
+              <div className="flex min-h-dvh flex-col items-center justify-center bg-background">
                   <main className="flex w-full flex-1 flex-col">
                     <div className="mx-auto w-full max-w-7xl p-2 my-2 overflow-clip">
+
                       {children}
                     </div>
                   </main>
@@ -29,11 +30,10 @@ export function Providers({children}: { children: React.ReactNode }) {
                 <AppBar />
               </div>
             </div>
-            </TooltipProvider>
-            </Theme>
-            </NextUIProvider>
             <Toaster />
+            </Theme>
         </ThemeProvider>
+        </NextUIProvider>
 
     )
   }

@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={cn(`min-h-screen bg-background antialiased element ${fontSans.className}`)}>
+      <body className={cn(`min-h-dvh bg-background antialiased element ${fontSans.className}`)}>
         <Providers>
           {children}
         </Providers>

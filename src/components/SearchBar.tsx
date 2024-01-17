@@ -30,7 +30,7 @@ export default function SearchBar({
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl lg:max-w-3xl p-0 gap-0">
+        <DialogContent className="max-w-2xl p-0 gap-0">
                   <Search runCommand={runCommand} setOpen={setOpen} />
         </DialogContent>
       </Dialog>
