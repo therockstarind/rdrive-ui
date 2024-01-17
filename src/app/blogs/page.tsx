@@ -1,6 +1,7 @@
 "use client"
 import { Pagination } from "@nextui-org/react"
 import { Flex, Grid } from "@radix-ui/themes"
+import Link from "next/link"
 import AnimatedDiv from "®/components/FramerMotion/AnimatedDiv"
 import AnimatedVariant from "®/components/FramerMotion/AnimatedVariant"
 import BlogCard from "®/components/blog/card"
@@ -74,8 +75,10 @@ export default function Blog() {
     <Grid gap="5">
     <AnimatedDiv variants={FadeContainer} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {Demo.map((card, index) => (
-        <AnimatedVariant key={index} variants={fromLeftVariant} mobileVariants={fromTopVariant}>
-            <BlogCard title={card.title} description={card.description} img={card.img}  />
+        <AnimatedVariant key={index} variants={fromLeftVariant} mobileVariants={fromTopVariant} >
+            <Link href='/blogs/preview' passHref>
+            <BlogCard title={card.title} description={card.description} img={card.img} />
+            </Link>
         </AnimatedVariant>
         ))}
      </AnimatedDiv>

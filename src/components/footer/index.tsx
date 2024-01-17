@@ -21,7 +21,7 @@ const Footer = () => {
     });
     return(
         <footer className="w-full border-t border-border p-4 md:p-2 text-sm">
-            <main className="w-full max-w-7xl mx-auto md:space-y-8 my-4 mb-20 md:mb-6"> 
+            <main className="w-full max-w-7xl mx-auto md:space-y-8 my-4 mb-20 md:mb-6 space-y-4"> 
             <ul className="grid grid-cols-2 gap-2 md:flex justify-between">
                 <li className="hidden md:flex"><SocialFooter /></li>
             <FooterLinks />
