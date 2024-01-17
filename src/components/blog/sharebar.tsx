@@ -4,7 +4,7 @@ import { BiLike } from "react-icons/bi"
 import { FaEdit, FaRegComment } from "react-icons/fa"
 import { IoMdShareAlt } from "react-icons/io"
 import { LuMenuSquare } from "react-icons/lu"
-import { MdEditDocument } from "react-icons/md"
+import { MdEditDocument, MdOutlineAddCircleOutline } from "react-icons/md"
 
 
 const ShareBar = () => {
@@ -18,7 +18,7 @@ const ShareBar = () => {
             {/* <Divider orientation="vertical" /> */}
             <Separator orientation="vertical" />
             <Tooltip content="Edit Post" sideOffset={10}><div className="bg-default/30 rounded-full p-1 LinkText border border-border"><MdEditDocument size={20}/></div></Tooltip>
-            <Tooltip content="New Post" sideOffset={10}><div className="bg-default/30 rounded-full p-1 LinkText border border-border"><FaEdit size={20}/></div></Tooltip>
+            <Tooltip content="New Post" sideOffset={10}><div className="bg-default/30 rounded-full p-1 LinkText border border-border"><MdOutlineAddCircleOutline size={20}/></div></Tooltip>
           </div>
         {/* <Tabs  aria-label="Like Share Comments Tabs" className="w-full flex flex-col" defaultSelectedKey="share">
           <Tab key="like" title="Like"/>
