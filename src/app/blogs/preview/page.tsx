@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import BlogAuthor from "®/components/blog/blogauthor";
-import BlogToc from "®/components/blog/toc";
+import BlogToc from "®/components/blog/blogtoc";
 import Markdown from "®/components/markdown";
 
 type TocItem = {
