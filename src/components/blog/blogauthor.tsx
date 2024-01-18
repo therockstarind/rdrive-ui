@@ -23,12 +23,12 @@ const BlogAuthor: React.FC<BlogAuthorProps> = ({ toc }) => {
             <div className="flex gap-2 items-center">
                 {/* {toc} */}
                 <Tooltip content="Follow">
-                    <Button isIconOnly radius="full" className="border border-border bg-default/20 dark:bg-default/40">
+                    <Button isIconOnly radius="full" variant="light" className="border border-border bg-default/20 dark:bg-default/40">
                             <div className="text-xl"><SlUserFollow /></div>
                     </Button>
                 </Tooltip>
                 <Tooltip content="Menu">    
-                    <Button isIconOnly radius="full" className="border border-border bg-default/20 dark:bg-default/40">
+                    <Button isIconOnly radius="full" variant="light" className="border border-border bg-default/20 dark:bg-default/40">
                             <div className="text-xl"><BsThreeDots /></div>
                     </Button>
                 </Tooltip>
