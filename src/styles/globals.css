@@ -158,24 +158,30 @@ code[data-theme*=' '] span {
   text-decoration: none;
 }
 
-table{
-  @apply w-full my-6;
+table {
+  @apply w-full my-6 border-collapse;
 }
 
-thead{
-  @apply [&>tr]:h-12 [&>tr>th]:py-0 [&>tr>th]:align-middle [&>tr>th]:bg-default/10 dark:[&>tr>th]:bg-default/30 [&>tr>th]:text-center [&>tr>th]:pl-2;
+thead {
+  @apply bg-default/10 dark:bg-default/50;
 }
 
-tbody{
+th {
+  @apply px-4 py-2 border border-border font-semibold;
+}
+
+tbody tr:nth-child(odd) {
   @apply bg-background;
 }
 
-th{
-  @apply border border-border text-xl;
+tbody tr:nth-child(even) {
+  @apply bg-default/10 dark:bg-default/30;
 }
-td{
-  @apply p-4 text-center max-w-[200px] border border-border whitespace-normal break-normal;
+
+td {
+  @apply px-4 py-2 border border-border text-sm text-center;
 }
+
 
 .rt-ScrollAreaThumb {
   background-color: hsl(var(--ring)) !important;

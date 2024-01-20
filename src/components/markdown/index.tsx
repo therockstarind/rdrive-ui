@@ -89,7 +89,7 @@ const components = {
     <AnimatedHeading variants={fromLeftVariant}>
       <h1
         className={cn(
-          "mdx-heading font-heading mt-6 text-4xl lg:text-5xl font-bold lg:font-extrabold ",
+          "mdx-heading text-4xl font-semibold mt-6 mb-4",
           className
         )}
         {...props}
@@ -100,7 +100,7 @@ const components = {
       <AnimatedHeading variants={fromLeftVariant}>
       <h2
         className={cn(
-          "mdx-heading font-heading mt-8 text-3xl font-bold tracking-tight",
+          "mdx-heading text-3xl font-semibold mt-6 mb-4",
           className
         )}
         {...props}
@@ -111,7 +111,7 @@ const components = {
       <AnimatedHeading variants={fromLeftVariant}>
       <h3
         className={cn(
-          "mdx-heading font-heading mt-8 text-2xl font-bold tracking-tight",
+          "mdx-heading text-2xl font-semibold mt-6 mb-4",
           className
         )}
         {...props}
@@ -122,7 +122,7 @@ const components = {
       <AnimatedHeading variants={fromLeftVariant}>
       <h4
         className={cn(
-          "mdx-heading font-heading mt-8 text-xl font-bold tracking-tight",
+          "mdx-heading text-xl font-semibold mt-6 mb-4",
           className
         )}
         {...props}
@@ -132,7 +132,7 @@ const components = {
     h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
       <h5
         className={cn(
-          "mdx-heading mt-8 text-xl font-bold tracking-tight",
+          "mdx-heading text-lg font-semibold mt-6 mb-4",
           className
         )}
         {...props}
@@ -141,7 +141,7 @@ const components = {
     h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
       <h6
         className={cn(
-          "mdx-heading mt-8 text-xl font-bold tracking-tight",
+          "mdx-heading text-lg font-semibold mt-6 mb-4",
           className
         )}
         {...props}
@@ -155,7 +155,7 @@ const components = {
     ),
     p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
       <p
-        className={cn("leading-7 [&:not(:first-child)]:mt-4", className)}
+        className={cn("text-base mt-4 mb-4 leading-relaxed", className)}
         {...props}
       />
     ),
@@ -169,7 +169,7 @@ const components = {
       <li className={cn("mt-2", className)} {...props} />
     ),
     blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-      <Card className={cn("p-2 my-5 bg-default/10 dark:bg-default/30", className)}>
+      <Card className={cn("p-1 my-5 bg-default/10 dark:bg-default/30", className)}>
       <blockquote
       className={cn("border-l-3 border-[hsl(var(--ring))] ml-1 pl-4 italic",className)}
         {...props}
