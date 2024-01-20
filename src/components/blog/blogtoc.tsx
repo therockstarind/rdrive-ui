@@ -1,6 +1,6 @@
 "use client"
 
-import { Button, Listbox, ListboxItem, Tooltip } from "@nextui-org/react";
+import { Button, Listbox, ListboxItem } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { FC, useState } from "react";
 import { LuTextQuote } from "react-icons/lu";
@@ -8,6 +8,7 @@ import { useMediaQuery } from "®/hooks/use-media-query";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "®ui/command";
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "®ui/dialog";
 import { Drawer, DrawerContent, DrawerTrigger } from "®ui/drawer";
+import Tooltip from "®ui/tooltip"
 
 type TocItem = {
   id: string;

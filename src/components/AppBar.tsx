@@ -11,7 +11,7 @@ import { SiApple } from "react-icons/si";
 import { TbApps } from "react-icons/tb";
 import { cn } from "®/lib/utils";
 import SearchBar from "./SearchBar";
-import { Tooltip } from "®ui//tooltip";
+import Tooltip from "®ui//tooltip";
 
 
 type ButtonProps = {

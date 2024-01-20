@@ -1,10 +1,9 @@
 "use client"
 
 import { Tab, Tabs } from '@nextui-org/react';
-import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from "next-themes";
 import { useHotkeys } from 'react-hotkeys-hook';
-import { RiComputerLine } from 'react-icons/ri';
+import { RiComputerLine, RiMoonLine, RiSunLine } from 'react-icons/ri';
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -19,15 +18,15 @@ export function ThemeSwitcher() {
   const tabs = [
     {
       theme: 'light',
-      icon: <SunIcon className="h-4 w-4" />,
+      icon: <RiSunLine />,
     },
     {
         theme: 'system',
-        icon: <RiComputerLine className="h-4 w-4"/>,
+        icon: <RiComputerLine />,
       },
     {
       theme: 'dark',
-      icon: <MoonIcon className="h-4 w-4" />,
+      icon: <RiMoonLine />,
     },
   ];
 
@@ -38,7 +37,7 @@ export function ThemeSwitcher() {
     radius="full"
     selectedKey={theme}
     onSelectionChange={(selectedTheme) => ThemeChange(selectedTheme as string)}
-    classNames={{ cursor: 'bg-default/10 dark:bg-default/30', tabContent: 'group-data-[selected=true]:text-none text-black dark:text-white'}}
+    classNames={{ cursor: 'bg-default/15 dark:bg-default/50 shadow-none', tabContent: 'group-data-[selected=true]:text-none text-black dark:text-white'}}
   >
     {tabs.map((item) => (
       <Tab key={item.theme} title={item.icon} aria-label={item.theme}/>

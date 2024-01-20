@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import { LegalLinks } from "./Legal";
-import { Tooltip } from "../ui/tooltip";
+import Tooltip from "®ui/tooltip"
 
 const FooterLinks = () => {
     const FooterLinks: { href: string; title: string; tooltip: string;}[] = [
@@ -35,11 +35,6 @@ const FooterLinks = () => {
           href: '/service-center-price-list',
           title: 'Parts Price List',
           tooltip: 'All Brand Parts Service Center Price List',
-        },
-        {
-          href: `/sponsor`,
-          title: 'Sponsor',
-          tooltip: 'Show Your Love',
         },
         {
           href: `https://status.rdrive.org/`,

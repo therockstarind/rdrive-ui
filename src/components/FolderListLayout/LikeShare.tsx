@@ -1,11 +1,12 @@
 "use client";
 import { Button, ButtonGroup, Divider } from "@nextui-org/react";
-import { Flex, Tooltip } from "@radix-ui/themes";
+import { Flex } from "@radix-ui/themes";
 import { BiDislike, BiLike } from 'react-icons/bi';
 import { fromRightVariant } from "®/lib/FramerMotionVariants";
 import AnimatedHeading from "../FramerMotion/AnimatedHeading";
 import { Share } from "../Share";
 import { Eye } from "../icons";
+import Tooltip from "®ui/tooltip"
 
 const LikeShare = () => {
     const hover = 'border border-border rounded-full'

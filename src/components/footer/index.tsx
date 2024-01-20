@@ -33,10 +33,10 @@ const Footer = () => {
             <p className="LinkText">&copy; {new Date().getFullYear()}</p>
             </Link>
             <div className="flex items-center">
-            <Button className="overflow-hidden rounded-full LinkText gap-2 hidden lg:flex" variant="light" onPress={openSearch}>
+            <Button size="sm" className="overflow-hidden rounded-full LinkText gap-2 hidden lg:flex" variant="light" onPress={openSearch}>
                             Command Menu
-                            <Kbd className="bg-background border border-border shadow-none">{os === 'windows' ? 'Ctrl' : '⌘'}</Kbd>
-                            <Kbd className="bg-background border border-border shadow-none">K</Kbd>
+                            <Kbd className="bg-background border border-border shadow-none text-xs">{os === 'windows' ? 'Ctrl' : '⌘'}</Kbd>
+                            <Kbd className="bg-background border border-border shadow-none text-xs">K</Kbd>
             </Button>
             <SearchBar open={open} setOpen={setOpen}/>
             <ThemeSwitcher />

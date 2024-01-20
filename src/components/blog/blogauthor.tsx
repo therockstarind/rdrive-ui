@@ -1,9 +1,10 @@
 "use client";
-import { Button, Tooltip } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { Avatar } from "@radix-ui/themes";
 import React from "react";
 import { BiSolidEdit } from "react-icons/bi";
 import { MdAddCircle } from "react-icons/md";
+import Tooltip from "®ui/tooltip";
 
 
 
