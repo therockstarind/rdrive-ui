@@ -1,9 +1,10 @@
 "use client";
 import { Button, Tooltip } from "@nextui-org/react";
 import { Avatar } from "@radix-ui/themes";
-import { Dot } from "lucide-react";
-import { BsThreeDots, BsThreeDotsVertical } from "react-icons/bs";
-import { SlUserFollow } from "react-icons/sl";
+import React from "react";
+import { BiSolidEdit } from "react-icons/bi";
+import { MdAddCircle } from "react-icons/md";
+
 
 
 type BlogAuthorProps = {
@@ -21,17 +22,25 @@ const BlogAuthor: React.FC<BlogAuthorProps> = ({ toc }) => {
                 </div>
             </div>
             <div className="flex gap-2 items-center">
-                {/* {toc} */}
-                <Tooltip content="Follow">
-                    <Button isIconOnly radius="full" variant="light" className="border border-border bg-default/20 dark:bg-default/40">
-                            <div className="text-xl"><SlUserFollow /></div>
+                {toc}
+
+                {/* This will only show when user login with it self */}
+                <Tooltip content="Edit Post">
+                    <Button isIconOnly size="sm" radius="full" variant="light" className="border border-border bg-default/20 dark:bg-default/40">
+                        <BiSolidEdit size={20} />
                     </Button>
                 </Tooltip>
-                <Tooltip content="Menu">    
-                    <Button isIconOnly radius="full" variant="light" className="border border-border bg-default/20 dark:bg-default/40">
-                            <div className="text-xl"><BsThreeDots /></div>
+                <Tooltip content="New Post">
+                    <Button isIconOnly size="sm" radius="full" variant="light" className="border border-border bg-default/20 dark:bg-default/40">
+                        <MdAddCircle size={20} />
                     </Button>
                 </Tooltip>
+
+                {/* <Tooltip content="Follow">
+                    <Button size="sm" radius="full" variant="light" className="border border-border bg-default/20 dark:bg-default/40">
+                            Follow
+                    </Button>
+                </Tooltip> */}
             </div>
         </div>
     )

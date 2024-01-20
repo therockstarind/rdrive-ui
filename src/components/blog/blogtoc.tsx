@@ -3,7 +3,7 @@
 import { Button, Listbox, ListboxItem, Tooltip } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { FC, useState } from "react";
-import { LuMenuSquare } from "react-icons/lu";
+import { LuTextQuote } from "react-icons/lu";
 import { useMediaQuery } from "®/hooks/use-media-query";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "®ui/command";
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "®ui/dialog";
@@ -59,8 +59,8 @@ const DesktopToc: FC<DesktopTocProps> = ({ toc, onNavigate }) => (
   <>
   <Tooltip content="Table of Content">
     <DialogTrigger asChild>
-      <Button radius="full" isIconOnly variant="light" className="border border-border bg-default/20 dark:bg-default/40">
-        <LuMenuSquare size={20} />
+      <Button size="sm" isIconOnly radius="full" variant="light" className="border border-border bg-default/20 dark:bg-default/40">
+        <LuTextQuote size={20} />
       </Button>
     </DialogTrigger>
   </Tooltip> 
@@ -79,8 +79,8 @@ const MobileToc: FC<MobileTocProps> = ({ toc, onNavigate }) => (
   <>
   <Tooltip content="Table of Content">
     <DrawerTrigger asChild>
-      <Button size="sm" radius="full" isIconOnly variant="light" className="border border-border bg-default/20 dark:bg-default/40">
-        <LuMenuSquare size={20} />
+      <Button size="sm" isIconOnly radius="full" variant="light" className="border border-border bg-default/20 dark:bg-default/40">
+        <LuTextQuote size={20} />
       </Button>
     </DrawerTrigger>
   </Tooltip>
