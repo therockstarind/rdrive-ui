@@ -3,6 +3,7 @@ import { siteConfig } from '®/config/site'
 import { fontSans } from '®/lib/fonts'
 import { cn } from '®/lib/utils'
 import { Providers } from './providers'
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: `${siteConfig.name}`,
@@ -64,6 +65,7 @@ export default function RootLayout({
       <body className={cn(`min-h-dvh bg-background antialiased element ${fontSans.className}`)}>
         <Providers>
           {children}
+          <SpeedInsights />
         </Providers>
       </body>
     </html>

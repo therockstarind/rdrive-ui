@@ -37,11 +37,11 @@ const BlogAuthor: React.FC<BlogAuthorProps> = ({ toc }) => {
                     </Button>
                 </Tooltip>
 
-                {/* <Tooltip content="Follow">
+                {/*
                     <Button size="sm" radius="full" variant="light" className="border border-border bg-default/20 dark:bg-default/40">
                             Follow
-                    </Button>
-                </Tooltip> */}
+                    </Button> 
+                    */}
             </div>
         </div>
     )
