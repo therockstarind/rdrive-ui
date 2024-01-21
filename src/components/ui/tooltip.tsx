@@ -33,7 +33,6 @@ type TooltipProps = {
 
 const Tooltip: React.FC<TooltipProps> = ({ children, content }) => (
   <NextTooltip 
-      radius='sm'
       size='sm'
       showArrow
       offset={10}

@@ -34,7 +34,7 @@ const LikeShare = () => {
         <Flex gap="3" align="center" justify="center" display={{ initial: 'none', sm: 'flex'}}>
             <Flex gap="3">
             <Tooltip content="was this help full?">
-            <ButtonGroup variant="light" className={`${hover}`} radius="full">
+            <ButtonGroup size="sm" variant="light" className={`${hover}`} radius="full">
             <Button>
               <BiLike size={20} /> 0
             </Button> 
@@ -46,7 +46,7 @@ const LikeShare = () => {
             </Tooltip>
             </Flex>
             <Share />
-          <Button variant="light" className={`${hover} p-0`}>
+          <Button size="sm" variant="light" className={`${hover}`}>
             <Eye /> 3
           </Button> 
         </Flex>

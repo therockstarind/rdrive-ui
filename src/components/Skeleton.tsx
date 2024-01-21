@@ -1,35 +1,37 @@
-import { Skeleton } from "@nextui-org/react";
+"use client";
 import { Grid } from "@radix-ui/themes";
+import Skeleton from "®ui/skeleton";
+
+const randomWidth = () => {
+    const widths = ['3/4', '4/5', 'full'];
+    return `w-${widths[Math.floor(Math.random() * widths.length)]}`;
+};
+
+const randomCount = (min: number, max: number) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 export const MarkdownSkeleton = () => {
     return (
-      <Grid gap="4" pt="4" aria-busy="true">
-        {/* Simulate an H1 Title */}
-        <Grid gap="2">
-          <Skeleton className="w-full h-8 rounded-md" />
-          {/* Simulate paragraphs */}
-          <Skeleton className="w-4/5 h-4 rounded-md" />
-          <Skeleton className="w-3/4 h-4 rounded-md" />
-          <Skeleton className="w-5/6 h-4 rounded-md" />
-        </Grid>
+        <Grid gap="4" pt="4" aria-busy="true">
+            {/* Simulate a large H1 Title */}
+            <Skeleton className="w-full h-12 rounded-md" />
 
-        {/* Simulate smaller headers and paragraphs */}
-        <Grid gap="2">
-          <Skeleton className="w-2/3 h-6 rounded-md" />
-          <Skeleton className="w-4/5 h-4 rounded-md" />
-          <Skeleton className="w-3/4 h-4 rounded-md" />
-          <Skeleton className="w-5/6 h-4 rounded-md" />
-        </Grid>
+            {/* Simulate Paragraphs */}
+            {[...Array(randomCount(2, 4))].map((_, index) => (
+                <Skeleton key={`para-${index}`} className={`${randomWidth()} h-4 rounded-md`} />
+            ))}
 
-        <Grid gap="2">
-          <Skeleton className="w-1/2 h-6 rounded-md" />
-          <Skeleton className="w-4/5 h-4 rounded-md" />
-          <Skeleton className="w-3/4 h-4 rounded-md" />
-          <Skeleton className="w-5/6 h-4 rounded-md" />
-        </Grid>
+            {/* Simulate a smaller H2 Header */}
+                <Skeleton className="h-10 rounded-md" />
 
-        {/* Simulate a Code Block */}
-        <Skeleton className="w-full h-36 rounded-md" />
-      </Grid>
+            {/* Simulate an Image */}
+            <Skeleton className="w-full h-48 rounded-md" />
+
+            {/* Simulate a Table */}
+            {[...Array(randomCount(2, 3))].map((_, index) => (
+                <Skeleton key={`table-${index}`} className={`${randomWidth()} h-6 rounded-md`} />
+            ))}
+        </Grid>
     );
 };

@@ -15,7 +15,7 @@ type CardItem = {
 
 const BlogCard: React.FC<CardItem> = ({ title, description, img, date, time  }) => {
   return (
-    <Card className="p-2 border border-border gap-1.5" isHoverable shadow="none">
+    <Card className="p-2 border border-border gap-1.5 bg-background" isHoverable shadow="none">
       <Image src={img} alt={title} width="1280" height="640" isBlurred/>
       <Grid mx="2">
           <CardTitle className="text-lg line-clamp-2">{title}</CardTitle>
