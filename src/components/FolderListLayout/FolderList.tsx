@@ -25,7 +25,7 @@ const List: ListItem[] = [
     title: 'Folder',
     size: '8 MB',
     date: '12 Jan 2024',
-    download: '',
+    download: '0',
     width: '',
     height: '',
   },

@@ -146,6 +146,10 @@ code[data-theme*=' '] span {
     @apply text-[var(--shiki-light)] bg-[var(--shiki-light-bg)] dark:text-[var(--shiki-dark)] dark:bg-[var(--shiki-dark-bg)]
 }
 
+.heading a {
+  text-decoration: none;
+}
+
 .header-anchor .anchor {
   visibility: hidden;
 }
@@ -154,10 +158,10 @@ code[data-theme*=' '] span {
   visibility: visible;
   padding-left: 5px;
 }
-.mdx-heading a {
-  text-decoration: none;
+figcaption{
+  font-size: 1.1em;
+  font-weight: normal;
 }
-
 table {
   @apply w-full my-6 border-collapse;
 }
@@ -167,7 +171,7 @@ thead {
 }
 
 th {
-  @apply px-4 py-2 border border-border font-semibold;
+  @apply px-4 py-2 border border-border text-[16px] font-semibold;
 }
 
 tbody tr:nth-child(odd) {
@@ -179,7 +183,7 @@ tbody tr:nth-child(even) {
 }
 
 td {
-  @apply px-4 py-2 border border-border text-sm text-center;
+  @apply px-4 py-2 border border-border text-[16px] text-center;
 }
 
 
@@ -189,8 +193,4 @@ td {
 
 .rt-AvatarRoot:where(.rt-variant-soft) :where(.rt-AvatarFallback) {
 @apply !bg-default/10 dark:!bg-default/30 !text-[hsl(var(--ring))]
-}
-
-.lock-scroll {
-  overflow: hidden !important;
 }

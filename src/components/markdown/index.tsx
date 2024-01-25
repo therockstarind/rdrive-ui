@@ -1,22 +1,18 @@
 "use client";
-import { useState, useEffect, FC } from 'react';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
-import rehypeSlug from 'rehype-slug';
+import { FC, useEffect, useState } from 'react';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from 'rehype-slug';
+import useSmoothScrolling from '®/hooks/useSmoothScrolling';
+import { generateTOC } from '®/lib/utils';
+import { MarkdownSkeleton } from '../Skeleton';
+import Code from './Code';
+import IMG from './Image';
 import Pre from './Pre';
 import YouTube from './YouTube';
-import IMG from './Image';
-import { cn, generateTOC } from '®/lib/utils';
-import Code from './Code';
-import Link from 'next/link';
-import { Card } from '../ui/card';
-import { MarkdownSkeleton } from '../Skeleton';
-import AnimatedHeading from '../FramerMotion/AnimatedHeading';
-import { fromLeftVariant } from '®/lib/FramerMotionVariants';
-import useSmoothScrolling from '®/hooks/useSmoothScrolling';
-
+import { A, Blockquote, H1, H2, H3, H4, H5, H6, HR, LI, OL, P, UL } from './typography';
 
 type MarkdownProps = {
   src: string;
@@ -76,7 +72,7 @@ const Markdown: FC<MarkdownProps> = ({ src, TOCGenerated }) => {
 
   if (!mdxSource) return <MarkdownSkeleton />;
 
-  return <MDXRemote className="mdx" {...mdxSource} components={components} />;
+  return <MDXRemote {...mdxSource} components={components} />;
 };
 
 export default Markdown;
@@ -85,106 +81,19 @@ const components = {
   pre: Pre,
   YouTube,
   img: IMG,
-  h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <AnimatedHeading variants={fromLeftVariant}>
-      <h1
-        className={cn(
-          "mdx-heading text-4xl font-semibold mt-6 mb-4",
-          className
-        )}
-        {...props}
-      />
-      </AnimatedHeading>
-    ),
-    h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <AnimatedHeading variants={fromLeftVariant}>
-      <h2
-        className={cn(
-          "mdx-heading text-3xl font-semibold mt-6 mb-4",
-          className
-        )}
-        {...props}
-      />
-      </AnimatedHeading>
-    ),
-    h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <AnimatedHeading variants={fromLeftVariant}>
-      <h3
-        className={cn(
-          "mdx-heading text-2xl font-semibold mt-6 mb-4",
-          className
-        )}
-        {...props}
-      />
-      </AnimatedHeading>
-    ),
-    h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <AnimatedHeading variants={fromLeftVariant}>
-      <h4
-        className={cn(
-          "mdx-heading text-xl font-semibold mt-6 mb-4",
-          className
-        )}
-        {...props}
-      />
-      </AnimatedHeading>
-    ),
-    h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h5
-        className={cn(
-          "mdx-heading text-lg font-semibold mt-6 mb-4",
-          className
-        )}
-        {...props}
-      />
-    ),
-    h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h6
-        className={cn(
-          "mdx-heading text-lg font-semibold mt-6 mb-4",
-          className
-        )}
-        {...props}
-      />
-    ),
-    a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
-      <a
-        className={cn("underline decoration-wavy decoration-[hsl(var(--ring))] underline-offset-4", className)}
-        {...props}
-      />
-    ),
-    p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-      <p
-        className={cn("text-base mt-4 mb-4 leading-relaxed", className)}
-        {...props}
-      />
-    ),
-    ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-      <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
-    ),
-    ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-      <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
-    ),
-    li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-      <li className={cn("mt-2", className)} {...props} />
-    ),
-    blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-      <Card className={cn("p-1 my-5 bg-default/10 dark:bg-default/30", className)}>
-      <blockquote
-      className={cn("border-l-3 border-[hsl(var(--ring))] ml-1 pl-4 italic",className)}
-        {...props}
-      />
-      </Card>
-    ),
-    hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
-      <hr className="my-4 md:my-8" {...props} />
-    ),
-    code: Code,
-    Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-      <Link
-        className={cn("font-medium underline underline-offset-4", className)}
-        {...props}
-      />
-    ),
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  h4: H4,
+  h5: H5,
+  h6: H6,
+  p: P,
+  ul: UL,
+  ol: OL,
+  li: LI,
+  blockquote: Blockquote,
+  hr: HR,
+  code: Code,
+  a: A,
 
 }

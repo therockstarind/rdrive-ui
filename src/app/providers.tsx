@@ -8,7 +8,6 @@ import { ThemeProvider } from "®/components/ThemeProvider";
 import Footer from "®/components/footer";
 import useSmoothScrolling from "®/hooks/useSmoothScrolling";
 import "®/styles/globals.css";
-import "®/styles/mdx.css";
 import { Toaster } from "®ui/sonner";
 
 export function Providers({children}: { children: React.ReactNode }) {

@@ -14,7 +14,6 @@ export default function Slug() {
     const css = 'bg-default/10 hover:bg-default/30 dark:hover:bg-default/70 border border-border'
   return (
     <main className="max-w-5xl mx-auto">
-      {/* <h1 className="mdx-heading font-heading my-4 text-4xl lg:text-5xl font-bold lg:font-extrabold">Chapter 1: The Mysterious Map</h1> */}
       <BlogAuthor toc={<BlogToc toc={toc} />} />
         <Markdown src="/sample.md" TOCGenerated={setToc}/>
     </main>

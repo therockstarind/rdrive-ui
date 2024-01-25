@@ -60,13 +60,15 @@ function Search({ runCommand, setOpen }: {runCommand: any, setOpen: any}) {
       <CommandEmpty>No results found.</CommandEmpty>
       <CommandGroup heading="Suggestions">
         {linksConfig.searchList.map((links) => ( 
-    <CommandItem onSelect={() => runCommand(() => router.push(`${links.href}`))}> 
-        <div className="text-xl mr-2">{links.icon && <links.icon/>}</div>
-        <div>
-            <h1 className="line-clamp-1">{links.title}</h1>
-            <p className="text-xs text-muted-foreground line-clamp-1">{links.description}</p>
-        </div>
-      <CommandShortcut><Kbd className="bg-background border border-border shadow-none text-xs">{links.title.charAt(0).toUpperCase()}</Kbd></CommandShortcut>
+    <CommandItem onSelect={() => runCommand(() => router.push(`${links.href}`))} className="my-1"> 
+                <div className='flex flex-1 items-center gap-2'>
+                  <div className="text-lg">{links.icon && <links.icon/>}</div>
+                    <div className="flex flex-col flex-1">
+                      <div className="flex-1 line-clamp-1">{links.title}</div>
+                      <div className="text-xs text-muted-foreground line-clamp-1">{links.description}</div>
+                    </div>
+                    <div className="flex items-center gap-1"><Kbd className="bg-background border border-border shadow-none text-xs">{links.title.charAt(0).toUpperCase()}</Kbd></div>
+                </div>
     </CommandItem>
           ))}
     </CommandGroup>
