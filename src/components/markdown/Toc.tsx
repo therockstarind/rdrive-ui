@@ -2,7 +2,7 @@
 import { Listbox, ListboxItem } from '@nextui-org/react';
 import { List } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useState } from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from '®ui/popover';
 import { ScrollArea } from '®ui/scroll-area';
 
@@ -10,45 +10,41 @@ type TocItem = {
   toc: {
     id: string;
     title: string;
+    level?: number;
   }[];
 };
 
 const Toc: React.FC<TocItem> = ({ toc }) => {
   const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const runCommand = React.useCallback((command: () => unknown) => {
+    setOpen(false)
+    command()
+  }, [])
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <List className="h-5 w-5 LinkText" />
       </PopoverTrigger>
       <PopoverContent side="bottom" align="end" sideOffset={18} className="p-0">
         <ScrollArea className="h-[40dvh]" type="always">
-          <Listbox items={toc} aria-label="Table of Content" className="pr-4 mb-1 overflow-x-hidden">
-            {toc.map((item, index) => (
-                 index === 0 ? (
+          <Listbox items={toc} aria-label="Table of Content" className="pr-2">
+            {toc.map((item) => (
               <ListboxItem
-                key={index}
                 variant="faded"
                 textValue={item.title} 
-                showDivider
-                onPress={() => router.push(`#${item.id}`)}
+                onPress={() => runCommand(() => router.push(`#${item.id}`))}
+                key={item.id}  className={`${
+                  item.level === 1 ? '!font-bold !max-w-64' : 
+                  item.level === 2 ? 'pl-8 text-muted-foreground !max-w-64' : 
+                  item.level === 3 ? 'pl-12 text-muted-foreground !max-w-64' :
+                  'pl-16 text-muted-foreground !max-w-64'
+              }`}
               >
-                <h1 className="text-xl !max-w-60 md:max-w-80 !truncate">
                   {item.title}
-                </h1>
               </ListboxItem>
-                ):(
-             <ListboxItem
-                    key={index}
-                    variant="faded"
-                    textValue={item.title} 
-                    onPress={() => router.push(`#${item.id}`)}
-                  >
-                    <h1 className="!max-w-60 md:max-w-80 !truncate">
-                      {item.title}
-                    </h1>
-             </ListboxItem>
-            )))}
+            ))}
           </Listbox>
         </ScrollArea>
       </PopoverContent>
