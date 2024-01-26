@@ -1,10 +1,9 @@
 "use client"
-import { Listbox, ListboxItem } from '@nextui-org/react';
 import { List } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from '®ui/popover';
-import { ScrollArea } from '®ui/scroll-area';
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '../ui/command';
 
 type TocItem = {
   toc: {
@@ -28,25 +27,26 @@ const Toc: React.FC<TocItem> = ({ toc }) => {
         <List className="h-5 w-5 LinkText" />
       </PopoverTrigger>
       <PopoverContent side="bottom" align="end" sideOffset={18} className="p-0">
-        <ScrollArea className="h-[40dvh]" type="always">
-          <Listbox items={toc} aria-label="Table of Content" className="pr-2">
-            {toc.map((item) => (
-              <ListboxItem
-                variant="faded"
-                textValue={item.title} 
-                onPress={() => runCommand(() => router.push(`#${item.id}`))}
-                key={item.id}  className={`${
-                  item.level === 1 ? '!font-bold !max-w-64' : 
-                  item.level === 2 ? 'pl-8 text-muted-foreground !max-w-64' : 
-                  item.level === 3 ? 'pl-12 text-muted-foreground !max-w-64' :
-                  'pl-16 text-muted-foreground !max-w-64'
-              }`}
-              >
-                  {item.title}
-              </ListboxItem>
-            ))}
-          </Listbox>
-        </ScrollArea>
+      <Command>
+          <CommandInput placeholder="Filter headings"/>
+                  <CommandList className="border-t border-border">
+                          <CommandEmpty>No content found.</CommandEmpty>
+                      <CommandGroup heading="On this page">
+                          {toc.map((item) => (
+                              <CommandItem key={item.id} onSelect={() => runCommand(() => router.push(`#${item.id}`))}
+                                  className={`${
+                                    item.level === 1 ? '': 
+                                    item.level === 2 ? 'pl-6': 
+                                    item.level === 3 ? 'pl-8':
+                                    'pl-10'
+                                }`}
+                              >
+                                  <div className="line-clamp-1">{item.title}</div>
+                              </CommandItem>
+                          ))}
+                      </CommandGroup>
+                  </CommandList>
+      </Command>
       </PopoverContent>
     </Popover>
   );
