@@ -58,7 +58,7 @@ type LoginFormProps = {
   return (
     <form className={cn("grid items-start gap-4", className)} onSubmit={handleSubmit}>
       <div className="flex flex-col justify-center mx-auto">
-        <Image src="/user/login.png" alt="Logo" width={150} height={150}/>
+        <Image src="/user/login.png" alt="Login" width={150} height={150} isBlurred/>
       </div>
       <div className="grid gap-2">
         <Input
@@ -77,7 +77,7 @@ function OtpForm({ className }: React.ComponentProps<"form">) {
     return (
       <form className={cn("grid items-start gap-4", className)}>
         <div className="flex flex-col justify-center mx-auto">
-          <Image src="/user/otp.png" alt="Logo" width={150} height={150}/>
+          <Image src="/user/otp.png" alt="OTP" width={150} height={150} isBlurred/>
         </div>
         <div className="grid gap-2">
           <Input
@@ -89,6 +89,10 @@ function OtpForm({ className }: React.ComponentProps<"form">) {
           />
         </div>
         <Button radius="sm" color="primary">Verify OTP</Button>
+        <div className="flex flex-col justify-center items-center text-sm">
+            <p className="LinkText">Resend OTP</p>
+            <p className="LinkText" >Change phone number</p>
+        </div>
       </form>
     )
   }
