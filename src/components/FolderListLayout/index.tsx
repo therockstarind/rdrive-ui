@@ -8,6 +8,7 @@ import ImageCard from "./ImageCard";
 import FolderList from "./FolderList";
 import FolderTab from "./FolderTab";
 import YouTube from "../markdown/YouTube";
+import BlogCard from "../blog/card";
 
 const FolderListLayout = () => {
     return (
@@ -25,7 +26,7 @@ const FolderListLayout = () => {
                     <FolderTab />
                     <Grid display={{initial: 'grid', sm: 'none'}} gap="3">
                         <YouTube id="PV08KlJeKuQ" />
-                        {/* <BlogCard /> */}
+                        <BlogCard />
                     </Grid> 
                 </Flex>
                 {/* List Image & Details */}
@@ -35,14 +36,8 @@ const FolderListLayout = () => {
                         <Header />
                     </Flex> 
                     <Grid display={{initial: 'none', sm: 'grid'}} className="sticky top-0.5 z-40" gap="3">
-                        <Grid gap="2">
-                            {/* <Text as="label" size="5" weight="bold" ml="3">Blog</Text> */}
-                            {/* <BlogCard /> */}
-                        </Grid>
-                        <Grid gap="2">
-                            {/* <Text as="label" size="5" weight="bold" ml="3">Video</Text> */}
                             <YouTube id="PV08KlJeKuQ" />
-                        </Grid>
+                            <BlogCard />
                     </Grid> 
                 </Flex>
             </Flex>
