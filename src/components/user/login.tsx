@@ -31,7 +31,7 @@ export default function Login({
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-[425px] max-h-[80dvh] overflow-y-scroll">
             {content}
         </DialogContent>
       </Dialog>
@@ -41,7 +41,9 @@ export default function Login({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerContent>
-        <div className="p-4">{content}</div>
+        <div className="p-4 overflow-y-scroll">
+            {content}
+        </div>
       </DrawerContent>
     </Drawer>
   )
