@@ -194,3 +194,12 @@ td {
 .rt-AvatarRoot:where(.rt-variant-soft) :where(.rt-AvatarFallback) {
 @apply !bg-default/10 dark:!bg-default/30 !text-[hsl(var(--ring))]
 }
+
+@layer utilities {
+  /* Hiding the arrows in the input number */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

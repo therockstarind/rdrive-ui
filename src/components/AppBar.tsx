@@ -12,6 +12,7 @@ import { TbApps } from "react-icons/tb";
 import { cn } from "®/lib/utils";
 import SearchBar from "./SearchBar";
 import Tooltip from "®ui//tooltip";
+import Login from "./user/login";
 
 
 type ButtonProps = {
@@ -29,7 +30,8 @@ const BarButton: React.FC<ButtonProps> = ({ children, tooltip, className, onPres
   </Tooltip>
 );
 const AppBar = () => {
-  const [open, setOpen] = React.useState(false)
+  const [openSearch, setSearchOpen] = React.useState(false)
+  const [openLogin, setLoginOpen] = React.useState(false)
   const router = useRouter();
 
     return (
@@ -39,9 +41,10 @@ const AppBar = () => {
             <BarButton tooltip="Apps" children={<TbApps />} onPress={() => router.push('/Apps')}/>
             <BarButton tooltip="Games" children={<IoGameController />} onPress={() => router.push('/Games')} />
             <BarButton tooltip="Apple" children={<SiApple />} onPress={() => router.push('/Apple')} />
-            <BarButton tooltip="Search" children={<GoSearch />} onPress={() => setOpen(true)}/>
-            <BarButton tooltip="Login" children={<FaUserCircle />} onPress={() => router.push('/blogs')} />
-            <SearchBar open={open} setOpen={setOpen}/>
+            <BarButton tooltip="Search" children={<GoSearch />} onPress={() => setSearchOpen(true)}/>
+            <BarButton tooltip="Login" children={<FaUserCircle />} onPress={() => setLoginOpen(true)} />
+            <SearchBar open={openSearch} setOpen={setSearchOpen}/>
+            <Login open={openLogin} setOpen={setLoginOpen}/>
         </div>
       </nav>
     );
