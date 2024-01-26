@@ -60,7 +60,7 @@ type LoginFormProps = {
   return (
     <form className={cn("grid items-start gap-4", className)} onSubmit={handleSubmit}>
       <div className="flex flex-col justify-center mx-auto">
-        <Image src="/user/login.png" alt="Login" width={150} height={150} isBlurred/>
+        <Image src="/user/login.png" alt="Login" width={150} height={150} isBlurred className="my-10"/>
       </div>
       <div className="grid gap-2">
         <Input
@@ -79,7 +79,7 @@ function OtpForm({ className }: React.ComponentProps<"form">) {
     return (
       <form className={cn("grid items-start gap-4", className)}>
         <div className="flex flex-col justify-center mx-auto">
-          <Image src="/user/otp.png" alt="OTP" width={150} height={150} isBlurred/>
+          <Image src="/user/otp.png" alt="OTP" width={150} height={150} isBlurred className="my-10"/>
         </div>
         <div className="grid gap-2">
           <Input
