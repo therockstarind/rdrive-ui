@@ -72,7 +72,7 @@ const Markdown: FC<MarkdownProps> = ({ src, TOCGenerated }) => {
 
   if (!mdxSource) return <MarkdownSkeleton />;
 
-  return <MDXRemote {...mdxSource} components={components} />;
+  return <div className="flex flex-col gap-4"><MDXRemote {...mdxSource} components={components} /></div>;
 };
 
 export default Markdown;
