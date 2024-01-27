@@ -6,7 +6,7 @@ import { fromLeftVariant } from "®/lib/FramerMotionVariants"
 
 export default function PriceList() {
   return (
-    <main className="max-w-5xl mx-auto">
+    <main className="mx-auto w-full max-w-5xl p-2">
       <AnimatedHeading variants={fromLeftVariant}><Heading size={{initial: '7', md: '9'}} align="center">All Brand Service Center Price List</Heading></AnimatedHeading>
       <Markdown src="https://rdrive.org/api/raw/?path=/assets/price-list/readme.md" />
     </main>

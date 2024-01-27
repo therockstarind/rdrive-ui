@@ -72,6 +72,7 @@ const Demo = [
 
 export default function Blog() {
   return (
+    <main className="mx-auto w-full max-w-7xl p-2">
     <Grid gap="5">
     <AnimatedDiv variants={FadeContainer} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {Demo.map((card, index) => (
@@ -95,5 +96,6 @@ export default function Blog() {
       />
       </Flex>
     </Grid>
+    </main>
   )
 }

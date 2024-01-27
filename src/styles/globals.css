@@ -193,7 +193,7 @@ td {
 }
 
 .rt-AvatarRoot:where(.rt-variant-soft) :where(.rt-AvatarFallback) {
-@apply !bg-default/10 dark:!bg-default/30 !text-[hsl(var(--ring))]
+@apply !bg-default/70 dark:!bg-default/70 !text-[hsl(var(--ring))]
 }
 
 @layer utilities {
