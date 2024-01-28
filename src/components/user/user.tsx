@@ -1,9 +1,10 @@
 "use client"
 import { Button, Image } from "@nextui-org/react"
 import { AspectRatio, Avatar, Flex, Separator, Text } from "@radix-ui/themes"
-import { FadeContainer, fromLeftVariant } from "®/lib/FramerMotionVariants"
+import { FadeContainer, fromLeftVariant, fromTopVariant } from "®/lib/FramerMotionVariants"
 import AnimatedDiv from "../FramerMotion/AnimatedDiv"
 import { motion } from "framer-motion"
+import AnimatedVariant from "../FramerMotion/AnimatedVariant"
 
 const User = () => {
     return (
@@ -57,10 +58,12 @@ const User = () => {
                     Follow
                 </Button> 
                 <div />
-                <Flex gap="2" mx="4" className="overflow-x-auto">
+                <Flex className="justify-center overflow-auto">
                 {social.map((social, index) => (
-                    <motion.div key={index} variants={fromLeftVariant}>
-                    <Button isIconOnly size="lg" variant="light" href={social.link}><Image src={social.icon} alt={social.name} /></Button>
+                    <motion.div key={index} variants={fromLeftVariant} className="mx-4">
+                        <Button isIconOnly size="lg" variant="light" href={social.link}>
+                            <Image src={social.icon} alt={social.name} />
+                        </Button>
                     </motion.div>
                 ))}
                 </Flex>
@@ -69,7 +72,9 @@ const User = () => {
                 <Flex className="md:w-2/3" direction="column" gap="3" p={{initial: '2', sm:'0'}}>
                     <div className="grid md:grid-cols-2 gap-3">
                         {Array.from({ length: 5 }, (_, index) => (
+                            <AnimatedVariant key={index} variants={fromLeftVariant} mobileVariants={fromTopVariant}>
                             <div key={index} className={`rounded-md h-40 bg-gradient-to-r ${index % 2 === 0 ? 'from-cyan-500 to-blue-500' : 'from-indigo-500 via-purple-500 to-pink-500'}`}></div>
+                            </AnimatedVariant>
                         ))}
                     </div>
                 </Flex>
@@ -81,11 +86,9 @@ const User = () => {
 export default User;
 
 const social = [
-    {name:"Github", link:"https://github.com", icon:"/social/whatsapp.png"},
+    {name:"Gmail", link:"https://gmail.com", icon:"/social/gmail.png"},
     {name:"YouTube", link:"https://youtube.com", icon:"/social/youtube.png"},
-    {name:"X", link:"https://x.com", icon:"/social/x.png"},
     {name:"WhatsApp", link:"https://whatsapp.com", icon:"/social/whatsapp.png"},
-    {name:"Discord", link:"https://discord.com", icon:"/social/discord.png"},
-    {name:"Github", link:"https://github.com", icon:"/social/github.png"},
     {name:"Telegram", link:"https://telegram.com", icon:"/social/telegram.png"},
+    {name:"GitHub", link:"https://github.com", icon:"/social/github.png"},
 ]
