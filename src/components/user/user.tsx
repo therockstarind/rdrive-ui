@@ -1,10 +1,11 @@
 "use client"
 import { Button, Image } from "@nextui-org/react"
-import { AspectRatio, Avatar, Flex, Separator, Text } from "@radix-ui/themes"
-import { FadeContainer, fromLeftVariant, fromTopVariant } from "®/lib/FramerMotionVariants"
+import { AspectRatio, Avatar, Flex, Separator } from "@radix-ui/themes"
+import { FadeContainer, fromLeftVariant, fromTopVariant } from "®lib/FramerMotionVariants"
 import AnimatedDiv from "../FramerMotion/AnimatedDiv"
 import { motion } from "framer-motion"
 import AnimatedVariant from "../FramerMotion/AnimatedVariant"
+import { Text } from "®/rdrive/ui"
 
 const User = () => {
     return (
@@ -31,25 +32,25 @@ const User = () => {
                         />
                 </div>
                 <Flex direction="column" align="center" mt="8">
-                        <Text as="div" size="5" weight="bold">Rock Star</Text>
-                        <Text as="p" size="2" color="gray">@rockstar</Text>
+                        <Text as="h3" font="bold">Rock Star</Text>
+                        <Text as="p" color="gray">@rockstar</Text>
                 </Flex>
                 <div />
                 {/* Counts */}
                 <div className="flex justify-around items-center">
                     <Flex direction="column" align="center" gap="1">
-                        <Text as="div" size="5" weight="bold">300</Text>
-                        <Text as="p" size="1" color="gray">Post</Text>
+                        <Text as="h3" font="bold">300</Text>
+                        <Text as="p" color="gray">Post</Text>
                     </Flex>
                     <Separator className="h-8" orientation="vertical" />
                     <Flex direction="column" align="center" gap="1">
-                        <Text as="div" size="5" weight="bold">200</Text>
-                        <Text as="p" size="1" color="gray">Followers</Text>
+                        <Text as="h3" font="bold">200</Text>
+                        <Text as="p" color="gray">Followers</Text>
                     </Flex>
                     <Separator className="h-8" orientation="vertical" />
                     <Flex direction="column" align="center" gap="1">
-                        <Text as="div" size="5" weight="bold">0</Text>
-                        <Text as="p" size="1" color="gray">Following</Text>
+                        <Text as="h3" font="bold">0</Text>
+                        <Text as="p" color="gray">Following</Text>
                     </Flex>
                 </div>
                 <div />

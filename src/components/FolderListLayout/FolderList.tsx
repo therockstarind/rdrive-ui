@@ -1,5 +1,5 @@
 "use client";
-import { Flex, Grid, Text } from "@radix-ui/themes";
+import { Flex, Grid } from "@radix-ui/themes";
 import { ArrowDownToLine } from "lucide-react";
 import React, { useState } from "react";
 import FileIcon, { getExtension } from "®/utils/getFileIcon";
@@ -8,6 +8,7 @@ import Preview from "®ui/preview";
 import { Author } from "./Author";
 import { useRouter } from "next/navigation";
 import { getPreviewType } from "®/utils/getPreviewType";
+import { Text } from "®rdrive/ui";
 
 type ListItem = {
   href: string;
@@ -83,7 +84,7 @@ return (
       <Grid className="border border-border rounded-md">
         <Flex className="bg-default/10 dark:bg-default/30 border-b border-border" justify="between" px="2" align="center" p="1">
             <Author />
-            <Text as="p" size="2" color="gray">{List.length} items</Text>
+            <Text as="p" color="gray">{List.length} items</Text>
           </Flex>
         <CommandList className="h-full max-h-60 sm:max-h-64 md:max-h-80 lg:max-h-92 pr-1">
           <CommandEmpty>No results found.</CommandEmpty>

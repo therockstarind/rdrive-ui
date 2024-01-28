@@ -1,8 +1,9 @@
 "use client"
 import { Card, Image } from "@nextui-org/react"
-import { Avatar, Flex, Grid, Text } from "@radix-ui/themes"
+import { Avatar, Flex, Grid } from "@radix-ui/themes"
 import { Timer } from "lucide-react"
 import { CardDescription, CardTitle } from "../ui/card"
+import { Text } from "®/rdrive/ui"
 
 type CardItem = {
     id?: string;
@@ -25,10 +26,10 @@ const BlogCard: React.FC<CardItem> = ({ title, description, img, date, time  }) 
         <Flex  className="flex gap-2 items-center" mt="2">
         <Avatar radius="full" src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop" fallback="T" />
         <Grid>
-        <Text as="div" size="3" weight="bold">
+        <Text as="h6" font="bold">
             Teodros Girmay
           </Text>
-          <Text as="p" size="1" color="gray">
+          <Text as="p" color="gray">
             2h ago
           </Text>
         </Grid>

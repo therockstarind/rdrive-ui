@@ -23,6 +23,7 @@
       "®app/*": ["./src/app*"],
       "®components/*": ["./src/components/*"],
       "®ui/*": ["./src/components/ui/*"],
+      "®rdrive*": ["./src/rdrive/*"],
       "®lib/*": ["./src/lib/*"],
       "®utils/*": ["./src/utils/*"],
       "®styles/*": ["./src/styles/*"],

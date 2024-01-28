@@ -1,11 +1,12 @@
 "use client"
-import { Avatar, Box, Checkbox, Flex, Tabs, Text, TextArea } from "@radix-ui/themes"
+import { Avatar, Box, Checkbox, Flex, Tabs, TextArea } from "@radix-ui/themes"
 import { BookOpen, MessageSquareText } from "lucide-react"
 import { useState } from "react"
 import { Card } from "®ui/card"
 import Markdown from "../markdown"
 import Toc from "../markdown/Toc"
 import useSmoothScrolling from "®/hooks/useSmoothScrolling"
+import { Text } from "®rdrive/ui"
 
 type TocItem = {
     id: string;
@@ -45,9 +46,9 @@ const FolderTab = () => {
                                 <TextArea placeholder="Write a comment…" style={{ height: 80 }} />
                             <Flex gap="3" mt="3" justify="between">
                                 <Flex align="center" gap="2" asChild>
-                                    <Text as="label" size="2">
+                                    <Text as="p">
                                     <Checkbox />
-                                    <Text>Send to group</Text>
+                                    <Text as="p" >Send to group</Text>
                                     </Text>
                                 </Flex>
                             </Flex>

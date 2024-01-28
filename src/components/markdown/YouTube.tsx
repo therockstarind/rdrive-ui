@@ -1,6 +1,6 @@
 "use client"
 
-import { Text } from "@radix-ui/themes";
+import { Text } from "®rdrive/ui";
 
 export default function YouTube({ id, title }: { id: string, title?: string }) {
   return (
@@ -14,7 +14,7 @@ export default function YouTube({ id, title }: { id: string, title?: string }) {
               allowFullScreen
           ></iframe>
       </div>
-      <Text size="5" weight="bold" align="center" className="line-clamp-1">{title}</Text>
+      <Text as="h4" font="bold" className="line-clamp-1">{title}</Text>
       </main>
   );
 }
