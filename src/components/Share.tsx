@@ -1,13 +1,13 @@
 "use client"
 
 import { Button, Image } from "@nextui-org/react"
-import { Flex } from "@radix-ui/themes"
 import * as React from "react"
 import { FiShare } from "react-icons/fi"
 import { IoMdShareAlt } from "react-icons/io"
 import { MdOutlineBugReport } from "react-icons/md"
 import { toast } from "sonner"
 import { useMediaQuery } from "®/hooks/use-media-query"
+import { Flex } from "®rdrive/ui"
 import { Dialog, DialogContent, DialogTrigger } from "®ui/dialog"
 import { Drawer, DrawerContent, DrawerFooter, DrawerTrigger } from "®ui/drawer"
 
@@ -58,7 +58,7 @@ const Content = () => {
 
 const ShareButton = () => {    
     return (
-        <Flex justify="between" align="center" className="gap-6 mx-1 sm:mx-4">
+        <Flex justify="justify-between" align="items-center" gap="gap-6" m="mx-1 sm:mx-4">
             <Button variant="light" className="w-full border border-border" onPress={shareCurrentUrl} ><IoMdShareAlt size={20}/> Share</Button> 
             <Button variant="light" className="w-full border border-border" onPress={reportOnWhatsApp}><MdOutlineBugReport size={20}/>Report</Button> 
         </Flex>

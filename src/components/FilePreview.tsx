@@ -1,9 +1,9 @@
 "use client"
 
 import { Image } from "@nextui-org/react";
-import { Flex } from "@radix-ui/themes";
 import Video from 'next-video';
 import Markdown from "./markdown";
+import { Flex, Text } from "®rdrive/ui";
 
 type PreviewProps = {
   src: string;
@@ -14,27 +14,27 @@ type PreviewProps = {
 
 const ImagePreview = ({ src, title, width, height }: PreviewProps) => {
     return (
-        <Flex align="center" justify='center' direction="column" className="space-y-3">
+        <Flex align="items-center" justify=" justify-center" display="flex-col" gap="gap-3" m="my-3">
             <Image src={src} alt={title} width={width} height={height}/>
-            <h1 className="text-2xl md:text-3xl line-clamp-1">{title}</h1>
+            <Text as="h1" size="text-2xl md:text-3xl line-clamp-1">{title}</Text>
         </Flex>
-    );
+    ); 
 };
 
 const VideoPreview = ({ src, title, width, height }: PreviewProps) => {
     return (
-        <Flex align="center" justify='center' direction="column" gap="2" className="space-y-3">
+        <Flex align="items-center" justify=" justify-center" display="flex-col" gap="gap-3" m="my-3">
                 <Video className="border border-border rounded-md p-1" src={src} accentColor="hsl(var(--ring))" poster="/images/lyra.png" blurDataURL="" /> {/* width={width} height={height} */}
-                <h1 className="text-2xl md:text-3xl line-clamp-1">{title}</h1>
+                <Text as="h1" size="text-2xl md:text-3xl line-clamp-1">{title}</Text>
         </Flex>
     );
 };
 
 const MarkdownPreview = ({ src }: PreviewProps) => {
     return (
-        <div className="m-1">
+        <Flex m="m-1">
                 <Markdown src={src} />
-        </div>
+        </Flex>
     );
 };
 

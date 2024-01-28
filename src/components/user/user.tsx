@@ -1,21 +1,21 @@
 "use client"
 import { Button, Image } from "@nextui-org/react"
-import { AspectRatio, Avatar, Flex, Separator } from "@radix-ui/themes"
+import { AspectRatio, Avatar, Separator } from "@radix-ui/themes"
 import { FadeContainer, fromLeftVariant, fromTopVariant } from "®lib/FramerMotionVariants"
 import AnimatedDiv from "../FramerMotion/AnimatedDiv"
 import { motion } from "framer-motion"
 import AnimatedVariant from "../FramerMotion/AnimatedVariant"
-import { Text } from "®/rdrive/ui"
+import { Flex, Text } from "®rdrive/ui"
 
 const User = () => {
     return (
         <AnimatedDiv variants={FadeContainer}>
             {/* Container */}
-            <Flex direction={{ initial: "column", sm: "row" }} gap="4">
+            <Flex display="flex-col sm:flex-row" gap="gap-4">
                 {/* User */}
-                <Flex className="md:w-1/3" direction="column" gap="3">
+                <Flex className="md:w-1/3" display="flex-col" gap="gap-3">
                 <div className="relative">
-                        <AspectRatio ratio={16 / 9} className="rounded-b-[50px] sm:rounded-md overflow-hidden opacity-90">
+                        <AspectRatio ratio={16 / 9} className="rounded-b-[100px] sm:rounded-md overflow-hidden opacity-90">
                             <Image 
                                 src="/images/lyra.png" 
                                 alt="Cover Image" 
@@ -31,26 +31,26 @@ const User = () => {
                             className="absolute -bottom-14 left-1/2 transform -translate-x-1/2 rounded-full sm:rounded-md"   
                         />
                 </div>
-                <Flex direction="column" align="center" mt="8">
-                        <Text as="h3" font="bold">Rock Star</Text>
-                        <Text as="p" color="gray">@rockstar</Text>
+                <Flex display="flex-col" align="items-center" m="mt-12">
+                        <Text as="h1" size="text-2xl" font="font-bold">Rock Star</Text>
+                        <Text size="text-xs sm:text-sm" color="text-muted-foreground">@rockstar</Text>
                 </Flex>
                 <div />
                 {/* Counts */}
                 <div className="flex justify-around items-center">
-                    <Flex direction="column" align="center" gap="1">
-                        <Text as="h3" font="bold">300</Text>
-                        <Text as="p" color="gray">Post</Text>
+                    <Flex display="flex-col" align="items-center" gap="gap-1">
+                        <Text as="h1" size="text-2xl" font="font-bold">300</Text>
+                        <Text size="text-xs sm:text-sm" color="text-muted-foreground">Post</Text>
                     </Flex>
                     <Separator className="h-8" orientation="vertical" />
-                    <Flex direction="column" align="center" gap="1">
-                        <Text as="h3" font="bold">200</Text>
-                        <Text as="p" color="gray">Followers</Text>
+                    <Flex display="flex-col" align="items-center" gap="gap-1">
+                        <Text as="h1" size="text-2xl" font="font-bold">200</Text>
+                        <Text size="text-xs sm:text-sm" color="text-muted-foreground">Followers</Text>
                     </Flex>
                     <Separator className="h-8" orientation="vertical" />
-                    <Flex direction="column" align="center" gap="1">
-                        <Text as="h3" font="bold">0</Text>
-                        <Text as="p" color="gray">Following</Text>
+                    <Flex display="flex-col" align="items-center" gap="gap-1">
+                        <Text as="h1" size="text-2xl" font="font-bold">0</Text>
+                        <Text size="text-xs sm:text-sm" color="text-muted-foreground">Following</Text>
                     </Flex>
                 </div>
                 <div />
@@ -70,7 +70,7 @@ const User = () => {
                 </Flex>
                 </Flex>
                 {/* Card */}
-                <Flex className="md:w-2/3" direction="column" gap="3" p={{initial: '2', sm:'0'}}>
+                <Flex className="md:w-2/3" display="flex-col" gap="gap-3" p="p-2 sm:p-0">
                     <div className="grid md:grid-cols-2 gap-3">
                         {Array.from({ length: 5 }, (_, index) => (
                             <AnimatedVariant key={index} variants={fromLeftVariant} mobileVariants={fromTopVariant}>

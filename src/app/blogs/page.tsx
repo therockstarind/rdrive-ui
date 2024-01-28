@@ -1,11 +1,11 @@
 "use client"
 import { Pagination } from "@nextui-org/react"
-import { Flex, Grid } from "@radix-ui/themes"
 import Link from "next/link"
 import AnimatedDiv from "®/components/FramerMotion/AnimatedDiv"
 import AnimatedVariant from "®/components/FramerMotion/AnimatedVariant"
 import BlogCard from "®/components/blog/card"
 import { FadeContainer, fromLeftVariant, fromTopVariant } from "®/lib/FramerMotionVariants"
+import { Flex } from "®rdrive/ui"
 
 const Demo = [
     {
@@ -73,7 +73,7 @@ const Demo = [
 export default function Blog() {
   return (
     <main className="mx-auto w-full max-w-7xl p-2">
-    <Grid gap="5">
+    <Flex display="flex-col" align="items-center" gap="gap-5">
     <AnimatedDiv variants={FadeContainer} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {Demo.map((card, index) => (
         <AnimatedVariant key={index} variants={fromLeftVariant} mobileVariants={fromTopVariant} >
@@ -83,7 +83,7 @@ export default function Blog() {
         </AnimatedVariant>
         ))}
      </AnimatedDiv>
-     <Flex justify="center">
+     <Flex>
      <Pagination
       total={5}
       classNames={{
@@ -95,7 +95,7 @@ export default function Blog() {
       }}
       />
       </Flex>
-    </Grid>
+    </Flex>
     </main>
   )
 }

@@ -1,17 +1,17 @@
 "use client";
 import { Button } from "@nextui-org/react";
-import { Flex } from "@radix-ui/themes";
 import { BsStar } from "react-icons/bs";
 import { fromRightVariant } from "®/lib/FramerMotionVariants";
 import AnimatedHeading from "../FramerMotion/AnimatedHeading";
 import { Share } from "../Share";
 import { Eye } from "../icons";
+import { Flex } from "®rdrive/ui";
 
 const StarShare = () => {
     const hover = 'border border-border rounded-full'
     return (
       <AnimatedHeading variants={fromRightVariant}>  
-        <Flex gap="3" align="center" justify="center" display={{ initial: 'flex', sm: 'none'}}>
+        <Flex gap="gap-3" align="items-center" justify="justify-center" display="sm:hidden">
         <Button variant="light"  className={`${hover}`}>
             <Eye /> 3
           </Button>
@@ -20,7 +20,7 @@ const StarShare = () => {
             <BsStar size={20}/> 5
           </Button>
         </Flex>
-        <Flex gap="3" align="center" justify="center" display={{ initial: 'none', sm: 'flex'}}>
+        <Flex gap="gap-3" align="items-center" justify="justify-center" display="hidden sm:flex">
         <Button  size="sm" variant="light"  className={`${hover}`}>
             <BsStar size={20} /> 5
           </Button>

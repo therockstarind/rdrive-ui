@@ -1,20 +1,20 @@
 "use client"
 
-import { Flex } from "@radix-ui/themes"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { fromLeftVariant } from "®/lib/FramerMotionVariants"
 import AnimatedHeading from "../FramerMotion/AnimatedHeading"
 import StarShare from "./StarShare"
+import { Flex, Text } from "®rdrive/ui"
 
 const Header = () => {
     const pathname = usePathname();
     const title = pathname.split('/').filter(Boolean).pop();
     return (
-        <Flex width="100%" justify={{initial: 'center', sm: 'between'}} align="center"  my={{initial: '2', sm: '4'}} direction={{initial: 'column', sm: 'row'}} gap="4">
+        <Flex justify="justify-center sm:justify-between" align="items-center"  m="my-2 sm:my-4" display="flex-col sm:flex-row" gap="gap-4">
             <AnimatedHeading variants={fromLeftVariant}>
                 <Link href="" passHref>
-                    <h1 className="text-xl sm:text-3xl font-bold line-clamp-1">{title}</h1>
+                    <Text as="h1" size="text-xl sm:text-3xl" align="text-center" font="font-bold line-clamp-1">{title}</Text>
                 </Link>
             </AnimatedHeading>       
             <StarShare />

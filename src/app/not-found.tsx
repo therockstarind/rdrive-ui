@@ -1,5 +1,5 @@
 "use client"
-import { Button, Image } from '@nextui-org/react';
+import { Image } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
  
 export default function NotFound() {

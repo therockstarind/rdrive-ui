@@ -1,5 +1,4 @@
 "use client";
-import { Flex, Grid } from "@radix-ui/themes";
 import { ArrowDownToLine } from "lucide-react";
 import React, { useState } from "react";
 import FileIcon, { getExtension } from "®/utils/getFileIcon";
@@ -8,7 +7,7 @@ import Preview from "®ui/preview";
 import { Author } from "./Author";
 import { useRouter } from "next/navigation";
 import { getPreviewType } from "®/utils/getPreviewType";
-import { Text } from "®rdrive/ui";
+import { Flex, Grid, Text } from "®rdrive/ui";
 
 type ListItem = {
   href: string;
@@ -76,15 +75,15 @@ const FolderList = () => {
   
 return (
     <Command>
-      <Flex justify="end" mt="1" mb="4" mx="2" align="center">
-      <div className="GoToFile">
+      <Flex justify="justify-end" m="mt-1 mb-4 mx-2" align="items-center">
+      <Flex className="GoToFile">
       <CommandInput placeholder="Go to file" className="h-8"/>
-      </div>
+      </Flex>
       </Flex>
       <Grid className="border border-border rounded-md">
-        <Flex className="bg-default/10 dark:bg-default/30 border-b border-border" justify="between" px="2" align="center" p="1">
+        <Flex color="bg-default/10 dark:bg-default/30" border="border-b border-border" justify="justify-between" p="px-2 p-1" align="items-center">
             <Author />
-            <Text as="p" color="gray">{List.length} items</Text>
+            <Text size="text-sm" color="text-muted-foreground">{List.length} items</Text>
           </Flex>
         <CommandList className="h-full max-h-60 sm:max-h-64 md:max-h-80 lg:max-h-92 pr-1">
           <CommandEmpty>No results found.</CommandEmpty>
@@ -92,18 +91,18 @@ return (
           {List.map((list, index) => (
           <React.Fragment key={list.title + index}>
             <CommandItem className="my-1" onSelect={() => SelectItem(list)}>
-            <div className='flex flex-1 items-center gap-4'>
-                <div className="text-lg"><FileIcon name={list.href} /></div>
-                    <div className="flex flex-col sm:flex-row flex-1 sm:gap-2 sm:items-center">
-                    <div className="flex-1 line-clamp-1 text-base">{list.title}</div>
-                        <div className="flex gap-2 sm:gap-6 sm:font-mono text-xs text-nowrap text-muted-foreground line-clamp-1">
-                            <div>{list.size}</div>
-                            <div>•</div>
-                            <div>{list.date}</div>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-1">{list.download}<ArrowDownToLine className="w-4 h-4" /></div>
-                </div>
+            <Flex display="flex-1" align="items-center" gap="gap-4">
+                <Flex size="text-lg"><FileIcon name={list.href} /></Flex>
+                    <Flex display="flex-col sm:flex-row flex-1" gap="sm:gap-2" align="sm:items-center">
+                    <Text as="h1" display="flex-1" size="text-base line-clamp-1">{list.title}</Text>
+                        <Flex gap="gap-2 sm:gap-6" size="sm:font-mono text-xs text-nowrap text-muted-foreground line-clamp-1">
+                            <Text>{list.size}</Text>
+                            <Text>•</Text>
+                            <Text>{list.date}</Text>
+                        </Flex>
+                    </Flex>
+                    <Text display="flex" gap="gap-1" align="items-center">{list.download}<ArrowDownToLine className="w-4 h-4" /></Text>
+                </Flex>
             </CommandItem><CommandSeparator />
             </React.Fragment>
             ))}
