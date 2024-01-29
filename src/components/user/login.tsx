@@ -5,8 +5,7 @@ import * as React from "react"
 import { Dispatch, SetStateAction } from "react"
 import { useMediaQuery } from "®/hooks/use-media-query"
 import { cn } from "®/lib/utils"
-import { Dialog, DialogContent } from "®ui/dialog"
-import { Drawer, DrawerContent } from "®ui/drawer"
+import { Dialog, DialogContent, Drawer, DrawerContent } from "®/rdrive/ui"
 
 
 export default function Login({

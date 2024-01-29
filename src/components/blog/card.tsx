@@ -1,45 +1,58 @@
 "use client"
-import { Card, Image } from "@nextui-org/react"
-import { Avatar } from "@radix-ui/themes"
-import { Timer } from "lucide-react"
-import { CardDescription, CardTitle } from "../ui/card"
-import { Flex, Grid, Text } from "®rdrive/ui"
+import { Image } from "@nextui-org/react";
+import { Avatar } from "@radix-ui/themes";
+import { BsBookmark } from "react-icons/bs";
+import { Flex, Grid, Text } from "®rdrive/ui";
 
 type CardItem = {
-    id?: string;
-    title?: string;
-    description?: string;
-    img?: string;
-    date?: number;
-    time?: number;
+  id?: string;
+  title?: string;
+  img?: string;
+  date?: string;
+  time?: string;
+  likes?: number;
+  views?: number;
 };
 
-const BlogCard: React.FC<CardItem> = ({ title, description, img, date, time  }) => {
+const BlogCard: React.FC<CardItem> = ({ title, img, date, time, likes, views }) => {
   return (
-    <Card className="p-2 border border-border gap-1.5 bg-background" isHoverable shadow="none">
-      <Image src={img} alt={title} width="1280" height="640" isBlurred/>
-      <Grid m="mx-2">
-          <CardTitle className="text-lg line-clamp-2">{title}</CardTitle>
-          <CardDescription className="line-clamp-3">{description}</CardDescription>
-      </Grid>
-      <Flex justify="justify-between" align="items-center" m="mx-2">
-        <Flex  className="flex gap-2 items-center" m="mt-2">
-        <Avatar radius="full" src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop" fallback="T" />
-        <Grid>
-        <Text as="h1" font="font-bold" size="text-base leading-tight">
-            Teodros Girmay
-          </Text>
-          <Text color="text-muted-foreground" size="text-sm">
-            2h ago
-          </Text>
-        </Grid>
-        </Flex>
-        <Flex align="items-center" gap="gap-1" size="text-sm text-muted-foreground">
-          <Timer className="w-5 h-5"/>5 min
-        </Flex>  
+        <Grid gap="gap-3">
+      <Flex display=" relative">
+          <Image src={img} alt={title} className="object-cover" width="1280" height="640"/>
+          <Flex className="absolute z-50 bottom-2 right-2 rounded-sm" color="bg-black text-white shadow-md" size="text-sm" p="px-1">{time}</Flex>
       </Flex>
-    </Card>
-  )
-}
+      <Flex gap="gap-2" m="mx-2">
+        <Avatar
+          src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop"
+          fallback="T"
+          radius="full"
+        />
+        <Flex display="flex-col w-full">
+          <Text as="h1" font="font-bold leading-tight line-clamp-2" align="text-start">
+            {title}
+          </Text>
+          <Flex gap="gap-2" align="items-center" m="mt-0.5">
+            <Text as="p" color="text-muted-foreground" size="text-xs">
+              {views} views
+            </Text>
+            <Text as="p" color="text-muted-foreground" size="text-xs">
+              •
+            </Text>
+            <Text as="p" color="text-muted-foreground" size="text-xs">
+              {likes} likes
+            </Text>
+            <Text as="p" color="text-muted-foreground" size="text-xs">
+              •
+            </Text>
+            <Text as="p" color="text-muted-foreground" size="text-xs">
+              {date} ago
+            </Text>
+          </Flex>
+        </Flex>
+        <BsBookmark size={24} />
+      </Flex>
+    </Grid>
+  );
+};
 
-export default BlogCard
+export default BlogCard;
