@@ -1,4 +1,4 @@
-
+"use client"
 import { AnimatedTooltip } from "®/components/ui/animated-tooltip";
 import { AspectRatio } from "®/components/ui/aspect-ratio";
 import { BentoGrid, BentoGridItem } from "®/components/ui/bento-grid";

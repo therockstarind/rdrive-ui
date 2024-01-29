@@ -1,11 +1,12 @@
 "use client"
 import { Button, Image } from "@nextui-org/react"
 import { AspectRatio, Avatar, Separator } from "@radix-ui/themes"
-import { FadeContainer, fromLeftVariant, fromTopVariant } from "®lib/FramerMotionVariants"
-import AnimatedDiv from "../FramerMotion/AnimatedDiv"
 import { motion } from "framer-motion"
+import { FadeContainer, fromLeftVariant, fromTopVariant } from "®lib/FramerMotionVariants"
+import { Card, Flex, Text } from "®rdrive/ui"
+import AnimatedDiv from "../FramerMotion/AnimatedDiv"
 import AnimatedVariant from "../FramerMotion/AnimatedVariant"
-import { Flex, Text } from "®rdrive/ui"
+import { RiVerifiedBadgeFill } from "react-icons/ri"
 
 const User = () => {
     return (
@@ -28,11 +29,14 @@ const User = () => {
                             size="8" 
                             src="/icons/rdrive.png" 
                             fallback="R"
-                            className="absolute -bottom-14 left-1/2 transform -translate-x-1/2 rounded-full sm:rounded-md"   
+                            className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rounded-full sm:rounded-md"   
                         />
                 </div>
-                <Flex display="flex-col" align="items-center" m="mt-12">
-                        <Text as="h1" size="text-2xl" font="font-bold">Rock Star</Text>
+                <Flex display="flex-col" align="items-center" m="mt-9">
+                        <Text as="h1" size="text-2xl" font="font-bold" display="flex" align="items-center" gap="gap-2">
+                            Rock Star 
+                            <RiVerifiedBadgeFill className="text-blue-500" size={20}/>
+                        </Text>
                         <Text size="text-xs sm:text-sm" color="text-muted-foreground">@rockstar</Text>
                 </Flex>
                 <div />
@@ -69,6 +73,12 @@ const User = () => {
                     </motion.div>
                 ))}
                 </Flex>
+                <Card className="mx-auto p-3">
+                    <Text as="p" color="text-muted-foreground" size="text-sm">About</Text>
+                    <Text as="h1" size="text-base">
+                        i wanna die in front of more then billoins people.
+                    </Text>
+                </Card>
                 </Flex>
                 {/* Card */}
                 <Flex className="md:w-2/3" display="flex-col" gap="gap-3" p="p-2 sm:p-0">
