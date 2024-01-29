@@ -1,9 +1,10 @@
 import User from "®/components/user/user";
+import { Page } from "®rdrive/ui";
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-7xl sm:p-2 sm:my-2">
+    <Page className="p-0 sm:p-2 sm:my-2">
         <User /> 
-    </main>
+    </Page>
   )
 }

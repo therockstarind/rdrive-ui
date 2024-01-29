@@ -1,11 +1,12 @@
 "use client"
 import { Image } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
+import { Page } from '®rdrive/ui';
  
 export default function NotFound() {
     const router = useRouter();
     return (
-      <main className="mx-auto w-full max-w-7xl p-2">
+      <Page>
         <div className="flex flex-col w-full justify-center items-center gap-4">
           <Image src="/icons/404.png" alt="" width={400} height={400} isBlurred/>
             <div className="flex flex-col text-center gap-4">
@@ -19,6 +20,6 @@ export default function NotFound() {
               </span>
             </button>
         </div>
-      </main>
+      </Page>
   )
 }

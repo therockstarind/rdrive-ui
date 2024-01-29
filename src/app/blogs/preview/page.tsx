@@ -2,12 +2,13 @@
 
 import BlogAuthor from "®/components/blog/blogauthor";
 import Markdown from "®/components/markdown";
+import { Page } from "®rdrive/ui";
 
 export default function Slug() {
   return (
-    <main className="mx-auto w-full max-w-5xl p-2">
+    <Page className="max-w-5xl">
       <BlogAuthor />
         <Markdown src="/sample.md"/>
-    </main>
+    </Page>
   )
 }

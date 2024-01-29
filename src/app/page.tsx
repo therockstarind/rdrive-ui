@@ -1,8 +1,9 @@
 import FolderGridLayout from '®/components/FolderGridLayout'
+import { Page } from '®rdrive/ui'
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-7xl p-2">
+    <Page>
       <FolderGridLayout />
-    </main>
+    </Page>
   )
 }

@@ -4,7 +4,7 @@ import { Avatar } from "@radix-ui/themes";
 import React from "react";
 import { BiSolidEdit } from "react-icons/bi";
 import { MdAddCircle } from "react-icons/md";
-import Tooltip from "®ui/tooltip";
+import { Tooltip } from "®rdrive/ui";
 
 
 

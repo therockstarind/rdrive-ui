@@ -37,7 +37,7 @@ const User = () => {
                 </Flex>
                 <div />
                 {/* Counts */}
-                <div className="flex justify-around items-center">
+                <Flex justify="justify-around" align="items-center">
                     <Flex display="flex-col" align="items-center" gap="gap-1">
                         <Text as="h1" size="text-2xl" font="font-bold">300</Text>
                         <Text size="text-xs sm:text-sm" color="text-muted-foreground">Post</Text>
@@ -52,14 +52,15 @@ const User = () => {
                         <Text as="h1" size="text-2xl" font="font-bold">0</Text>
                         <Text size="text-xs sm:text-sm" color="text-muted-foreground">Following</Text>
                     </Flex>
-                </div>
-                <div />
+                </Flex>
+                <Flex />
                     {/* This button will be follow or edit based on user */}
                 <Button radius="full" variant="light" className="mx-4 border border-border bg-default/20 dark:bg-default/40">
                     Follow
                 </Button> 
                 <div />
-                <Flex className="justify-center overflow-auto">
+                {/* Social Icon */}
+                <Flex justify="justify-center overflow-auto">
                 {social.map((social, index) => (
                     <motion.div key={index} variants={fromLeftVariant} className="mx-4">
                         <Button isIconOnly size="lg" variant="light" href={social.link}>

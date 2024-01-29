@@ -38,3 +38,15 @@ export type GridProps = React.HTMLAttributes<HTMLElement> & {
   gap?: string;
   border?: string;
 }
+
+export type PageProps = React.HTMLAttributes<HTMLElement> & {
+  m?: string;
+  p?: string;
+  size?: string;
+  font?: string;
+  color?: string;
+  justify?: string;
+  align?: string;
+  gap?: string;
+  border?: string;
+}
