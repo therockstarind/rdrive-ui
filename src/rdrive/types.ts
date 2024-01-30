@@ -50,3 +50,12 @@ export type PageProps = React.HTMLAttributes<HTMLElement> & {
   gap?: string;
   border?: string;
 }
+
+export type AvatarProps = React.HTMLAttributes<HTMLElement> & {
+  src:  string;
+  fallback: string;
+  alt?: string;
+  className?: string;
+  href?: string;
+  radius?: string;
+};

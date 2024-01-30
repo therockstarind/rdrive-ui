@@ -1,6 +1,7 @@
 "use client"
 import { AnimatedTooltip } from "®/components/ui/animated-tooltip";
 import { AspectRatio } from "®/components/ui/aspect-ratio";
+import { Avatar } from "®/components/ui/avatar";
 import { BentoGrid, BentoGridItem } from "®/components/ui/bento-grid";
 import { Button, buttonVariants } from "®/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "®/components/ui/card";
@@ -23,6 +24,7 @@ import { Text } from "®/components/ui/text";
 import Tooltip from "®/components/ui/tooltip";
 
 export {
+  Avatar,
   AnimatedTooltip, AspectRatio, BentoGrid,
   BentoGridItem, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, Command,
   CommandDialog, CommandEmpty,

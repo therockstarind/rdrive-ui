@@ -2,14 +2,14 @@
 
 import { Separator } from "@radix-ui/themes";
 import { FadeContainer } from "®/lib/FramerMotionVariants";
+import { Flex, Grid } from "®rdrive/ui";
 import AnimatedDiv from "../FramerMotion/AnimatedDiv";
-import Header from "./Header";
-import ImageCard from "./ImageCard";
+import FeedCard from "../blog/feedcard";
+import YouTube from "../markdown/YouTube";
 import FolderList from "./FolderList";
 import FolderTab from "./FolderTab";
-import YouTube from "../markdown/YouTube";
-import BlogCard from "../blog/card";
-import { Flex, Grid } from "®rdrive/ui";
+import Header from "./Header";
+import ImageCard from "./ImageCard";
 
 const FolderListLayout = () => {
     return (
@@ -27,7 +27,7 @@ const FolderListLayout = () => {
                     <FolderTab />
                     <Grid display="grid sm:hidden" gap="gap-3">
                         <YouTube id="PV08KlJeKuQ" />
-                        <BlogCard />
+                        <FeedCard card={feed} />
                     </Grid> 
                 </Flex>
                 {/* List Image & Details */}
@@ -38,7 +38,7 @@ const FolderListLayout = () => {
                     </Flex> 
                     <Grid display="hidden sm:grid" className="sticky top-0.5 z-40" gap="gap-3">
                             <YouTube id="PV08KlJeKuQ" />
-                            <BlogCard />
+                            <FeedCard card={feed} />
                     </Grid> 
                 </Flex>
             </Flex>
@@ -46,3 +46,14 @@ const FolderListLayout = () => {
     )
 }
 export default FolderListLayout
+
+const feed = {
+    title: "Step-by-Step Guide to Settings - Demo 1",
+    img: "https://www.minterapp.com/wp-content/uploads/2022/11/image4-1280x640.png",
+    date: "1 day",
+    time: "05:00",
+    views: 1200,
+    likes: 85,
+    href: '/blogs/demo1',
+    author: "/rockstar1",
+};
