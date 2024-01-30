@@ -47,18 +47,13 @@ const AvatarFallback = React.forwardRef<
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
 export const Avatar: React.FC<AvatarProps> = ({ src, fallback, alt, className, href, radius }) => {
-  return href ? (
+  return (
       <RadixAvatar className={cn(className, `rounded-${radius}`)}>
-              <Link href={href} className="flex h-full w-full">
+              <Link href={href ? `/${href}` : ''} className="flex h-full w-full">
               <AvatarImage src={src} alt={alt} />
               <AvatarFallback>{fallback}</AvatarFallback>
               </Link>
       </RadixAvatar>
-  ) : (
-    <RadixAvatar className={cn(className, `rounded-${radius}`)}>
-          <AvatarImage src={src} alt={alt} />
-          <AvatarFallback>{fallback}</AvatarFallback>
-    </RadixAvatar>
   );
 };
 

@@ -56,6 +56,6 @@ export type AvatarProps = React.HTMLAttributes<HTMLElement> & {
   fallback: string;
   alt?: string;
   className?: string;
-  href?: string;
+  href?: string | null;
   radius?: string;
 };

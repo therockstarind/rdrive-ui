@@ -14,11 +14,6 @@ const Demo = [
         views: 1200,
         likes: 85,
         href: '/blogs/preview',
-        author: {
-            name: "Rock Star",
-            url: "/rockstar",
-            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
-        },
     },
     {
         title: "Exploring Settings for Efficiency - Demo 2",
@@ -28,11 +23,7 @@ const Demo = [
         views: 950,
         likes: 78,
         href: '/blogs/preview',
-        author: {
-            name: "Rock Star",
-            url: "/rockstar",
-            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
-        },
+
     },
     {
         title: "Mastering Device Settings - Demo 3",
@@ -42,11 +33,7 @@ const Demo = [
         views: 1800,
         likes: 120,
         href: '/blogs/preview',
-        author: {
-            name: "Rock Star",
-            url: "/rockstar",
-            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
-        },
+
     },
     {
         title: "Optimizing Your Experience - Demo 4",
@@ -56,11 +43,7 @@ const Demo = [
         views: 1350,
         likes: 95,
         href: '/blogs/preview',
-        author: {
-            name: "Rock Star",
-            url: "/rockstar",
-            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
-        },
+
     },
     {
         title: "Discovering Hidden Settings - Demo 5",
@@ -70,11 +53,11 @@ const Demo = [
         views: 2000,
         likes: 150,
         href: '/blogs/preview',
-        author: {
-            name: "Rock Star",
-            url: "/rockstar",
-            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
-        },
+    author: {
+        name: "Rock Star",
+        username: "rockstar",
+        img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
+    },
     },
     {
         title: "Advanced Settings Techniques - Demo 6",
@@ -84,11 +67,6 @@ const Demo = [
         views: 1700,
         likes: 130,
         href: '/blogs/preview',
-        author: {
-            name: "Rock Star",
-            url: "/rockstar",
-            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
-        },
     },
 ];
 

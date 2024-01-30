@@ -27,7 +27,7 @@ const FolderListLayout = () => {
                     <FolderTab />
                     <Grid display="grid sm:hidden" gap="gap-3">
                         <YouTube id="PV08KlJeKuQ" />
-                        <FeedCard card={feed} />
+                        <FeedCard feed={feed} />
                     </Grid> 
                 </Flex>
                 {/* List Image & Details */}
@@ -38,7 +38,7 @@ const FolderListLayout = () => {
                     </Flex> 
                     <Grid display="hidden sm:grid" className="sticky top-0.5 z-40" gap="gap-3">
                             <YouTube id="PV08KlJeKuQ" />
-                            <FeedCard card={feed} />
+                            <FeedCard feed={feed} />
                     </Grid> 
                 </Flex>
             </Flex>
@@ -54,6 +54,10 @@ const feed = {
     time: "05:00",
     views: 1200,
     likes: 85,
-    href: '/blogs/demo1',
-    author: "/rockstar1",
+    href: '/blogs/preview',
+    author: {
+        name: "Rock Star",
+        username: "rockstar",
+        img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
+    },
 };

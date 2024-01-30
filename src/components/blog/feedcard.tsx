@@ -1,20 +1,19 @@
 "use client"
 import { Image } from "@nextui-org/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { BsBookmark } from "react-icons/bs";
 import { Counts } from "®/lib/utils";
-import { FeedsProps } from "®/types";
-import { Avatar, Flex, Grid, Text } from "®rdrive/ui";
+import { FeedsType } from "®/types";
+import { Flex, Grid, Text } from "®rdrive/ui";
+import Author from "../FolderListLayout/Author";
 
-const FeedCard: React.FC<{ feed: FeedsProps }> = ({ feed }) => {
-    const router = useRouter();
+const FeedCard: React.FC<{ feed: FeedsType }> = ({ feed }) => {
   return (
     <Grid gap="gap-3">
       {/* Link to the blog post */}
       <Link href={feed.href} passHref className="relative">
         {/* Image container with absolute position and time display */}
-        <Image src={feed.img} alt={feed.title} className="object-cover" width="1280" height="640" />
+        <Image src={feed.img} alt={feed.title} className="object-cover" width="1280" height="640" isZoomed/>
         <Text className="absolute z-50 bottom-2 right-2 rounded-sm bg-black text-white text-sm px-1">
           {feed.time}
         </Text>
@@ -23,13 +22,7 @@ const FeedCard: React.FC<{ feed: FeedsProps }> = ({ feed }) => {
       {/* Flex container for author info, blog title, and icons */}
       <Flex gap="gap-2" m="mx-2">
         {/* Author Avatar */}
-        <Avatar
-          src={feed.author.img}
-          fallback="R"
-          alt={feed.author.name}
-          href={feed.author.url}
-          radius="full"
-        />
+        <Author author={authorUser} authordetails={authorDetails} />
         {/* Link to the blog post with title and metadata */}
         <Flex display="flex-col w-full">
           <Link href={feed.href} passHref>
@@ -64,3 +57,16 @@ const FeedCard: React.FC<{ feed: FeedsProps }> = ({ feed }) => {
 };
 
 export default FeedCard;
+
+const authorUser = {
+  img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
+};
+const authorDetails = {
+  coverimg: "/images/lyra.png",
+  img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png",
+  name: "Rock Star",
+  username: "rockstar",
+  post: 10,
+  followers: 100,
+  following: 0,
+};

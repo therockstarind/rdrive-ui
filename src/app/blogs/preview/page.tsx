@@ -7,7 +7,7 @@ import { Page } from "®rdrive/ui";
 export default function Slug() {
   return (
     <Page className="max-w-5xl">
-      <BlogAuthor />
+        <BlogAuthor />
         <Markdown src="/sample.md"/>
     </Page>
   )
