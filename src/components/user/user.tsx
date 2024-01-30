@@ -1,9 +1,9 @@
 "use client"
 import { Button, Image } from "@nextui-org/react"
-import { AspectRatio, Avatar, Separator } from "@radix-ui/themes"
+import { AspectRatio, Separator } from "@radix-ui/themes"
 import { motion } from "framer-motion"
 import { FadeContainer, fromLeftVariant, fromTopVariant } from "®lib/FramerMotionVariants"
-import { Card, Flex, Text } from "®rdrive/ui"
+import { Avatar, Card, Flex, Text } from "®rdrive/ui"
 import AnimatedDiv from "../FramerMotion/AnimatedDiv"
 import AnimatedVariant from "../FramerMotion/AnimatedVariant"
 import { RiVerifiedBadgeFill } from "react-icons/ri"
@@ -25,11 +25,10 @@ const User = () => {
                                 height="100%"
                             />
                         </AspectRatio>
-                        <Avatar 
-                            size="8" 
-                            src="/icons/rdrive.png" 
+                        <Avatar
+                            src="https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.ng" 
                             fallback="R"
-                            className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rounded-full sm:rounded-md"   
+                            className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rounded-full sm:rounded-md w-32 h-32 text-3xl"   
                         />
                 </div>
                 <Flex display="flex-col" align="items-center" m="mt-9">

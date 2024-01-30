@@ -1,10 +1,10 @@
 "use client"
 
-import * as React from "react"
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
+import * as React from "react"
 
-import { cn } from "®/lib/utils"
 import Link from "next/link"
+import { cn } from "®/lib/utils"
 import { AvatarProps } from "®/rdrive/types"
 
 const RadixAvatar = React.forwardRef<
@@ -14,7 +14,7 @@ const RadixAvatar = React.forwardRef<
   <AvatarPrimitive.Root
     ref={ref}
     className={cn(
-      "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-md",
+      "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-md bg-default/30",
       className
     )}
     {...props}
@@ -40,27 +40,25 @@ const AvatarFallback = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback
     ref={ref}
+     className="flex h-full w-full items-center justify-center"
     {...props}
   />
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
 export const Avatar: React.FC<AvatarProps> = ({ src, fallback, alt, className, href, radius }) => {
-  const avatarContent = (
-    <>
-      <AvatarImage src={src} alt={alt} />
-      <AvatarFallback>{fallback}</AvatarFallback>
-    </>
-  );
-
   return href ? (
       <RadixAvatar className={cn(className, `rounded-${radius}`)}>
-            <Link href={href} passHref className="flex h-full w-full items-center justify-center rounded-md bg-muted">
-              {avatarContent}
-            </Link>
+              <Link href={href} className="flex h-full w-full">
+              <AvatarImage src={src} alt={alt} />
+              <AvatarFallback>{fallback}</AvatarFallback>
+              </Link>
       </RadixAvatar>
   ) : (
-    <RadixAvatar className={cn(className, `rounded-${radius}`)}>{avatarContent}</RadixAvatar>
+    <RadixAvatar className={cn(className, `rounded-${radius}`)}>
+          <AvatarImage src={src} alt={alt} />
+          <AvatarFallback>{fallback}</AvatarFallback>
+    </RadixAvatar>
   );
 };
 

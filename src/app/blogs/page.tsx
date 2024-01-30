@@ -13,8 +13,12 @@ const Demo = [
         time: "05:00",
         views: 1200,
         likes: 85,
-        href: '/blogs/demo1',
-        author: "/rockstar1",
+        href: '/blogs/preview',
+        author: {
+            name: "Rock Star",
+            url: "/rockstar",
+            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
+        },
     },
     {
         title: "Exploring Settings for Efficiency - Demo 2",
@@ -23,8 +27,12 @@ const Demo = [
         time: "03:00",
         views: 950,
         likes: 78,
-            href: '/blogs/demo1',
-    author: "/rockstar1",
+        href: '/blogs/preview',
+        author: {
+            name: "Rock Star",
+            url: "/rockstar",
+            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
+        },
     },
     {
         title: "Mastering Device Settings - Demo 3",
@@ -33,8 +41,12 @@ const Demo = [
         time: "04:00",
         views: 1800,
         likes: 120,
-            href: '/blogs/demo1',
-    author: "/rockstar1",
+        href: '/blogs/preview',
+        author: {
+            name: "Rock Star",
+            url: "/rockstar",
+            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
+        },
     },
     {
         title: "Optimizing Your Experience - Demo 4",
@@ -43,8 +55,12 @@ const Demo = [
         time: "03:30",
         views: 1350,
         likes: 95,
-            href: '/blogs/demo1',
-    author: "/rockstar1",
+        href: '/blogs/preview',
+        author: {
+            name: "Rock Star",
+            url: "/rockstar",
+            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
+        },
     },
     {
         title: "Discovering Hidden Settings - Demo 5",
@@ -53,8 +69,12 @@ const Demo = [
         time: "06:00",
         views: 2000,
         likes: 150,
-            href: '/blogs/demo1',
-    author: "/rockstar1",
+        href: '/blogs/preview',
+        author: {
+            name: "Rock Star",
+            url: "/rockstar",
+            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
+        },
     },
     {
         title: "Advanced Settings Techniques - Demo 6",
@@ -63,10 +83,15 @@ const Demo = [
         time: "04:30",
         views: 1700,
         likes: 130,
-            href: '/blogs/demo1',
-    author: "/rockstar1",
+        href: '/blogs/preview',
+        author: {
+            name: "Rock Star",
+            url: "/rockstar",
+            img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
+        },
     },
 ];
+
 
 export default function Blog() {
   return (
@@ -74,7 +99,7 @@ export default function Blog() {
     <AnimatedDiv variants={FadeContainer} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         {Demo.map((feed) => (
         <AnimatedVariant variants={fromLeftVariant} mobileVariants={fromTopVariant} >
-            <FeedCard card={feed}/>
+            <FeedCard feed={feed}/>
         </AnimatedVariant>
         ))}
      </AnimatedDiv>
