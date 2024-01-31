@@ -90,8 +90,8 @@ const Author: React.FC<AuthorType> = ({ author, authordetails }) => {
       <DrawerTrigger>
           <User user={author} />
       </DrawerTrigger>
-      <DrawerContent showDiv={false}>
-        <div className="mb-4">
+      <DrawerContent>
+        <div className="p-1">
         <UserDetails user={authordetails} />
         </div>
       </DrawerContent>
