@@ -15,7 +15,7 @@ const FeedCard: React.FC<{ feed: FeedsType }> = ({ feed }) => {
       <Link href={feed.href} passHref className="relative">
         {/* Image container with absolute position and time display */}
         <Image src={feed.img} alt={feed.title} className="object-cover" width="1280" height="640" isZoomed/>
-        <Text className="absolute z-50 bottom-2 right-2 rounded-sm bg-black text-white text-sm px-1">
+        <Text className="absolute z-10 bottom-2 right-2 rounded-sm bg-black text-white text-sm px-1">
           {feed.time}
         </Text>
       </Link>

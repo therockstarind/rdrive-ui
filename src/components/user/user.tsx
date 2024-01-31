@@ -82,7 +82,7 @@ const User: React.FC<{ user?: UserType, post?: FeedsType[]  }> = ({ user, post }
             {/* Card */}
             <Flex className="md:w-2/3" display="flex-col" gap="gap-3" p="p-1 sm:p-0">
                 <Command>
-                    <Flex border="border border-border rounded-md" display="flex-col">
+                    <Flex border="border border-border rounded-full" display="sticky top-0.5 z-50 flex-col" color="bg-background/70 backdrop-blur-lg" m="mx-4 mt-1 mb-3">
                         <CommandInput placeholder="Search Post"  />
                     </Flex>
                   <CommandEmpty>No result found</CommandEmpty>

@@ -47,11 +47,6 @@ export const Demo = {
         views: 2000,
         likes: 150,
         href: '/blogs/preview',
-    author: {
-        name: "Rock Star",
-        username: "rockstar",
-        img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
-    },
     },
     {
         title: "Advanced Settings Techniques - Demo 6",
@@ -63,6 +58,7 @@ export const Demo = {
         href: '/blogs/preview',
     },
     ],
+    
     user: {
         name: 'Rock Star',
         username: 'rockstar',
