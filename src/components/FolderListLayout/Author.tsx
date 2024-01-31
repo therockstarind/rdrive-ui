@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, Image } from "@nextui-org/react";
+import Link from "next/link";
 import React from "react";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { useMediaQuery } from "®/hooks/use-media-query";
@@ -8,7 +9,7 @@ import { AuthorType, UserDetailsType, UserType } from "®/types";
 import { AspectRatio, Avatar, Drawer, DrawerContent, DrawerTrigger, Flex, Grid, HoverCard, HoverCardContent, HoverCardTrigger, Text } from "®rdrive/ui";
 
 const fallback = (str: string | undefined): string => {
-  return str ? str.charAt(0).toUpperCase() + str.slice(1) : '';
+  return str ? str.charAt(0).toUpperCase() : '';
 };
 const User: React.FC<{ user?: UserType }> = ({ user }) => (
   <Flex gap="gap-2">
@@ -31,17 +32,21 @@ const UserDetails: React.FC<{ user?: UserDetailsType }> = ({ user }) => (
       <AspectRatio ratio={16 / 9} className="rounded-b-[100px] rounded-t-xl sm:rounded-md overflow-hidden opacity-90">
         <Image src={user?.coverimg} alt={`${user?.name} Cover`} className="rounded-none object-cover" width="100%" height="100%" />
       </AspectRatio>
+      <Link href={user?.username || ''} passHref>
       <Avatar
         src={user?.img || ''}
         fallback={fallback(user?.name)}
         className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rounded-full w-32 h-32 text-3xl"
       />
+      </Link>
     </Flex>
     <Flex display="flex-col" align="items-center" m="mt-9">
+      <Link href={user?.username || ''} passHref>
       <Text as="h1" size="text-2xl" font="font-bold" display="flex" align="items-center" gap="gap-2">
         {user?.name}
         <RiVerifiedBadgeFill className="text-blue-500" size={20} />
       </Text>
+      </Link>
       <Text size="text-xs sm:text-sm" color="text-muted-foreground">
         @{user?.username}
       </Text>

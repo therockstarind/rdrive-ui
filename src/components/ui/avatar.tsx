@@ -3,7 +3,6 @@
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
 import * as React from "react"
 
-import Link from "next/link"
 import { cn } from "®/lib/utils"
 import { AvatarProps } from "®/rdrive/types"
 
@@ -46,13 +45,11 @@ const AvatarFallback = React.forwardRef<
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
-export const Avatar: React.FC<AvatarProps> = ({ src, fallback, alt, className, href, radius }) => {
+export const Avatar: React.FC<AvatarProps> = ({ src, fallback, alt, className, radius }) => {
   return (
       <RadixAvatar className={cn(className, `rounded-${radius}`)}>
-              <Link href={href ? `/${href}` : ''} className="flex h-full w-full">
               <AvatarImage src={src} alt={alt} />
               <AvatarFallback>{fallback}</AvatarFallback>
-              </Link>
       </RadixAvatar>
   );
 };
