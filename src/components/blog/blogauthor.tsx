@@ -6,6 +6,7 @@ import { BiSolidEdit } from "react-icons/bi";
 import { MdAddCircle } from "react-icons/md";
 import { Flex, Tooltip } from "®rdrive/ui";
 import Author from "../FolderListLayout/Author";
+import { Demo } from "®/config/demo";
 
 type BlogAuthorType = {
     toc?: React.ReactNode;
@@ -14,7 +15,7 @@ type BlogAuthorType = {
 const BlogAuthor: React.FC<BlogAuthorType> = ({ toc }) => {
     return (
         <Navbar shouldHideOnScroll isBordered classNames={{wrapper:'px-0'}}>
-            <Author author={authorUser} authordetails={authorDetails} />
+            <Author author={Demo.user} />
             <Flex gap="gap-2" align="items-center">
                 {toc}
                 {/* This will only show when user login with it self */}
@@ -39,19 +40,3 @@ const BlogAuthor: React.FC<BlogAuthorType> = ({ toc }) => {
 }
 
 export default BlogAuthor;
-
-
-const authorUser = {
-  img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png",
-  name: "Rock Star",
-  description: "2 weeks",
-};
-const authorDetails = {
-  coverimg: "/images/lyra.png",
-  img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png",
-  name: "Rock Star",
-  username: "rockstar",
-  post: 10,
-  followers: 100,
-  following: 0,
-};

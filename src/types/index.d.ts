@@ -10,12 +10,6 @@ export type FeedsType = {
 };
 
 
-export type UserType = {
-  img: string;
-  name?: string;
-  description?: string;
-};
-
 export type UserDetailsType = {
   coverimg?: string;
   img: string;
@@ -29,4 +23,19 @@ export type UserDetailsType = {
 export type AuthorType = {
   author?: UserType;
   authordetails?: UserDetailsType;
+};
+
+export type UserType = {
+  name?: string;
+  description?: string;
+  bio?: string;
+  social?: Array<{ link: string; icon: string }>;
+  username?: string;
+  password?: string;
+  avatar?: string;
+  coverimg?: string;
+  post?: number;
+  followers?: number;
+  following?: number;
+  [key: string]: any;
 };

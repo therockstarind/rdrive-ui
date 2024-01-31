@@ -6,6 +6,7 @@ import { Counts } from "®/lib/utils";
 import { FeedsType } from "®/types";
 import { Flex, Grid, Text } from "®rdrive/ui";
 import Author from "../FolderListLayout/Author";
+import { Demo } from "®/config/demo";
 
 const FeedCard: React.FC<{ feed: FeedsType }> = ({ feed }) => {
   return (
@@ -22,7 +23,7 @@ const FeedCard: React.FC<{ feed: FeedsType }> = ({ feed }) => {
       {/* Flex container for author info, blog title, and icons */}
       <Flex gap="gap-2" m="mx-2">
         {/* Author Avatar */}
-        <Author author={authorUser} authordetails={authorDetails} />
+        <Author avatar={Demo.user.avatar} author={Demo.user} />
         {/* Link to the blog post with title and metadata */}
         <Flex display="flex-col w-full">
           <Link href={feed.href} passHref>
@@ -57,16 +58,3 @@ const FeedCard: React.FC<{ feed: FeedsType }> = ({ feed }) => {
 };
 
 export default FeedCard;
-
-const authorUser = {
-  img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png"
-};
-const authorDetails = {
-  coverimg: "/images/lyra.png",
-  img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png",
-  name: "Rock Star",
-  username: "rockstar",
-  post: 10,
-  followers: 100,
-  following: 0,
-};

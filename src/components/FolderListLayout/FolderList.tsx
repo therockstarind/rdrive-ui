@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { getPreviewType } from "®/utils/getPreviewType";
 import { Flex, Grid, Text } from "®rdrive/ui";
 import Author from "./Author";
+import { Demo } from "®/config/demo";
 
 type ListItem = {
   href: string;
@@ -58,22 +59,6 @@ const List: ListItem[] = [
   },
 ];
 
-const authorUser = {
-  img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png",
-  name: "Rock Star",
-  description: "2 weeks",
-};
-const authorDetails = {
-  coverimg: "/images/lyra.png",
-  img: "https://cdn3d.iconscout.com/3d/premium/thumb/boy-7215504-5873316.png",
-  name: "Rock Star",
-  username: "rockstar",
-  post: 10,
-  followers: 100,
-  following: 0,
-};
-
-
 const FolderList = () => {
   const [open, setOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<ListItem | null>(null);
@@ -98,7 +83,7 @@ return (
       </Flex>
       <Grid className="border border-border rounded-md">
         <Flex color="bg-default/10 dark:bg-default/30" border="border-b border-border" justify="justify-between" p="px-2 p-1" align="items-center">
-            <Author author={authorUser} authordetails={authorDetails} />
+            <Author author={Demo.user} />
             <Text size="text-sm" color="text-muted-foreground">{List.length} items</Text>
           </Flex>
         <CommandList className="h-full max-h-60 sm:max-h-64 md:max-h-80 lg:max-h-92 pr-1">

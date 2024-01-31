@@ -5,15 +5,15 @@ import Link from "next/link";
 import React from "react";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { useMediaQuery } from "®/hooks/use-media-query";
-import { AuthorType, UserDetailsType, UserType } from "®/types";
+import { UserType } from "®/types";
 import { AspectRatio, Avatar, Drawer, DrawerContent, DrawerTrigger, Flex, Grid, HoverCard, HoverCardContent, HoverCardTrigger, Text } from "®rdrive/ui";
 
 const fallback = (str: string | undefined): string => {
   return str ? str.charAt(0).toUpperCase() : '';
 };
-const User: React.FC<{ user?: UserType }> = ({ user }) => (
+const User: React.FC<{ user?: UserType; }> = ({ user }) => (
   <Flex gap="gap-2">
-    <Avatar radius="full" src={user?.img || ''} alt={user?.name} fallback={fallback(user?.name)} />
+    <Avatar radius="full" src={user?.avatar || ''} alt={user?.name} fallback={fallback(user?.name)} />
     <Grid>
       <Text as="h1" font="font-bold" display="flex" align="items-center" gap="gap-0.5">
         {user?.name}
@@ -26,7 +26,8 @@ const User: React.FC<{ user?: UserType }> = ({ user }) => (
   </Flex>
 );
 
-const UserDetails: React.FC<{ user?: UserDetailsType }> = ({ user }) => (
+
+const UserDetails: React.FC<{ user?: UserType }> = ({ user }) => (
   <Flex display="flex-col" gap="gap-3">
     <Flex className="relative">
       <AspectRatio ratio={16 / 9} className="rounded-b-[100px] rounded-t-xl sm:rounded-md overflow-hidden opacity-90">
@@ -34,7 +35,7 @@ const UserDetails: React.FC<{ user?: UserDetailsType }> = ({ user }) => (
       </AspectRatio>
       <Link href={`/${user?.username}` || ''} passHref>
       <Avatar
-        src={user?.img || ''}
+        src={user?.avatar || ''}
         fallback={fallback(user?.name)}
         className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rounded-full w-32 h-32 text-3xl"
       />
@@ -64,22 +65,27 @@ const UserDetails: React.FC<{ user?: UserDetailsType }> = ({ user }) => (
           </Button> 
       ))}
     </Flex>
+    <Flex/>
+    {/* For non Follow user , the button should be clickable and take to follow or unfollow the user and for it self it shloud show view profile or maybe edit */}
+    <Button radius="full" variant="light" className="mx-4 border border-border bg-default/20 dark:bg-default/40">
+                    Follow
+        </Button> 
         <Flex />
   </Flex>
 );
 
-const Author: React.FC<AuthorType> = ({ author, authordetails }) => {
+const Author: React.FC<UserType & { avatar?: string }> = ({ author, avatar }) => {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
-
+    const userProps = avatar ? { avatar } : author;
   if (isDesktop) {
     return (
         <HoverCard open={open} onOpenChange={setOpen}>
             <HoverCardTrigger className="cursor-pointer">
-                <User user={author}/>
+                <User user={userProps}/>
             </HoverCardTrigger>
             <HoverCardContent className="p-2 w-80" align="start" sideOffset={8}>
-                <UserDetails user={authordetails} />
+                <UserDetails user={author} />
             </HoverCardContent>
         </HoverCard>
     )
@@ -88,11 +94,11 @@ const Author: React.FC<AuthorType> = ({ author, authordetails }) => {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger>
-          <User user={author} />
+          <User user={userProps} />
       </DrawerTrigger>
       <DrawerContent>
         <div className="p-1">
-        <UserDetails user={authordetails} />
+        <UserDetails user={author} />
         </div>
       </DrawerContent>
     </Drawer>
