@@ -7,15 +7,14 @@ import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
 import * as React from "react"
 import { Dispatch, SetStateAction } from "react"
+import { FaBrush } from "react-icons/fa"
 import { FiPlus } from "react-icons/fi"
-import { IoMdBook } from "react-icons/io"
 import { RiComputerLine } from "react-icons/ri"
+import { VscBook } from "react-icons/vsc"
 import { Demo } from "®/config/demo"
 import { linksConfig } from "®/config/links"
 import { useMediaQuery } from "®/hooks/use-media-query"
-import { Button } from "®/rdrive/ui"
-import { Dialog, DialogContent } from "®ui/dialog"
-import { Drawer, DrawerContent } from "®ui/drawer"
+import { Button, Dialog, DialogContent, Drawer, DrawerContent } from "®/rdrive/ui"
 
 
 export default function SearchBar({
@@ -99,9 +98,9 @@ const placeholder: Record<string, string> = {
   }
 
   return (
-    <div className="vercel">
     <Command
     ref={ref}
+    className="vercel"
         onKeyDown={(e: React.KeyboardEvent) => {
           if (e.key === 'Enter') {
             bounce()
@@ -147,7 +146,6 @@ const placeholder: Record<string, string> = {
     </Command.List>
     <Footer setOpen={setOpen} />
     </Command>
-    </div>
   )
 }
 
@@ -157,13 +155,13 @@ function Home({ runCommand, Theme, Post }: {runCommand: any, Theme: Function, Po
       <>
       <Command.Group heading="Posts">
         <Command.Item onSelect={() => {Post()}}>
-          <IoMdBook size={24} /> Search Posts...
+          <VscBook size={24} /> Search Posts... <Shortcut>P</Shortcut>
         </Command.Item>
         <Command.Item>
            <FiPlus size={24} /> Create New Post..
         </Command.Item>
       </Command.Group>
-        <Command.Group heading="Navigate to">
+        <Command.Group heading="Navigation">
         {linksConfig.searchList.map((links) => ( 
     <Command.Item onSelect={() => runCommand(() => router.push(`${links.href}`))}> 
       <div className="text-[24px]">{links.icon && <links.icon/>}</div>
@@ -172,14 +170,13 @@ function Home({ runCommand, Theme, Post }: {runCommand: any, Theme: Function, Po
                       <div className="flex-1 line-clamp-1">{links.title}</div>
                       <div className="text-xs text-muted-foreground line-clamp-1">{links.description}</div>
                     </div>
-                    <Shortcut>{links.title.charAt(0)}</Shortcut>
                 </div>
     </Command.Item>
           ))}
         </Command.Group>
         <Command.Group heading="General">
         <Command.Item onSelect={() => {Theme()}}>
-          <IoMdBook size={24} /> Change Theme...
+          <FaBrush size={24} /> Change Theme... <Shortcut>T</Shortcut>
         </Command.Item>
       </Command.Group>
       </>
@@ -191,8 +188,8 @@ function Post({ runCommand }: {runCommand: any}) {
       <>
         {Demo.post.map((post) => ( 
       <Command.Item onSelect={() => runCommand(() => router.push(`${post.href}`))}> 
-                {post.title}
-    </Command.Item>
+          <VscBook size={24} /> {post.title}
+      </Command.Item>
           ))}
       </>
   )
