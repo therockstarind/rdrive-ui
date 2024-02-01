@@ -153,16 +153,13 @@
 .vercel {
   [cmdk-root] {
     width: 100%;
-    /* padding: 8px; */
     background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
     font-family: var(--font-sans);
-    /* border: 1px solid var(--gray6);
-    box-shadow: var(--cmdk-shadow); */
+    border: 1px solid var(--gray6);
     transition: transform 100ms ease;
     outline: none;
-
     .dark & {
       background: rgb(0, 0, 0);
     }
@@ -178,7 +175,6 @@
     background: var(--bg);
     color: var(--gray12);
     border-bottom: 1px solid var(--gray6);
-    /* margin-bottom: 16px; */
     border-radius: 0;
 
     &::placeholder {

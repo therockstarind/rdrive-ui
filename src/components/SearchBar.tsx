@@ -44,7 +44,7 @@ export default function SearchBar({
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl gap-0 p-0">
+        <DialogContent className="max-w-2xl gap-0 border-none bg-transparent p-0">
           <Search runCommand={runCommand} setOpen={setOpen} />
         </DialogContent>
       </Dialog>
@@ -53,10 +53,8 @@ export default function SearchBar({
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerContent showDiv={false}>
-        <div className="mt-1">
-          <Search runCommand={runCommand} setOpen={setOpen} />
-        </div>
+      <DrawerContent showDiv={false} className="max-h-[60dvh] border-none">
+        <Search runCommand={runCommand} setOpen={setOpen} />
       </DrawerContent>
     </Drawer>
   )
@@ -69,7 +67,6 @@ function Search({ runCommand, setOpen }: { runCommand: any; setOpen: any }) {
   const [pages, setPages] = React.useState<string[]>(['Home'])
   const activePage = pages[pages.length - 1]
   const isHome = activePage === 'Home'
-
   const popPage = React.useCallback(() => {
     setPages((pages) => {
       const x = [...pages]
@@ -110,63 +107,64 @@ function Search({ runCommand, setOpen }: { runCommand: any; setOpen: any }) {
   }
 
   return (
-    <Command
-      ref={ref}
-      className="vercel"
-      onKeyDown={(e: React.KeyboardEvent) => {
-        if (e.key === 'Enter') {
-          bounce()
-        }
+    <div className="vercel">
+      <Command
+        ref={ref}
+        onKeyDown={(e: React.KeyboardEvent) => {
+          if (e.key === 'Enter') {
+            bounce()
+          }
 
-        if (isHome || inputValue.length) {
-          return
-        }
+          if (isHome || inputValue.length) {
+            return
+          }
 
-        if (e.key === 'Backspace') {
-          e.preventDefault()
-          popPage()
-          bounce()
-        }
-      }}
-    >
-      <div className="mx-2 mt-1">
-        {pages.map((p) => (
-          <div
-            key={p}
-            cmdk-vercel-badge=""
-            onClick={() => {
-              if (p !== activePage) {
-                popPage()
-                bounce()
-              }
-            }}
-            className="cursor-pointer"
-          >
-            {p}
-          </div>
-        ))}
-      </div>
-      <Command.Input
-        autoFocus
-        placeholder={placeholder[activePage]}
-        onValueChange={(value) => {
-          setInputValue(value)
+          if (e.key === 'Backspace') {
+            e.preventDefault()
+            popPage()
+            bounce()
+          }
         }}
-      />
-      <Command.List>
-        <Command.Empty>No results found.</Command.Empty>
-        {activePage === 'Home' && (
-          <Home
-            Theme={() => setPages([...pages, 'Theme'])}
-            Post={() => setPages([...pages, 'Posts'])}
-            runCommand={runCommand}
-          />
-        )}
-        {activePage === 'Theme' && <Theme runCommand={runCommand} />}
-        {activePage === 'Posts' && <Post runCommand={runCommand} />}
-      </Command.List>
-      <Footer setOpen={setOpen} />
-    </Command>
+      >
+        <div className="mx-2 mt-1">
+          {pages.map((p) => (
+            <div
+              key={p}
+              cmdk-vercel-badge=""
+              onClick={() => {
+                if (p !== activePage) {
+                  popPage()
+                  bounce()
+                }
+              }}
+              className="cursor-pointer"
+            >
+              {p}
+            </div>
+          ))}
+        </div>
+        <Command.Input
+          autoFocus
+          placeholder={placeholder[activePage]}
+          onValueChange={(value) => {
+            setInputValue(value)
+          }}
+        />
+        <Command.List>
+          <Command.Empty>No results found.</Command.Empty>
+          {activePage === 'Home' && (
+            <Home
+              Theme={() => setPages([...pages, 'Theme'])}
+              Post={() => setPages([...pages, 'Posts'])}
+              runCommand={runCommand}
+            />
+          )}
+          {activePage === 'Theme' && <Theme runCommand={runCommand} />}
+          {activePage === 'Posts' && <Post runCommand={runCommand} />}
+        </Command.List>
+        <Footer setOpen={setOpen} />
+      </Command>
+    </div>
   )
 }
 
