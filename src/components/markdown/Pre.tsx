@@ -12,14 +12,14 @@ const Pre = ({ children }: { children?: ReactElement | undefined }) => {
   }
 
   return (
-    <main className="border border-border !rounded-md">
-      <div className="flex items-center justify-between px-4 py-2 bg-default/10 dark:bg-default/30">
+    <main className="!rounded-md border border-border">
+      <div className="flex items-center justify-between bg-default/10 px-4 py-2 dark:bg-default/30">
         {getClassName() && (
           <div className="flex items-center">
             <CodeTitle lang={getClassName()} />
           </div>
         )}
-        <div className="flex items-center flex-grow justify-end">
+        <div className="flex flex-grow items-center justify-end">
           <Snippet
             size="sm"
             hideSymbol

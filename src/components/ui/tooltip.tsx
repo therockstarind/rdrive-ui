@@ -42,7 +42,7 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => (
         // arrow color
         'before:bg-[hsl(var(--ring))]',
       ],
-      content: ['px-2', 'text-white bg-[hsl(var(--ring))]'],
+      content: ['px-2', 'bg-[hsl(var(--ring))] text-white'],
     }}
   >
     {children}

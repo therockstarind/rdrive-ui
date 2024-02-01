@@ -40,7 +40,7 @@ export function ThemeSwitcher() {
         ThemeChange(selectedTheme as string)
       }
       classNames={{
-        cursor: 'bg-default/15 dark:bg-default/50 shadow-none',
+        cursor: 'bg-default/15 shadow-none dark:bg-default/50',
         tabContent:
           'group-data-[selected=true]:text-none text-black dark:text-white',
       }}

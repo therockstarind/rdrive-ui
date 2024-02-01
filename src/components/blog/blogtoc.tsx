@@ -42,12 +42,12 @@ const TocList: FC<TocListProps> = ({ toc, onNavigate }) => {
               onSelect={() => onNavigate(item.id)}
               className={`${
                 item.level === 1
-                  ? 'font-bold text-lg'
+                  ? 'text-lg font-bold'
                   : item.level === 2
-                  ? 'pl-6'
-                  : item.level === 3
-                  ? 'pl-8 line-clamp-1'
-                  : 'pl-10'
+                    ? 'pl-6'
+                    : item.level === 3
+                      ? 'line-clamp-1 pl-8'
+                      : 'pl-10'
               }`}
             >
               <div className="line-clamp-1">{item.title}</div>
@@ -88,7 +88,7 @@ const BlogToc: FC<TocProps> = ({ toc }) => {
           </Button>
         </DialogTrigger>
       </Tooltip>
-      <DialogContent className="max-w-2xl p-0 gap-0 translate-y-0 bottom-0 sm:translate-y-[-50%] sm:bottom-none">
+      <DialogContent className="sm:bottom-none bottom-0 max-w-2xl translate-y-0 gap-0 p-0 sm:translate-y-[-50%]">
         <DialogHeader />
         <TocList toc={toc} onNavigate={onNavigate} />
       </DialogContent>

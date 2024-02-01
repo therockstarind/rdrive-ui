@@ -106,8 +106,8 @@ export default function CodeTitle({ lang }: Props) {
   }
   return (
     <div className="flex items-center gap-2">
-      <Icon className="w-5 h-5" />
-      <p className="!my-0 font-[500] text-sm">{Title}</p>
+      <Icon className="h-5 w-5" />
+      <p className="!my-0 text-sm font-[500]">{Title}</p>
     </div>
   )
 }

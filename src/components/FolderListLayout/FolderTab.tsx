@@ -33,16 +33,16 @@ const FolderTab = () => {
           >
             <Tabs.List size="2" className="!shadow-none">
               <Tabs.Trigger value="readme">
-                <BookOpen className="w-5 h-5 mr-2" /> README{' '}
+                <BookOpen className="mr-2 h-5 w-5" /> README{' '}
               </Tabs.Trigger>
               <Tabs.Trigger value="comments">
-                <MessageSquareText className="w-5 h-5 mr-2" /> Comments
+                <MessageSquareText className="mr-2 h-5 w-5" /> Comments
               </Tabs.Trigger>
             </Tabs.List>
             {readmeTab === 'readme' && <Toc toc={toc} />}
           </Flex>
         </div>
-        <Grid m="mx-4 md:mx-6 my-4">
+        <Grid m="mx-4 my-4 md:mx-6">
           <Tabs.Content value="readme">
             <Markdown src="/sample.md" TOCGenerated={setToc} />
           </Tabs.Content>

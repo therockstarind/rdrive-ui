@@ -21,31 +21,31 @@ const FeedCard: React.FC<{ feed: FeedsType }> = ({ feed }) => {
           height="640"
           isZoomed
         />
-        <div className="absolute z-10 bottom-2 right-2 rounded-sm bg-black text-white text-sm px-1">
+        <div className="absolute bottom-2 right-2 z-10 rounded-sm bg-black px-1 text-sm text-white">
           {feed.time}
         </div>
       </Link>
 
       {/* Flex container for author info, blog title, and icons */}
-      <div className="flex gap-2 mx-2">
+      <div className="mx-2 flex gap-2">
         {/* Author Avatar */}
         <Author avatar={Demo.user.avatar} author={Demo.user} />
         {/* Link to the blog post with title and metadata */}
-        <div className="flex flex-col w-full">
+        <div className="flex w-full flex-col">
           <Link href={feed.href} passHref>
-            <h1 className="font-bold leading-tight line-clamp-2 text-start">
+            <h1 className="line-clamp-2 text-start font-bold leading-tight">
               {feed.title}
             </h1>
-            <div className="flex flex-wrap text-nowrap gap-x-2 mt-0.5">
-              <p className="text-muted-foreground text-xs">
+            <div className="mt-0.5 flex flex-wrap gap-x-2 text-nowrap">
+              <p className="text-xs text-muted-foreground">
                 {Counts(feed.views)} views
               </p>
-              <p className="text-muted-foreground text-xs">•</p>
-              <p className="text-muted-foreground text-xs">
+              <p className="text-xs text-muted-foreground">•</p>
+              <p className="text-xs text-muted-foreground">
                 {Counts(feed.likes)} likes
               </p>
-              <p className="text-muted-foreground text-xs">•</p>
-              <p className="text-muted-foreground text-xs">{feed.date} ago</p>
+              <p className="text-xs text-muted-foreground">•</p>
+              <p className="text-xs text-muted-foreground">{feed.date} ago</p>
             </div>
           </Link>
         </div>

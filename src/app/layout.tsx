@@ -63,7 +63,7 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          `min-h-dvh bg-background antialiased element ${fontSans.className}`
+          `element min-h-dvh bg-background antialiased ${fontSans.className}`
         )}
       >
         <Providers>

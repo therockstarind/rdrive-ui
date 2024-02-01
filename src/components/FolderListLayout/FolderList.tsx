@@ -84,17 +84,17 @@ const FolderList = () => {
 
   return (
     <Command>
-      <Flex justify="justify-end" m="mt-1 mb-4 mx-2" align="items-center">
+      <Flex justify="justify-end" m="mx-2 mb-4 mt-1" align="items-center">
         <Flex className="GoToFile">
           <CommandInput placeholder="Go to file" className="h-8" />
         </Flex>
       </Flex>
-      <Grid className="border border-border rounded-md">
+      <Grid className="rounded-md border border-border">
         <Flex
           color="bg-default/10 dark:bg-default/30"
           border="border-b border-border"
           justify="justify-between"
-          p="px-2 p-1"
+          p="p-1 px-2"
           align="items-center"
         >
           <Author author={Demo.user} />
@@ -102,7 +102,7 @@ const FolderList = () => {
             {List.length} items
           </Text>
         </Flex>
-        <CommandList className="h-full max-h-60 sm:max-h-64 md:max-h-80 lg:max-h-92 pr-1">
+        <CommandList className="lg:max-h-92 h-full max-h-60 pr-1 sm:max-h-64 md:max-h-80">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup>
             {List.map((list, index) => (
@@ -113,20 +113,20 @@ const FolderList = () => {
                       <FileIcon name={list.href} />
                     </Flex>
                     <Flex
-                      display="flex-col sm:flex-row flex-1"
+                      display="flex-1 flex-col sm:flex-row"
                       gap="sm:gap-2"
                       align="sm:items-center"
                     >
                       <Text
                         as="h1"
                         display="flex-1"
-                        size="text-base line-clamp-1"
+                        size="line-clamp-1 text-base"
                       >
                         {list.title}
                       </Text>
                       <Flex
                         gap="gap-2 sm:gap-6"
-                        size="sm:font-mono text-xs text-nowrap text-muted-foreground line-clamp-1"
+                        size="line-clamp-1 text-nowrap text-xs text-muted-foreground sm:font-mono"
                       >
                         <Text>{list.size}</Text>
                         <Text>•</Text>
@@ -135,7 +135,7 @@ const FolderList = () => {
                     </Flex>
                     <Text display="flex" gap="gap-1" align="items-center">
                       {list.download}
-                      <ArrowDownToLine className="w-4 h-4" />
+                      <ArrowDownToLine className="h-4 w-4" />
                     </Text>
                   </Flex>
                 </CommandItem>

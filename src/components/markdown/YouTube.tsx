@@ -4,10 +4,10 @@ import { Text } from '®rdrive/ui'
 
 export default function YouTube({ id, title }: { id: string; title?: string }) {
   return (
-    <main className="border border-border p-1 rounded-md">
-      <div className="max-w-full overflow-hidden relative pb-[56.25%] h-0 rounded-md">
+    <main className="rounded-md border border-border p-1">
+      <div className="relative h-0 max-w-full overflow-hidden rounded-md pb-[56.25%]">
         <iframe
-          className="absolute top-0 left-0 w-full h-full"
+          className="absolute left-0 top-0 h-full w-full"
           src={`https://www.youtube.com/embed/${id}`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

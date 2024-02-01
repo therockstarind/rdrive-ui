@@ -53,15 +53,15 @@ const FolderGridLayout = () => {
             onPress={() => router.push('/Xiaomi-12-Pro-(Dimensity-Edition)')}
             aria-label={card.title}
           >
-            <div className="h-40 flex justify-center items-center mb-2">
+            <div className="mb-2 flex h-40 items-center justify-center">
               <Image
                 src={card.img || siteConfig.fallback}
                 alt={card.title}
                 isBlurred
-                className="mx-auto my-10 h-40 object-center object-contain rounded-none"
+                className="mx-auto my-10 h-40 rounded-none object-contain object-center"
               />
             </div>
-            <h1 className="text-center line-clamp-1">{card.title}</h1>
+            <h1 className="line-clamp-1 text-center">{card.title}</h1>
           </Card>
         </motion.div>
       ))}

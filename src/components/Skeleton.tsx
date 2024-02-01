@@ -15,7 +15,7 @@ export const MarkdownSkeleton = () => {
   return (
     <Grid gap="4" pt="4" aria-busy="true">
       {/* Simulate a large H1 Title */}
-      <Skeleton className="w-full h-12 rounded-md" />
+      <Skeleton className="h-12 w-full rounded-md" />
 
       {/* Simulate Paragraphs */}
       {[...Array(randomCount(2, 4))].map((_, index) => (
@@ -29,7 +29,7 @@ export const MarkdownSkeleton = () => {
       <Skeleton className="h-10 rounded-md" />
 
       {/* Simulate an Image */}
-      <Skeleton className="w-full h-48 rounded-md" />
+      <Skeleton className="h-48 w-full rounded-md" />
 
       {/* Simulate a Table */}
       {[...Array(randomCount(2, 3))].map((_, index) => (

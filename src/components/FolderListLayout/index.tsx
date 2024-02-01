@@ -15,7 +15,7 @@ const FolderListLayout = () => {
   return (
     <AnimatedDiv variants={FadeContainer}>
       {/* Header & LikeShare */}
-      <Flex display="flex-col hidden sm:flex" m="mb-4">
+      <Flex display="hidden flex-col sm:flex" m="mb-4">
         <Header />
         <Separator size="4" />
       </Flex>
@@ -33,7 +33,7 @@ const FolderListLayout = () => {
         {/* List Image & Details */}
         <Flex size="md:w-1/4" display="flex-col" gap="gap-3">
           <ImageCard />
-          <Flex display="sm:hidden flex-col">
+          <Flex display="flex-col sm:hidden">
             <Header />
           </Flex>
           <Grid

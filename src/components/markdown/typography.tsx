@@ -12,7 +12,7 @@ export const H1 = ({
   return (
     <AnimatedHeading variants={fromLeftVariant}>
       <h1
-        className={cn('text-[2em] font-bold heading', className)}
+        className={cn('heading text-[2em] font-bold', className)}
         {...props}
       />
     </AnimatedHeading>
@@ -26,7 +26,7 @@ export const H2 = ({
   return (
     <AnimatedHeading variants={fromLeftVariant}>
       <h2
-        className={cn('text-[1.75em] font-bold heading', className)}
+        className={cn('heading text-[1.75em] font-bold', className)}
         {...props}
       />
     </AnimatedHeading>
@@ -40,7 +40,7 @@ export const H3 = ({
   return (
     <AnimatedHeading variants={fromLeftVariant}>
       <h3
-        className={cn('text-[1.5em] font-bold heading', className)}
+        className={cn('heading text-[1.5em] font-bold', className)}
         {...props}
       />
     </AnimatedHeading>
@@ -54,7 +54,7 @@ export const H4 = ({
   return (
     <AnimatedHeading variants={fromLeftVariant}>
       <h4
-        className={cn('text-[1.25em] font-bold heading', className)}
+        className={cn('heading text-[1.25em] font-bold', className)}
         {...props}
       />
     </AnimatedHeading>
@@ -67,7 +67,7 @@ export const H5 = ({
 }: React.HTMLAttributes<HTMLHeadingElement>) => {
   return (
     <h5
-      className={cn('text-[1.25em] font-bold heading', className)}
+      className={cn('heading text-[1.25em] font-bold', className)}
       {...props}
     />
   )
@@ -79,7 +79,7 @@ export const H6 = ({
 }: React.HTMLAttributes<HTMLHeadingElement>) => {
   return (
     <h6
-      className={cn('text-[1.25em] font-bold heading', className)}
+      className={cn('heading text-[1.25em] font-bold', className)}
       {...props}
     />
   )
@@ -118,10 +118,10 @@ export const Blockquote = ({
   ...props
 }: React.HTMLAttributes<HTMLElement>) => {
   return (
-    <Card className={cn('p-1.5 bg-default/10 dark:bg-default/30', className)}>
+    <Card className={cn('bg-default/10 p-1.5 dark:bg-default/30', className)}>
       <blockquote
         className={cn(
-          'border-l-3 border-[hsl(var(--ring))] ml-1 pl-4 italic',
+          'ml-1 border-l-3 border-[hsl(var(--ring))] pl-4 italic',
           className
         )}
         {...props}
@@ -135,7 +135,7 @@ export const HR = ({
   ...props
 }: React.HTMLAttributes<HTMLHRElement>) => {
   return (
-    <hr className={cn('my-2 sm:my-6 border-border', className)} {...props} />
+    <hr className={cn('my-2 border-border sm:my-6', className)} {...props} />
   )
 }
 
@@ -146,7 +146,7 @@ export const A = ({
   return (
     <Link
       className={cn(
-        'underline decoration-wavy decoration-[hsl(var(--ring))] underline-offset-4',
+        'underline decoration-[hsl(var(--ring))] decoration-wavy underline-offset-4',
         className
       )}
       {...props}

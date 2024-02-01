@@ -30,11 +30,11 @@ const User: React.FC<{ user?: UserType }> = ({ user }) => (
       fallback={fallback(user?.name)}
     />
     <div>
-      <h1 className="font-bold flex items-center gap-0.5">
+      <h1 className="flex items-center gap-0.5 font-bold">
         {user?.name}
         {user?.name && <RiVerifiedBadgeFill className="text-blue-500" />}
       </h1>
-      <p className="text-xs text-start tracking-tighter text-muted-foreground">
+      <p className="text-start text-xs tracking-tighter text-muted-foreground">
         {user?.description}
       </p>
     </div>
@@ -43,10 +43,10 @@ const User: React.FC<{ user?: UserType }> = ({ user }) => (
 
 const UserDetails: React.FC<{ user?: UserType }> = ({ user }) => (
   <div className="flex flex-col gap-3">
-    <div className="flex relative">
+    <div className="relative flex">
       <AspectRatio
         ratio={16 / 9}
-        className="rounded-b-[100px] rounded-t-xl sm:rounded-md overflow-hidden opacity-90"
+        className="overflow-hidden rounded-b-[100px] rounded-t-xl opacity-90 sm:rounded-md"
       >
         <Image
           src={user?.coverimg}
@@ -60,29 +60,29 @@ const UserDetails: React.FC<{ user?: UserType }> = ({ user }) => (
         <Avatar
           src={user?.avatar || ''}
           fallback={fallback(user?.name)}
-          className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rounded-full w-32 h-32 text-3xl"
+          className="absolute -bottom-10 left-1/2 h-32 w-32 -translate-x-1/2 transform rounded-full text-3xl"
         />
       </Link>
     </div>
-    <div className="flex flex-col items-center mt-9">
+    <div className="mt-9 flex flex-col items-center">
       <Link href={`/${user?.username}` || ''} passHref>
-        <h1 className="text-2xl font-bold flex items-center gap-2">
+        <h1 className="flex items-center gap-2 text-2xl font-bold">
           {user?.name}
           <RiVerifiedBadgeFill className="text-blue-500" size={20} />
         </h1>
       </Link>
-      <p className="text-xs sm:text-sm text-muted-foreground">
+      <p className="text-xs text-muted-foreground sm:text-sm">
         @{user?.username}
       </p>
     </div>
     {/* Counts */}
-    <div className="flex justify-around items-center">
+    <div className="flex items-center justify-around">
       {['post', 'followers', 'following'].map((key) => (
         <Button
           radius="sm"
           variant="light"
           key={key}
-          className="flex flex-col border border-border bg-default/20 dark:bg-default/40 h-auto gap-0 p-0 py-1"
+          className="flex h-auto flex-col gap-0 border border-border bg-default/20 p-0 py-1 dark:bg-default/40"
         >
           <h1 className="text-2xl font-bold">{user?.[key]}</h1>
           <p className="text-xs text-muted-foreground">
@@ -117,7 +117,7 @@ const Author: React.FC<UserType & { avatar?: string }> = ({
         <HoverCardTrigger className="cursor-pointer">
           <User user={userProps} />
         </HoverCardTrigger>
-        <HoverCardContent className="p-2 w-80" align="start" sideOffset={8}>
+        <HoverCardContent className="w-80 p-2" align="start" sideOffset={8}>
           <UserDetails user={author} />
         </HoverCardContent>
       </HoverCard>

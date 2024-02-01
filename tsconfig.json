@@ -15,8 +15,8 @@
     "incremental": true,
     "plugins": [
       {
-        "name": "next"
-      }
+        "name": "next",
+      },
     ],
     "paths": {
       "®/*": ["./src/*"],
@@ -27,15 +27,15 @@
       "®lib/*": ["./src/lib/*"],
       "®utils/*": ["./src/utils/*"],
       "®styles/*": ["./src/styles/*"],
-      "®images/*": ["./public/images/*"]
-    }
+      "®images/*": ["./public/images/*"],
+    },
   },
   "include": [
     "video.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }

@@ -38,7 +38,7 @@ const User: React.FC<{ user?: UserType; post?: FeedsType[] }> = ({
         <div className="relative">
           <AspectRatio
             ratio={16 / 9}
-            className="rounded-b-[100px] sm:rounded-md overflow-hidden opacity-90"
+            className="overflow-hidden rounded-b-[100px] opacity-90 sm:rounded-md"
           >
             <Image
               src={user?.coverimg}
@@ -51,7 +51,7 @@ const User: React.FC<{ user?: UserType; post?: FeedsType[] }> = ({
           <Avatar
             src={user?.avatar || ''}
             fallback={fallback(user?.name)}
-            className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rounded-full w-32 h-32 text-3xl"
+            className="absolute -bottom-10 left-1/2 h-32 w-32 -translate-x-1/2 transform rounded-full text-3xl"
           />
         </div>
         <Flex display="flex-col" align="items-center" m="mt-9">
@@ -122,16 +122,16 @@ const User: React.FC<{ user?: UserType; post?: FeedsType[] }> = ({
       <Flex className="md:w-2/3" display="flex-col" gap="gap-3" p="p-1 sm:p-0">
         <Command>
           <Flex
-            border="border border-border rounded-full"
+            border="rounded-full border border-border"
             display="sticky top-0.5 z-50 flex-col"
             color="bg-background/70 backdrop-blur-lg"
-            m="mx-4 mt-1 mb-3"
+            m="mx-4 mb-3 mt-1"
           >
             <CommandInput placeholder="Search Post" />
           </Flex>
           <CommandEmpty>No result found</CommandEmpty>
           <CommandGroup>
-            <Flex className="grid sm:grid-cols-2 gap-2">
+            <Flex className="grid gap-2 sm:grid-cols-2">
               {post?.map((feed) => (
                 <CommandItem
                   key={feed.title}

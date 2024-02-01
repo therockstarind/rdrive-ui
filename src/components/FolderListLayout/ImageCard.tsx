@@ -10,14 +10,14 @@ const ImageCard = () => {
       isHoverable
       isPressable
     >
-      <div className="h-40 flex justify-center items-center">
+      <div className="flex h-40 items-center justify-center">
         <Image
           src={
             'https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1666344481.20013313.png' ||
             siteConfig.fallback
           }
           alt="Xiaomi-12-Pro-(Dimensity-Edition)"
-          className="mx-auto my-10 h-48 w-48 object-center object-contain"
+          className="mx-auto my-10 h-48 w-48 object-contain object-center"
           isBlurred
         />
       </div>

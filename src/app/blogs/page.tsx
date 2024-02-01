@@ -15,7 +15,7 @@ export default function Blog() {
     <Page>
       <AnimatedDiv
         variants={FadeContainer}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"
+        className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3"
       >
         {Demo.post.map((feed) => (
           <AnimatedVariant

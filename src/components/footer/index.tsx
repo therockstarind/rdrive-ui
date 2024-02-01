@@ -20,16 +20,16 @@ const Footer = () => {
     e.preventDefault()
   })
   return (
-    <footer className="w-full border-t border-border p-4 md:p-2 text-sm">
-      <main className="w-full max-w-7xl mx-auto md:space-y-8 my-4 mb-20 md:mb-6 space-y-4">
-        <ul className="grid grid-cols-2 gap-2 md:flex justify-between">
+    <footer className="w-full border-t border-border p-4 text-sm md:p-2">
+      <main className="mx-auto my-4 mb-20 w-full max-w-7xl space-y-4 md:mb-6 md:space-y-8">
+        <ul className="grid grid-cols-2 justify-between gap-2 md:flex">
           <li className="hidden md:flex">
             <SocialFooter />
           </li>
           <FooterLinks />
         </ul>
 
-        <div className="justify-between items-center hidden md:flex">
+        <div className="hidden items-center justify-between md:flex">
           <Link href="/" passHref className="flex items-center gap-1">
             <Image
               src={siteConfig.logo}
@@ -43,15 +43,15 @@ const Footer = () => {
           <div className="flex items-center">
             <Button
               size="sm"
-              className="overflow-hidden rounded-full LinkText gap-2 hidden lg:flex"
+              className="LinkText hidden gap-2 overflow-hidden rounded-full lg:flex"
               variant="light"
               onPress={openSearch}
             >
               Command Menu
-              <Kbd className="bg-background border border-border shadow-none text-xs">
+              <Kbd className="border border-border bg-background text-xs shadow-none">
                 {os === 'windows' ? 'Ctrl' : '⌘'}
               </Kbd>
-              <Kbd className="bg-background border border-border shadow-none text-xs">
+              <Kbd className="border border-border bg-background text-xs shadow-none">
                 K
               </Kbd>
             </Button>
@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="justify-between items-center flex md:hidden">
+        <div className="flex items-center justify-between md:hidden">
           <SocialFooter />
           <ThemeSwitcher />
         </div>

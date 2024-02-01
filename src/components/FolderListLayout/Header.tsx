@@ -24,7 +24,7 @@ const Header = () => {
             as="h1"
             size="text-xl sm:text-3xl"
             align="text-center"
-            font="font-bold line-clamp-1"
+            font="line-clamp-1 font-bold"
           >
             {title}
           </Text>

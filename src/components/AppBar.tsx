@@ -33,7 +33,7 @@ const BarButton: React.FC<ButtonProps> = ({
       radius="full"
       onPress={onPress}
       className={cn(
-        'bg-default/20 dark:bg-default/40 hover:bg-default/40 dark:hover:bg-default/70 border border-border',
+        'border border-border bg-default/20 hover:bg-default/40 dark:bg-default/40 dark:hover:bg-default/70',
         className
       )}
     >
@@ -47,8 +47,8 @@ const AppBar = () => {
   const router = useRouter()
 
   return (
-    <nav className="fixed bottom-3 sm:bottom-1.5  justify-center mx-auto max-w-auto z-50">
-      <div className="flex gap-2 border border-border p-1.5 rounded-full bg-white/70 dark:bg-black/70 backdrop-blur-md items-center">
+    <nav className="max-w-auto fixed bottom-3  z-50 mx-auto justify-center sm:bottom-1.5">
+      <div className="flex items-center gap-2 rounded-full border border-border bg-white/70 p-1.5 backdrop-blur-md dark:bg-black/70">
         <BarButton
           tooltip="Android"
           children={<BsAndroid2 />}

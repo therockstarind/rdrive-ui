@@ -31,7 +31,7 @@ const Toc: React.FC<TocItem> = ({ toc }) => {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <List className="h-5 w-5 LinkText" />
+        <List className="LinkText h-5 w-5" />
       </PopoverTrigger>
       <PopoverContent side="bottom" align="end" sideOffset={18} className="p-0">
         <Command>
@@ -47,10 +47,10 @@ const Toc: React.FC<TocItem> = ({ toc }) => {
                     item.level === 1
                       ? ''
                       : item.level === 2
-                      ? 'pl-6'
-                      : item.level === 3
-                      ? 'pl-8'
-                      : 'pl-10'
+                        ? 'pl-6'
+                        : item.level === 3
+                          ? 'pl-8'
+                          : 'pl-10'
                   }`}
                 >
                   <div className="line-clamp-1">{item.title}</div>

@@ -44,7 +44,7 @@ export default function SearchBar({
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl p-0 gap-0">
+        <DialogContent className="max-w-2xl gap-0 p-0">
           <Search runCommand={runCommand} setOpen={setOpen} />
         </DialogContent>
       </Dialog>
@@ -201,9 +201,9 @@ function Home({
           >
             <div className="text-[24px]">{links.icon && <links.icon />}</div>
             <div className="flex flex-1 items-center gap-2">
-              <div className="flex flex-col flex-1">
-                <div className="flex-1 line-clamp-1">{links.title}</div>
-                <div className="text-xs text-muted-foreground line-clamp-1">
+              <div className="flex flex-1 flex-col">
+                <div className="line-clamp-1 flex-1">{links.title}</div>
+                <div className="line-clamp-1 text-xs text-muted-foreground">
                   {links.description}
                 </div>
               </div>
@@ -265,7 +265,7 @@ function Shortcut({ children }: { children: React.ReactNode }) {
 }
 function Footer({ setOpen }: { setOpen: any }) {
   return (
-    <div className="border-t border-border flex justify-between items-center p-2 cursor-default">
+    <div className="flex cursor-default items-center justify-between border-t border-border p-2">
       <Tooltip content="ESC" placement="bottom">
         <Button
           variant="outline"
@@ -273,23 +273,23 @@ function Footer({ setOpen }: { setOpen: any }) {
           className="h-6 w-6"
           onClick={() => setOpen(false)}
         >
-          <ArrowUpLeftFromCircle className="w-3 h-3" />
+          <ArrowUpLeftFromCircle className="h-3 w-3" />
         </Button>
       </Tooltip>
-      <div className="flex gap-3 items-center">
+      <div className="flex items-center gap-3">
         <Tooltip content="UP" placement="bottom">
           <Button variant="outline" size="icon" className="h-6 w-6">
-            <ArrowUp className="w-4 h-4" />
+            <ArrowUp className="h-4 w-4" />
           </Button>
         </Tooltip>
         <Tooltip content="Down" placement="bottom">
           <Button variant="outline" size="icon" className="h-6 w-6">
-            <ArrowDown className="w-4 h-4" />
+            <ArrowDown className="h-4 w-4" />
           </Button>
         </Tooltip>
         <Tooltip content="Enter" placement="bottom">
           <Button variant="outline" size="icon" className="h-6 w-6">
-            <CornerDownLeft className="w-4 h-4" />
+            <CornerDownLeft className="h-4 w-4" />
           </Button>
         </Tooltip>
       </div>

@@ -29,7 +29,7 @@ export default function Login({
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-[425px] max-h-[80dvh] overflow-y-scroll">
+        <DialogContent className="max-h-[80dvh] overflow-y-scroll sm:max-w-[425px]">
           {content}
         </DialogContent>
       </Dialog>
@@ -39,7 +39,7 @@ export default function Login({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerContent>
-        <div className="p-4 overflow-y-scroll">{content}</div>
+        <div className="overflow-y-scroll p-4">{content}</div>
       </DrawerContent>
     </Drawer>
   )
@@ -58,7 +58,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSendOtp, className }) => {
       className={cn('grid items-start gap-4', className)}
       onSubmit={handleSubmit}
     >
-      <div className="flex flex-col justify-center mx-auto">
+      <div className="mx-auto flex flex-col justify-center">
         <Image
           src="/user/login.png"
           alt="Login"
@@ -86,7 +86,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSendOtp, className }) => {
 function OtpForm({ className }: React.ComponentProps<'form'>) {
   return (
     <form className={cn('grid items-start gap-4', className)}>
-      <div className="flex flex-col justify-center mx-auto">
+      <div className="mx-auto flex flex-col justify-center">
         <Image
           src="/user/otp.png"
           alt="OTP"
@@ -108,7 +108,7 @@ function OtpForm({ className }: React.ComponentProps<'form'>) {
       <Button radius="sm" color="primary">
         Verify OTP
       </Button>
-      <div className="flex flex-col justify-center items-center text-sm">
+      <div className="flex flex-col items-center justify-center text-sm">
         <p className="LinkText">Resend OTP</p>
         <p className="LinkText">Change phone number</p>
       </div>

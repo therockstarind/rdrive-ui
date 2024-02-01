@@ -323,16 +323,16 @@
 
 /* Our CSS */
 .LinkText {
-  @apply text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white;
+  @apply text-[#666] hover:text-black dark:text-[#888] dark:hover:text-white;
 }
 .FolderCardLayout {
-  @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3;
+  @apply grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
 }
 .FolderCard {
-  @apply w-full border border-border bg-transparent items-center p-4 lg:p-8 shadow-none;
+  @apply w-full items-center border border-border bg-transparent p-4 shadow-none lg:p-8;
 }
 .FolderImageCard {
-  @apply w-full border border-border bg-transparent items-center sm:p-6 shadow-none;
+  @apply w-full items-center border border-border bg-transparent shadow-none sm:p-6;
 }
 /* vaul shouldScaleBackground */
 .element {
@@ -351,7 +351,7 @@ a:focus-visible {
   outline-color: hsl(var(--ring)) !important;
 }
 .GoToFile {
-  @apply border border-border rounded-md max-w-36 sm:max-w-full focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 dark:focus-within:ring-offset-black;
+  @apply max-w-36 rounded-md border border-border focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 dark:focus-within:ring-offset-black sm:max-w-full;
 }
 
 * {
@@ -407,7 +407,7 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 }
 code[data-theme*=' '],
 code[data-theme*=' '] span {
-  @apply text-[var(--shiki-light)] bg-[var(--shiki-light-bg)] dark:text-[var(--shiki-dark)] dark:bg-[var(--shiki-dark-bg)];
+  @apply bg-[var(--shiki-light-bg)] text-[var(--shiki-light)] dark:bg-[var(--shiki-dark-bg)] dark:text-[var(--shiki-dark)];
 }
 
 .heading a {
@@ -428,7 +428,7 @@ figcaption {
   margin-bottom: 8px;
 }
 table {
-  @apply w-full my-6 border-collapse;
+  @apply my-6 w-full border-collapse;
 }
 
 thead {
@@ -436,7 +436,7 @@ thead {
 }
 
 th {
-  @apply px-4 py-2 border border-border text-[16px] font-semibold;
+  @apply border border-border px-4 py-2 text-[16px] font-semibold;
 }
 
 tbody tr:nth-child(odd) {
@@ -448,7 +448,7 @@ tbody tr:nth-child(even) {
 }
 
 td {
-  @apply px-4 py-2 border border-border text-[16px] text-center;
+  @apply border border-border px-4 py-2 text-center text-[16px];
 }
 
 .rt-ScrollAreaThumb {
@@ -456,7 +456,7 @@ td {
 }
 
 .rt-AvatarRoot:where(.rt-variant-soft) :where(.rt-AvatarFallback) {
-  @apply !bg-default/70 dark:!bg-default/70 !text-[hsl(var(--ring))];
+  @apply !bg-default/70 !text-[hsl(var(--ring))] dark:!bg-default/70;
 }
 
 @layer utilities {

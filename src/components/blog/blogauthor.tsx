@@ -16,7 +16,7 @@ const BlogAuthor: React.FC<BlogAuthorType> = ({ toc }) => {
   return (
     <Navbar shouldHideOnScroll isBordered classNames={{ wrapper: 'px-0' }}>
       <Author author={Demo.user} />
-      <div className="flex gap-2 items-center">
+      <div className="flex items-center gap-2">
         {toc}
         {/* This will only show when user login with it self */}
         <Tooltip content="Edit Post">

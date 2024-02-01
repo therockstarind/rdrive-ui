@@ -22,7 +22,7 @@ export function Share() {
           <Button
             size="sm"
             variant="light"
-            className="border border-border rounded-full"
+            className="rounded-full border border-border"
           >
             <FiShare size={20} /> Share
           </Button>
@@ -38,12 +38,12 @@ export function Share() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button variant="light" className="border border-border rounded-full">
+        <Button variant="light" className="rounded-full border border-border">
           <FiShare size={20} /> <span className="text-xs">Share</span>
         </Button>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="mt-4 mx-1">
+        <div className="mx-1 mt-4">
           <Content />
         </div>
         <DrawerFooter>

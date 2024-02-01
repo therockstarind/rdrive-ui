@@ -48,7 +48,7 @@ export default function Preview({
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl lg:max-w-3xl p-0">
+        <DialogContent className="max-w-2xl p-0 lg:max-w-3xl">
           <ScrollArea
             type="always"
             className="max-h-[80dvh] overflow-hidden p-3"
@@ -63,7 +63,7 @@ export default function Preview({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerContent>
-        <ScrollArea type="always" className="p-2 overflow-y-scroll">
+        <ScrollArea type="always" className="overflow-y-scroll p-2">
           {Preview()}
         </ScrollArea>
       </DrawerContent>

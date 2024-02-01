@@ -22,7 +22,7 @@ const ImagePreview = ({ src, title, width, height }: PreviewProps) => {
       m="my-3"
     >
       <Image src={src} alt={title} width={width} height={height} />
-      <Text as="h1" size="text-2xl md:text-3xl line-clamp-1">
+      <Text as="h1" size="line-clamp-1 text-2xl md:text-3xl">
         {title}
       </Text>
     </Flex>
@@ -39,14 +39,14 @@ const VideoPreview = ({ src, title, width, height }: PreviewProps) => {
       m="my-3"
     >
       <Video
-        className="border border-border rounded-md p-1"
+        className="rounded-md border border-border p-1"
         src={src}
         accentColor="hsl(var(--ring))"
         poster="/images/lyra.png"
         blurDataURL=""
       />{' '}
       {/* width={width} height={height} */}
-      <Text as="h1" size="text-2xl md:text-3xl line-clamp-1">
+      <Text as="h1" size="line-clamp-1 text-2xl md:text-3xl">
         {title}
       </Text>
     </Flex>
