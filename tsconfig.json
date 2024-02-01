@@ -27,9 +27,15 @@
       "®lib/*": ["./src/lib/*"],
       "®utils/*": ["./src/utils/*"],
       "®styles/*": ["./src/styles/*"],
-      "®images/*": ["./public/images/*"],
+      "®images/*": ["./public/images/*"]
     }
   },
-  "include": ["video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "video.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

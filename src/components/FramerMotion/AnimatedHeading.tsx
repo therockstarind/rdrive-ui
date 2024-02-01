@@ -1,6 +1,6 @@
-"use client";
-import { motion } from "framer-motion";
-import { AnimatedTAGProps } from "®/lib/types";
+'use client'
+import { motion } from 'framer-motion'
+import { AnimatedTAGProps } from '®/lib/types'
 
 export default function AnimatedHeading({
   variants,
@@ -18,5 +18,5 @@ export default function AnimatedHeading({
     >
       {children}
     </motion.div>
-  );
+  )
 }

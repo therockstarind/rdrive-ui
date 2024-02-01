@@ -1,16 +1,17 @@
-"use client";
+'use client'
 
-import React from 'react';
-import { cn } from '®/lib/utils';
+import React from 'react'
+import { cn } from '®/lib/utils'
 
 interface SkeletonProps {
-  className?: string;
+  className?: string
 }
 
 const Skeleton: React.FC<SkeletonProps> = ({ className }) => {
-    return (
-        <div className={cn(
-            `group relative
+  return (
+    <div
+      className={cn(
+        `group relative
             overflow-hidden
             bg-content3 dark:bg-content2
             before:opacity-100
@@ -33,8 +34,11 @@ const Skeleton: React.FC<SkeletonProps> = ({ className }) => {
             dark:after:bg-content2
             data-[loaded=true]:!bg-transparent
             data-[loaded=true]:before:opacity-0 data-[loaded=true]:before:animate-none
-            data-[loaded=true]:after:opacity-0`, className)} />
-    );
-};
+            data-[loaded=true]:after:opacity-0`,
+        className
+      )}
+    />
+  )
+}
 
-export default Skeleton;
+export default Skeleton

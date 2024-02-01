@@ -1,11 +1,10 @@
-import { getExtension } from "./getFileIcon"
+import { getExtension } from './getFileIcon'
 
-type Types = 'image' | 'markdown' | 'video'; // 'pdf' | 'audio'
+type Types = 'image' | 'markdown' | 'video' // 'pdf' | 'audio'
 
 type PreviewTypes = {
-  [key: string]: Types;
-};
-
+  [key: string]: Types
+}
 
 export const preview = {
   markdown: 'markdown',
@@ -27,7 +26,7 @@ export const extensions: PreviewTypes = {
   markdown: 'markdown',
   mdown: 'markdown',
 
-//   pdf: 'pdf',
+  //   pdf: 'pdf',
 
   mp4: 'video',
   flv: 'video',
@@ -37,17 +36,20 @@ export const extensions: PreviewTypes = {
   mov: 'video',
   avi: 'video', // won't work!
 
-//   mp3: 'audio',
-//   m4a: 'audio',
-//   aac: 'audio',
-//   wav: 'audio',
-//   ogg: 'audio',
-//   oga: 'audio',
-//   opus: 'audio',
-//   flac: 'audio',
+  //   mp3: 'audio',
+  //   m4a: 'audio',
+  //   aac: 'audio',
+  //   wav: 'audio',
+  //   ogg: 'audio',
+  //   oga: 'audio',
+  //   opus: 'audio',
+  //   flac: 'audio',
 }
 
-export function getPreviewType(extension: string, flags?: { video?: boolean }): string | undefined {
+export function getPreviewType(
+  extension: string,
+  flags?: { video?: boolean }
+): string | undefined {
   let previewType = extensions[extension]
   if (!previewType) {
     return previewType
@@ -65,7 +67,6 @@ export function getPreviewType(extension: string, flags?: { video?: boolean }): 
 }
 
 export function getLanguageByFileName(filename: string): string {
-  const extension = getExtension(filename);
-  return extension;
+  const extension = getExtension(filename)
+  return extension
 }
-

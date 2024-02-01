@@ -1,13 +1,16 @@
-"use client";
-import { Variants, motion } from "framer-motion";
-import { AnimatedTAGProps } from "®/lib/types";
+'use client'
+import { Variants, motion } from 'framer-motion'
+import { AnimatedTAGProps } from '®/lib/types'
 
 const Variant = (variants: Variants, mobileVariant?: Variants) => {
-  if (typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches) {
-    return mobileVariant;
+  if (
+    typeof window !== 'undefined' &&
+    window.matchMedia('(max-width: 768px)').matches
+  ) {
+    return mobileVariant
   }
-  return variants; 
-};
+  return variants
+}
 export default function AnimatedVariant({
   variants,
   mobileVariants,
@@ -21,5 +24,5 @@ export default function AnimatedVariant({
     >
       {children}
     </motion.div>
-  );
+  )
 }

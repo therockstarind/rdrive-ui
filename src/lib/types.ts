@@ -1,15 +1,14 @@
-import { Variants } from "framer-motion";
-import { ComponentType } from "react";
-
+import { Variants } from 'framer-motion'
+import { ComponentType } from 'react'
 
 /* Custom Animated Components types */
 export type AnimatedTAGProps = {
-    variants: Variants
-    mobileVariants?: Variants
-    className?: string;
-    children: React.ReactNode;
-    infinity?: boolean;
-  };
+  variants: Variants
+  mobileVariants?: Variants
+  className?: string
+  children: React.ReactNode
+  infinity?: boolean
+}
 
 export interface NavItem {
   title: string

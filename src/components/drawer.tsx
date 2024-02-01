@@ -1,16 +1,31 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "®ui/dialog"
-import { Button } from "®ui/button"
-import { DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose, Drawer } from "®ui/drawer"
-import { cn } from "®/lib/utils"
-import { useMediaQuery } from "®/hooks/use-media-query"
-
+import * as React from 'react'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '®ui/dialog'
+import { Button } from '®ui/button'
+import {
+  DrawerTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerClose,
+  Drawer,
+} from '®ui/drawer'
+import { cn } from '®/lib/utils'
+import { useMediaQuery } from '®/hooks/use-media-query'
 
 export function DrawerDialogDemo() {
   const [open, setOpen] = React.useState(false)
-  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const isDesktop = useMediaQuery('(min-width: 768px)')
 
   if (isDesktop) {
     return (
@@ -54,9 +69,9 @@ export function DrawerDialogDemo() {
   )
 }
 
-function ProfileForm({ className }: React.ComponentProps<"form">) {
+function ProfileForm({ className }: React.ComponentProps<'form'>) {
   return (
-    <form className={cn("grid items-start gap-4", className)}>
+    <form className={cn('grid items-start gap-4', className)}>
       <div className="grid gap-2">
         {/* <Label htmlFor="email">Email</Label>
         <Input type="email" id="email" defaultValue="shadcn@example.com" /> */}

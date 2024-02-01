@@ -1,26 +1,40 @@
-"use client";
-import { MDXRemote } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
-import { FC, useEffect, useState } from 'react';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from 'rehype-slug';
-import useSmoothScrolling from '®/hooks/useSmoothScrolling';
-import { generateTOC } from '®/lib/utils';
-import { MarkdownSkeleton } from '../Skeleton';
-import Code from './Code';
-import IMG from './Image';
-import Pre from './Pre';
-import YouTube from './YouTube';
-import { A, Blockquote, H1, H2, H3, H4, H5, H6, HR, LI, OL, P, UL } from './typography';
+'use client'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+import { FC, useEffect, useState } from 'react'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypePrettyCode from 'rehype-pretty-code'
+import rehypeSlug from 'rehype-slug'
+import useSmoothScrolling from '®/hooks/useSmoothScrolling'
+import { generateTOC } from '®/lib/utils'
+import { MarkdownSkeleton } from '../Skeleton'
+import Code from './Code'
+import IMG from './Image'
+import Pre from './Pre'
+import YouTube from './YouTube'
+import {
+  A,
+  Blockquote,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  HR,
+  LI,
+  OL,
+  P,
+  UL,
+} from './typography'
 
 type MarkdownProps = {
-  src: string;
-  TOCGenerated?: (toc: { id: string; title: string; }[]) => void;
-};
+  src: string
+  TOCGenerated?: (toc: { id: string; title: string }[]) => void
+}
 
 const Markdown: FC<MarkdownProps> = ({ src, TOCGenerated }) => {
-  const [mdxSource, setMdxSource] = useState<any>(null);
+  const [mdxSource, setMdxSource] = useState<any>(null)
 
   const Options = {
     theme: {
@@ -28,17 +42,17 @@ const Markdown: FC<MarkdownProps> = ({ src, TOCGenerated }) => {
       light: 'light-plus',
     },
     showLineNumbers: true,
-  };
-  
+  }
+
   useEffect(() => {
     fetch(src)
-      .then(response => response.text())
-      .then(mdContent => {
+      .then((response) => response.text())
+      .then((mdContent) => {
         // Here we can still generate the TOC but not store it in the state
         // Instead, we call TOCGenerated callback
-        const toc = generateTOC(mdContent);
+        const toc = generateTOC(mdContent)
         if (TOCGenerated) {
-          TOCGenerated(toc);
+          TOCGenerated(toc)
         }
 
         return serialize(mdContent, {
@@ -60,22 +74,26 @@ const Markdown: FC<MarkdownProps> = ({ src, TOCGenerated }) => {
               ],
               [rehypePrettyCode as any, Options],
             ],
-            development: process.env.NODE_ENV === "development"
+            development: process.env.NODE_ENV === 'development',
           },
-        });
+        })
       })
-      .then(mdx => setMdxSource(mdx))
-      .catch(error => console.error('Error fetching markdown:', error));
-  }, [src, TOCGenerated]);
+      .then((mdx) => setMdxSource(mdx))
+      .catch((error) => console.error('Error fetching markdown:', error))
+  }, [src, TOCGenerated])
 
-  useSmoothScrolling('a[href^="#"]', mdxSource);
+  useSmoothScrolling('a[href^="#"]', mdxSource)
 
-  if (!mdxSource) return <MarkdownSkeleton />;
+  if (!mdxSource) return <MarkdownSkeleton />
 
-  return <div className="flex flex-col gap-4"><MDXRemote {...mdxSource} components={components} /></div>;
-};
+  return (
+    <div className="flex flex-col gap-4">
+      <MDXRemote {...mdxSource} components={components} />
+    </div>
+  )
+}
 
-export default Markdown;
+export default Markdown
 
 const components = {
   pre: Pre,
@@ -95,5 +113,4 @@ const components = {
   hr: HR,
   code: Code,
   a: A,
-
 }

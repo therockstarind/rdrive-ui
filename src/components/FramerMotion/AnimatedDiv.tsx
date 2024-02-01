@@ -1,6 +1,6 @@
-"use client";
-import { motion } from "framer-motion";
-import { AnimatedTAGProps } from "®/lib/types";
+'use client'
+import { motion } from 'framer-motion'
+import { AnimatedTAGProps } from '®/lib/types'
 
 export default function AnimatedDiv({
   variants,
@@ -20,5 +20,5 @@ export default function AnimatedDiv({
     >
       {children}
     </motion.div>
-  );
+  )
 }

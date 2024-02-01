@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import {Tooltip as NextTooltip} from "@nextui-org/react";
+import { Tooltip as NextTooltip } from '@nextui-org/react'
 // import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 // import * as React from 'react';
 
@@ -27,30 +27,26 @@ import {Tooltip as NextTooltip} from "@nextui-org/react";
 // TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
 type TooltipProps = {
-  children: React.ReactElement;
-  content: string;
-};
+  children: React.ReactElement
+  content: string
+}
 
 const Tooltip: React.FC<TooltipProps> = ({ children, content }) => (
-  <NextTooltip 
-      size='sm'
-      showArrow
-      offset={10}
-      content={content}
-      classNames={{
-        base: [
-          // arrow color
-          "before:bg-[hsl(var(--ring))]",
-        ],
-        content: [
-          "px-2",
-          "text-white bg-[hsl(var(--ring))]",
-        ],
-      }}
-    >
-      {children}
-    </NextTooltip>
-);
+  <NextTooltip
+    size="sm"
+    showArrow
+    offset={10}
+    content={content}
+    classNames={{
+      base: [
+        // arrow color
+        'before:bg-[hsl(var(--ring))]',
+      ],
+      content: ['px-2', 'text-white bg-[hsl(var(--ring))]'],
+    }}
+  >
+    {children}
+  </NextTooltip>
+)
 
 export default Tooltip
-

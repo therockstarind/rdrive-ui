@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import * as AvatarPrimitive from "@radix-ui/react-avatar"
-import * as React from "react"
+import * as AvatarPrimitive from '@radix-ui/react-avatar'
+import * as React from 'react'
 
-import { cn } from "®/lib/utils"
-import { AvatarProps } from "®/rdrive/types"
+import { cn } from '®/lib/utils'
+import { AvatarProps } from '®/rdrive/types'
 
 const RadixAvatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
@@ -13,7 +13,7 @@ const RadixAvatar = React.forwardRef<
   <AvatarPrimitive.Root
     ref={ref}
     className={cn(
-      "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-md bg-default/30",
+      'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-md bg-default/30',
       className
     )}
     {...props}
@@ -27,7 +27,7 @@ const AvatarImage = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Image
     ref={ref}
-    className={cn("aspect-square h-full w-full", className)}
+    className={cn('aspect-square h-full w-full', className)}
     {...props}
   />
 ))
@@ -39,19 +39,23 @@ const AvatarFallback = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback
     ref={ref}
-     className="flex h-full w-full items-center justify-center"
+    className="flex h-full w-full items-center justify-center"
     {...props}
   />
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
-export const Avatar: React.FC<AvatarProps> = ({ src, fallback, alt, className, radius }) => {
+export const Avatar: React.FC<AvatarProps> = ({
+  src,
+  fallback,
+  alt,
+  className,
+  radius,
+}) => {
   return (
-      <RadixAvatar className={cn(className, `rounded-${radius}`)}>
-              <AvatarImage src={src} alt={alt} />
-              <AvatarFallback>{fallback}</AvatarFallback>
-      </RadixAvatar>
-  );
-};
-
-
+    <RadixAvatar className={cn(className, `rounded-${radius}`)}>
+      <AvatarImage src={src} alt={alt} />
+      <AvatarFallback>{fallback}</AvatarFallback>
+    </RadixAvatar>
+  )
+}

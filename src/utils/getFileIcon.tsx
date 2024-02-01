@@ -1,12 +1,27 @@
-"use client"
+'use client'
 
-import React from 'react';
-import { AiFillAndroid } from 'react-icons/ai';
-import { BsFiletypeGif, BsFiletypeHeic, BsFillRecordCircleFill, BsImage, BsMarkdownFill } from 'react-icons/bs';
-import { FaBook, FaFile, FaFileAlt, FaFileArchive, FaFileAudio, FaFileCode, FaFileExcel, FaFileImage, FaFilePdf, FaFilePowerpoint, FaFileVideo, FaFileWord, FaFolder, FaLink, FaMarkdown } from 'react-icons/fa';
-import { IconType } from 'react-icons/lib';
-import { MdInstallDesktop, MdRestorePage } from 'react-icons/md';
-import { SiApple, SiJpeg } from 'react-icons/si';
+import React from 'react'
+import { AiFillAndroid } from 'react-icons/ai'
+import { BsFiletypeGif, BsFillRecordCircleFill, BsImage } from 'react-icons/bs'
+import {
+  FaBook,
+  FaFile,
+  FaFileAlt,
+  FaFileArchive,
+  FaFileAudio,
+  FaFileCode,
+  FaFileExcel,
+  FaFilePdf,
+  FaFilePowerpoint,
+  FaFileVideo,
+  FaFileWord,
+  FaFolder,
+  FaLink,
+  FaMarkdown,
+} from 'react-icons/fa'
+import { IconType } from 'react-icons/lib'
+import { MdInstallDesktop, MdRestorePage } from 'react-icons/md'
+import { SiApple, SiJpeg } from 'react-icons/si'
 
 const icons: { [key: string]: IconType } = {
   image: BsImage,
@@ -28,7 +43,7 @@ const icons: { [key: string]: IconType } = {
   android: AiFillAndroid,
   windows: BsFillRecordCircleFill,
   recovery: MdRestorePage,
-};
+}
 
 const extensions: { [key: string]: IconType } = {
   gif: BsFiletypeGif,
@@ -118,43 +133,43 @@ const extensions: { [key: string]: IconType } = {
   msi: MdInstallDesktop,
 
   apk: icons.android,
-};
-  
-  function getRawExtension(fileName: string): string {
-    return fileName.slice(((fileName.lastIndexOf('.') - 1) >>> 0) + 2);
-  }
-  
+}
+
+function getRawExtension(fileName: string): string {
+  return fileName.slice(((fileName.lastIndexOf('.') - 1) >>> 0) + 2)
+}
+
 export function getExtension(fileName: string): string {
-    return getRawExtension(fileName).toLowerCase();
-  }
-  
-  interface Flags {
-    video?: boolean;
+  return getRawExtension(fileName).toLowerCase()
+}
+
+interface Flags {
+  video?: boolean
+}
+
+function isFolder(fileName: string): boolean {
+  return !fileName.includes('.')
+}
+
+function getFileIcon(fileName: string, flags?: Flags): IconType {
+  if (isFolder(fileName)) {
+    return icons.folder
   }
 
-  function isFolder(fileName: string): boolean {
-    return !fileName.includes('.');
+  const extension = getExtension(fileName)
+  const icon = extensions[extension] || icons.file
+
+  if (extension === 'ts' && flags?.video) {
+    return icons.video
   }
-  
-  function getFileIcon(fileName: string, flags?: Flags): IconType {
-    if (isFolder(fileName)) {
-      return icons.folder;
-    }
-  
-    const extension = getExtension(fileName);
-    const icon = extensions[extension] || icons.file;
-  
-    if (extension === 'ts' && flags?.video) {
-      return icons.video;
-    }
-  
-    return icon;
-  }
-  
+
+  return icon
+}
+
 const FileIcon: React.FC<{ name: string }> = ({ name }) => {
-  const IconComponent = getFileIcon(name);
+  const IconComponent = getFileIcon(name)
 
-  return IconComponent ? <IconComponent /> : null;
-};
+  return IconComponent ? <IconComponent /> : null
+}
 
-export default FileIcon;
+export default FileIcon

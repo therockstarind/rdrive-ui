@@ -45,6 +45,7 @@ However, they also knew that such power needed to be protected. They decided to 
 Elara returned to New Haven, where her journey had begun. She continued her work as a historian, enriched by the incredible experience and the knowledge she had gained. The map and the Sun Stone were carefully preserved, symbols of the endless mysteries waiting to be uncovered in our world.
 
 Elara often looked back on her journey, knowing that it was just the beginning of her lifelong quest to unravel the secrets of the past and share them with the world.
+
 # The Joke Tax Chronicles
 
 Once upon a time, in a far-off land, there was a very lazy king who spent all day lounging on his throne. One day, his advisors came to him with a problem: the kingdom was running out of money.
@@ -121,8 +122,6 @@ The king, seeing how much happier his subjects were, realized the error of his w
 
 The moral of the story is: never underestimate the power of a good laugh and always be careful of bad ideas.
 
-
-
 ```json title="components.json"
 {
   "style": "default",
@@ -185,4 +184,3 @@ Configure the import alias for components: › @/components
 Configure the import alias for utils: › @/lib/utils
 Are you using React Server Components? › no / yes
 ```
-

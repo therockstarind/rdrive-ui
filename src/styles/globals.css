@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Style */
 
 /* .dark
@@ -27,58 +26,59 @@
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0,0%,92%;
+    --border: 0, 0%, 92%;
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
 
     /* cmdk */
-      --font-sans: 'Inter', --apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-          Droid Sans, Helvetica Neue, sans-serif;
-        --app-bg: var(--gray1);
-        --cmdk-shadow: 0 16px 70px rgb(0 0 0 / 20%);
-      
-        --lowContrast: #ffffff;
-        --highContrast: #000000;
-      
-        --gray1: hsl(0, 0%, 99%);
-        --gray2: hsl(0, 0%, 97.3%);
-        --gray3: hsl(0, 0%, 95.1%);
-        --gray4: hsl(0, 0%, 93%);
-        --gray5: hsl(0, 0%, 90.9%);
-        --gray6: hsl(0, 0%, 88.7%);
-        --gray7: hsl(0, 0%, 85.8%);
-        --gray8: hsl(0, 0%, 78%);
-        --gray9: hsl(0, 0%, 56.1%);
-        --gray10: hsl(0, 0%, 52.3%);
-        --gray11: hsl(0, 0%, 43.5%);
-        --gray12: hsl(0, 0%, 9%);
-      
-        --grayA1: hsla(0, 0%, 0%, 0.012);
-        --grayA2: hsla(0, 0%, 0%, 0.027);
-        --grayA3: hsla(0, 0%, 0%, 0.047);
-        --grayA4: hsla(0, 0%, 0%, 0.071);
-        --grayA5: hsla(0, 0%, 0%, 0.09);
-        --grayA6: hsla(0, 0%, 0%, 0.114);
-        --grayA7: hsla(0, 0%, 0%, 0.141);
-        --grayA8: hsla(0, 0%, 0%, 0.22);
-        --grayA9: hsla(0, 0%, 0%, 0.439);
-        --grayA10: hsla(0, 0%, 0%, 0.478);
-        --grayA11: hsla(0, 0%, 0%, 0.565);
-        --grayA12: hsla(0, 0%, 0%, 0.91);
-      
-        --blue1: hsl(206, 100%, 99.2%);
-        --blue2: hsl(210, 100%, 98%);
-        --blue3: hsl(209, 100%, 96.5%);
-        --blue4: hsl(210, 98.8%, 94%);
-        --blue5: hsl(209, 95%, 90.1%);
-        --blue6: hsl(209, 81.2%, 84.5%);
-        --blue7: hsl(208, 77.5%, 76.9%);
-        --blue8: hsl(206, 81.9%, 65.3%);
-        --blue9: hsl(206, 100%, 50%);
-        --blue10: hsl(208, 100%, 47.3%);
-        --blue11: hsl(211, 100%, 43.2%);
-        --blue12: hsl(211, 100%, 15%);
+    --font-sans: 'Inter', --apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+      Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+      sans-serif;
+    --app-bg: var(--gray1);
+    --cmdk-shadow: 0 16px 70px rgb(0 0 0 / 20%);
+
+    --lowContrast: #ffffff;
+    --highContrast: #000000;
+
+    --gray1: hsl(0, 0%, 99%);
+    --gray2: hsl(0, 0%, 97.3%);
+    --gray3: hsl(0, 0%, 95.1%);
+    --gray4: hsl(0, 0%, 93%);
+    --gray5: hsl(0, 0%, 90.9%);
+    --gray6: hsl(0, 0%, 88.7%);
+    --gray7: hsl(0, 0%, 85.8%);
+    --gray8: hsl(0, 0%, 78%);
+    --gray9: hsl(0, 0%, 56.1%);
+    --gray10: hsl(0, 0%, 52.3%);
+    --gray11: hsl(0, 0%, 43.5%);
+    --gray12: hsl(0, 0%, 9%);
+
+    --grayA1: hsla(0, 0%, 0%, 0.012);
+    --grayA2: hsla(0, 0%, 0%, 0.027);
+    --grayA3: hsla(0, 0%, 0%, 0.047);
+    --grayA4: hsla(0, 0%, 0%, 0.071);
+    --grayA5: hsla(0, 0%, 0%, 0.09);
+    --grayA6: hsla(0, 0%, 0%, 0.114);
+    --grayA7: hsla(0, 0%, 0%, 0.141);
+    --grayA8: hsla(0, 0%, 0%, 0.22);
+    --grayA9: hsla(0, 0%, 0%, 0.439);
+    --grayA10: hsla(0, 0%, 0%, 0.478);
+    --grayA11: hsla(0, 0%, 0%, 0.565);
+    --grayA12: hsla(0, 0%, 0%, 0.91);
+
+    --blue1: hsl(206, 100%, 99.2%);
+    --blue2: hsl(210, 100%, 98%);
+    --blue3: hsl(209, 100%, 96.5%);
+    --blue4: hsl(210, 98.8%, 94%);
+    --blue5: hsl(209, 95%, 90.1%);
+    --blue6: hsl(209, 81.2%, 84.5%);
+    --blue7: hsl(208, 77.5%, 76.9%);
+    --blue8: hsl(206, 81.9%, 65.3%);
+    --blue9: hsl(206, 100%, 50%);
+    --blue10: hsl(208, 100%, 47.3%);
+    --blue11: hsl(211, 100%, 43.2%);
+    --blue12: hsl(211, 100%, 15%);
   }
 
   .dark {
@@ -98,54 +98,54 @@
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0,0%,18%;
+    --border: 0, 0%, 18%;
     --input: 240 3.7% 15.9%;
     --ring: 346.8 77.2% 49.8%;
 
     /* cmdk */
     --app-bg: var(--gray1);
-    
-      --lowContrast: #000000;
-      --highContrast: #ffffff;
-    
-      --gray1: hsl(0, 0%, 8.5%);
-      --gray2: hsl(0, 0%, 11%);
-      --gray3: hsl(0, 0%, 13.6%);
-      --gray4: hsl(0, 0%, 15.8%);
-      --gray5: hsl(0, 0%, 17.9%);
-      --gray6: hsl(0, 0%, 20.5%);
-      --gray7: hsl(0, 0%, 24.3%);
-      --gray8: hsl(0, 0%, 31.2%);
-      --gray9: hsl(0, 0%, 43.9%);
-      --gray10: hsl(0, 0%, 49.4%);
-      --gray11: hsl(0, 0%, 62.8%);
-      --gray12: hsl(0, 0%, 93%);
-    
-      --grayA1: hsla(0, 0%, 100%, 0);
-      --grayA2: hsla(0, 0%, 100%, 0.026);
-      --grayA3: hsla(0, 0%, 100%, 0.056);
-      --grayA4: hsla(0, 0%, 100%, 0.077);
-      --grayA5: hsla(0, 0%, 100%, 0.103);
-      --grayA6: hsla(0, 0%, 100%, 0.129);
-      --grayA7: hsla(0, 0%, 100%, 0.172);
-      --grayA8: hsla(0, 0%, 100%, 0.249);
-      --grayA9: hsla(0, 0%, 100%, 0.386);
-      --grayA10: hsla(0, 0%, 100%, 0.446);
-      --grayA11: hsla(0, 0%, 100%, 0.592);
-      --grayA12: hsla(0, 0%, 100%, 0.923);
-    
-      --blue1: hsl(212, 35%, 9.2%);
-      --blue2: hsl(216, 50%, 11.8%);
-      --blue3: hsl(214, 59.4%, 15.3%);
-      --blue4: hsl(214, 65.8%, 17.9%);
-      --blue5: hsl(213, 71.2%, 20.2%);
-      --blue6: hsl(212, 77.4%, 23.1%);
-      --blue7: hsl(211, 85.1%, 27.4%);
-      --blue8: hsl(211, 89.7%, 34.1%);
-      --blue9: hsl(206, 100%, 50%);
-      --blue10: hsl(209, 100%, 60.6%);
-      --blue11: hsl(210, 100%, 66.1%);
-      --blue12: hsl(206, 98%, 95.8%);
+
+    --lowContrast: #000000;
+    --highContrast: #ffffff;
+
+    --gray1: hsl(0, 0%, 8.5%);
+    --gray2: hsl(0, 0%, 11%);
+    --gray3: hsl(0, 0%, 13.6%);
+    --gray4: hsl(0, 0%, 15.8%);
+    --gray5: hsl(0, 0%, 17.9%);
+    --gray6: hsl(0, 0%, 20.5%);
+    --gray7: hsl(0, 0%, 24.3%);
+    --gray8: hsl(0, 0%, 31.2%);
+    --gray9: hsl(0, 0%, 43.9%);
+    --gray10: hsl(0, 0%, 49.4%);
+    --gray11: hsl(0, 0%, 62.8%);
+    --gray12: hsl(0, 0%, 93%);
+
+    --grayA1: hsla(0, 0%, 100%, 0);
+    --grayA2: hsla(0, 0%, 100%, 0.026);
+    --grayA3: hsla(0, 0%, 100%, 0.056);
+    --grayA4: hsla(0, 0%, 100%, 0.077);
+    --grayA5: hsla(0, 0%, 100%, 0.103);
+    --grayA6: hsla(0, 0%, 100%, 0.129);
+    --grayA7: hsla(0, 0%, 100%, 0.172);
+    --grayA8: hsla(0, 0%, 100%, 0.249);
+    --grayA9: hsla(0, 0%, 100%, 0.386);
+    --grayA10: hsla(0, 0%, 100%, 0.446);
+    --grayA11: hsla(0, 0%, 100%, 0.592);
+    --grayA12: hsla(0, 0%, 100%, 0.923);
+
+    --blue1: hsl(212, 35%, 9.2%);
+    --blue2: hsl(216, 50%, 11.8%);
+    --blue3: hsl(214, 59.4%, 15.3%);
+    --blue4: hsl(214, 65.8%, 17.9%);
+    --blue5: hsl(213, 71.2%, 20.2%);
+    --blue6: hsl(212, 77.4%, 23.1%);
+    --blue7: hsl(211, 85.1%, 27.4%);
+    --blue8: hsl(211, 89.7%, 34.1%);
+    --blue9: hsl(206, 100%, 50%);
+    --blue10: hsl(209, 100%, 60.6%);
+    --blue11: hsl(210, 100%, 66.1%);
+    --blue12: hsl(206, 98%, 95.8%);
   }
 }
 
@@ -247,7 +247,7 @@
       background: var(--gray4);
     }
 
-    &+[cmdk-item] {
+    & + [cmdk-item] {
       margin-top: 4px;
     }
 
@@ -296,7 +296,7 @@
     margin: 4px 0;
   }
 
-  *:not([hidden])+[cmdk-group] {
+  *:not([hidden]) + [cmdk-group] {
     margin-top: 8px;
   }
 
@@ -321,26 +321,25 @@
   }
 }
 
-
 /* Our CSS */
 .LinkText {
   @apply text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white;
 }
-.FolderCardLayout{
+.FolderCardLayout {
   @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3;
 }
 .FolderCard {
-  @apply  w-full border border-border bg-transparent items-center p-4 lg:p-8 shadow-none;
+  @apply w-full border border-border bg-transparent items-center p-4 lg:p-8 shadow-none;
 }
 .FolderImageCard {
-  @apply  w-full border border-border bg-transparent items-center sm:p-6 shadow-none;
+  @apply w-full border border-border bg-transparent items-center sm:p-6 shadow-none;
 }
 /* vaul shouldScaleBackground */
 .element {
   background: none !important;
 }
 
-.data-\[focus-visible\=true\]\:outline-focus[data-focus-visible=true] {
+.data-\[focus-visible\=true\]\:outline-focus[data-focus-visible='true'] {
   outline-color: hsl(var(--ring)) !important;
 }
 
@@ -348,11 +347,11 @@
   outline-color: hsl(var(--ring)) !important;
 }
 
-a:focus-visible{
+a:focus-visible {
   outline-color: hsl(var(--ring)) !important;
 }
 .GoToFile {
-  @apply  border border-border rounded-md max-w-36 sm:max-w-full focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 dark:focus-within:ring-offset-black;
+  @apply border border-border rounded-md max-w-36 sm:max-w-full focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 dark:focus-within:ring-offset-black;
 }
 
 * {
@@ -386,11 +385,11 @@ html {
 code {
   counter-reset: line;
 }
- 
+
 code > [data-line]::before {
   counter-increment: line;
   content: counter(line);
- 
+
   /* Other styling */
   display: inline-block;
   width: 1rem;
@@ -398,17 +397,17 @@ code > [data-line]::before {
   text-align: right;
   color: gray;
 }
- 
-code[data-line-numbers-max-digits="2"] > [data-line]::before {
+
+code[data-line-numbers-max-digits='2'] > [data-line]::before {
   width: 2rem;
 }
- 
-code[data-line-numbers-max-digits="3"] > [data-line]::before {
+
+code[data-line-numbers-max-digits='3'] > [data-line]::before {
   width: 3rem;
 }
 code[data-theme*=' '],
 code[data-theme*=' '] span {
-    @apply text-[var(--shiki-light)] bg-[var(--shiki-light-bg)] dark:text-[var(--shiki-dark)] dark:bg-[var(--shiki-dark-bg)]
+  @apply text-[var(--shiki-light)] bg-[var(--shiki-light-bg)] dark:text-[var(--shiki-dark)] dark:bg-[var(--shiki-dark-bg)];
 }
 
 .heading a {
@@ -423,7 +422,7 @@ code[data-theme*=' '] span {
   visibility: visible;
   padding-left: 5px;
 }
-figcaption{
+figcaption {
   font-size: 1.1em;
   font-weight: normal;
   margin-bottom: 8px;
@@ -452,19 +451,18 @@ td {
   @apply px-4 py-2 border border-border text-[16px] text-center;
 }
 
-
 .rt-ScrollAreaThumb {
   background-color: hsl(var(--ring)) !important;
 }
 
 .rt-AvatarRoot:where(.rt-variant-soft) :where(.rt-AvatarFallback) {
-@apply !bg-default/70 dark:!bg-default/70 !text-[hsl(var(--ring))]
+  @apply !bg-default/70 dark:!bg-default/70 !text-[hsl(var(--ring))];
 }
 
 @layer utilities {
   /* Hiding the arrows in the input number */
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
