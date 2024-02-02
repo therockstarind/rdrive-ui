@@ -17,7 +17,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <NextUIProvider navigate={router.push}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <Theme>
-          <div className="flex min-h-dvh flex-col items-center justify-center bg-background" vaul-drawer-wrapper="">
+          <div
+            className="flex min-h-dvh flex-col items-center justify-center bg-background"
+            vaul-drawer-wrapper=""
+          >
             <main className="flex w-full flex-1 flex-col overflow-clip">
               {children}
             </main>

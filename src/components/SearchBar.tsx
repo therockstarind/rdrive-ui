@@ -150,7 +150,7 @@ function Search({ runCommand, setOpen }: { runCommand: any; setOpen: any }) {
             setInputValue(value)
           }}
         />
-        <Command.List className='scrollbar'>
+        <Command.List className="scrollbar">
           <Command.Empty>No results found.</Command.Empty>
           {activePage === 'Home' && (
             <Home
