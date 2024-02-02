@@ -150,7 +150,7 @@
 }
 
 /* CMDK CSS */
-.vercel {
+.cmdk {
   [cmdk-root] {
     width: 100%;
     background: #ffffff;
@@ -182,7 +182,7 @@
     }
   }
 
-  [cmdk-vercel-badge] {
+  [cmdk-badge] {
     height: 20px;
     background: var(--grayA3);
     display: inline-flex;
@@ -263,7 +263,7 @@
     transition-property: height;
   }
 
-  [cmdk-vercel-shortcuts] {
+  [cmdk-shortcuts] {
     display: flex;
     margin-left: auto;
     gap: 8px;
@@ -360,6 +360,12 @@ a:focus-visible {
   width: 0px;
   height: 0px;
 }
+/* General scrollbar styles */
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--ring)) #ffffff00;
+}
+
 html {
   scroll-behavior: auto;
 }

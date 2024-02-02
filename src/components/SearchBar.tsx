@@ -107,7 +107,7 @@ function Search({ runCommand, setOpen }: { runCommand: any; setOpen: any }) {
   }
 
   return (
-    <div className="vercel">
+    <div className="cmdk">
       <Command
         ref={ref}
         onKeyDown={(e: React.KeyboardEvent) => {
@@ -130,7 +130,7 @@ function Search({ runCommand, setOpen }: { runCommand: any; setOpen: any }) {
           {pages.map((p) => (
             <div
               key={p}
-              cmdk-vercel-badge=""
+              cmdk-badge=""
               onClick={() => {
                 if (p !== activePage) {
                   popPage()
@@ -150,7 +150,7 @@ function Search({ runCommand, setOpen }: { runCommand: any; setOpen: any }) {
             setInputValue(value)
           }}
         />
-        <Command.List>
+        <Command.List className='scrollbar'>
           <Command.Empty>No results found.</Command.Empty>
           {activePage === 'Home' && (
             <Home
@@ -256,7 +256,7 @@ function Theme({ runCommand }: { runCommand: any }) {
 }
 function Shortcut({ children }: { children: React.ReactNode }) {
   return (
-    <div cmdk-vercel-shortcuts="">
+    <div cmdk-shortcuts="">
       <kbd>{children}</kbd>
     </div>
   )
