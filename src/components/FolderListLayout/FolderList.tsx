@@ -57,8 +57,8 @@ const List: ListItem[] = [
     height: '',
   },
   {
-    href: '/sample.md',
-    title: 'Sample',
+    href: '/post.md',
+    title: 'Post',
     size: '1.89 MB',
     date: '12 Jan 2024',
     download: '0',
@@ -85,7 +85,7 @@ const FolderList = () => {
   return (
     <Command>
       <Flex justify="justify-end" m="mx-2 mb-4 mt-1" align="items-center">
-        <Flex className="GoToFile">
+        <Flex className="max-w-36 rounded-md border border-border focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 dark:focus-within:ring-offset-black sm:max-w-full">
           <CommandInput placeholder="Go to file" className="h-8" />
         </Flex>
       </Flex>

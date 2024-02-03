@@ -5,7 +5,7 @@ import { siteConfig } from '®/config/site'
 const ImageCard = () => {
   return (
     <Card
-      className="FolderCard dark:data-[hover=true]:bg-default/40"
+      className="w-full items-center border border-border bg-transparent shadow-none dark:data-[hover=true]:bg-default/40 sm:p-6"
       shadow="none"
       isHoverable
       isPressable

@@ -55,7 +55,6 @@ export const Demo = {
       href: '/blogs/preview',
     },
   ],
-
   user: {
     name: 'Rock Star',
     username: 'rockstar',
@@ -75,6 +74,38 @@ export const Demo = {
       { icon: '/social/github.png', link: 'http://www.github.com' },
     ],
   },
+  items: [
+    {
+      href: '/hello',
+      title: 'Apple',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Apple_Computer_Logo_rainbow.svg/412px-Apple_Computer_Logo_rainbow.svg.png',
+    },
+    {
+      href: '/',
+      title: 'Asus',
+      img: '',
+    },
+    {
+      href: '/',
+      title: 'Google',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png',
+    },
+    {
+      href: '/',
+      title: 'HTC',
+      img: 'https://1000logos.net/wp-content/uploads/2021/05/HTC-logo.png',
+    },
+    {
+      href: '/',
+      title: 'Xiaomi-12-Pro-(Dimensity-Edition)',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Reliance_Jio_Logo_%28October_2015%29.svg/2048px-Reliance_Jio_Logo_%28October_2015%29.svg.png',
+    },
+    {
+      href: '/',
+      title: 'Redmi K20 Pro',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Motorola_logo.svg/2560px-Motorola_logo.svg.png',
+    },
+  ],
 }
 
 export type Demo = typeof Demo

@@ -1,67 +1,42 @@
 'use client'
-import { Card, Image } from '@nextui-org/react'
-import { useRouter } from 'next/navigation'
-import AnimatedDiv from './FramerMotion/AnimatedDiv'
-import { FadeContainer, fromLeftVariant } from '®/lib/FramerMotionVariants'
+import { Card, CardFooter, Image } from '@nextui-org/react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
+import { Demo } from '®/config/demo'
 import { siteConfig } from '®/config/site'
+import { FadeContainer, fromLeftVariant } from '®/lib/FramerMotionVariants'
+import { Text } from '®rdrive/ui'
+import AnimatedDiv from './FramerMotion/AnimatedDiv'
 
-const FolderItems = [
-  {
-    href: '/hello',
-    title: 'Apple',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Apple_Computer_Logo_rainbow.svg/412px-Apple_Computer_Logo_rainbow.svg.png',
-  },
-  {
-    href: '/',
-    title: 'Asus',
-    img: '',
-  },
-  {
-    href: '/',
-    title: 'Google',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png',
-  },
-  {
-    href: '/',
-    title: 'HTC',
-    img: 'https://1000logos.net/wp-content/uploads/2021/05/HTC-logo.png',
-  },
-  {
-    href: '/',
-    title: 'Xiaomi-12-Pro-(Dimensity-Edition)',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Reliance_Jio_Logo_%28October_2015%29.svg/2048px-Reliance_Jio_Logo_%28October_2015%29.svg.png',
-  },
-  {
-    href: '/',
-    title: 'Redmi K20 Pro',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Motorola_logo.svg/2560px-Motorola_logo.svg.png',
-  },
-]
 const FolderGridLayout = () => {
   const router = useRouter()
   return (
-    <AnimatedDiv variants={FadeContainer} className="FolderCardLayout">
-      {FolderItems.map((card, index) => (
+    <AnimatedDiv
+      variants={FadeContainer}
+      className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+    >
+      {Demo.items.map((card, index) => (
         <motion.div key={index} variants={fromLeftVariant}>
           <Card
-            key={index}
-            className="FolderCard dark:data-[hover=true]:bg-default/40"
-            shadow="none"
+            isBlurred
             isHoverable
             isPressable
+            isFooterBlurred
             onPress={() => router.push('/Xiaomi-12-Pro-(Dimensity-Edition)')}
-            aria-label={card.title}
+            className="flex w-full items-center justify-center border border-border bg-transparent shadow-none dark:data-[hover=true]:bg-default/40"
           >
-            <div className="mb-2 flex h-40 items-center justify-center">
-              <Image
-                src={card.img || siteConfig.fallback}
-                alt={card.title}
-                isBlurred
-                className="mx-auto my-10 h-40 rounded-none object-contain object-center"
-              />
-            </div>
-            <h1 className="line-clamp-1 text-center">{card.title}</h1>
+            <Image
+              removeWrapper
+              alt={card.title}
+              className="mx-auto my-10 h-40 w-full object-contain px-8 pb-8 lg:h-48"
+              src={card.img || siteConfig.fallback}
+              isBlurred
+            />
+            <CardFooter className="dark:bg-default-40 absolute bottom-0 z-10 flex flex-col border-t-1 border-border bg-default/10 dark:bg-default/30">
+              <Text as="h1" size="line-clamp-1 text-xs" align="text-center">
+                {card.title}
+              </Text>
+            </CardFooter>
           </Card>
         </motion.div>
       ))}

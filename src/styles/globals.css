@@ -321,15 +321,7 @@
 .LinkText {
   @apply text-[#666] hover:text-black dark:text-[#888] dark:hover:text-white;
 }
-.FolderCardLayout {
-  @apply grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
-}
-.FolderCard {
-  @apply w-full items-center border border-border bg-transparent p-4 shadow-none lg:p-8;
-}
-.FolderImageCard {
-  @apply w-full items-center border border-border bg-transparent shadow-none sm:p-6;
-}
+
 /* vaul shouldScaleBackground */
 .element {
   background: none !important;
@@ -345,9 +337,6 @@
 
 a:focus-visible {
   outline-color: hsl(var(--ring)) !important;
-}
-.GoToFile {
-  @apply max-w-36 rounded-md border border-border focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 dark:focus-within:ring-offset-black sm:max-w-full;
 }
 
 * {
@@ -409,7 +398,12 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 }
 code[data-theme*=' '],
 code[data-theme*=' '] span {
-  @apply bg-[var(--shiki-light-bg)] text-[var(--shiki-light)] dark:bg-[var(--shiki-dark-bg)] dark:text-[var(--shiki-dark)];
+  background: var(--shiki-light-bg);
+  color: var(--shiki-light);
+  .dark & {
+    background: var(--shiki-dark-bg);
+    color: var(--shiki-dark);
+  }
 }
 
 .heading a {

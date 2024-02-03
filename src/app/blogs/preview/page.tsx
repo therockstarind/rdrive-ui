@@ -8,7 +8,7 @@ export default function Slug() {
   return (
     <Page className="max-w-5xl">
       <BlogAuthor />
-      <Markdown src="/sample.md" />
+      <Markdown src="/post.md" />
     </Page>
   )
 }
