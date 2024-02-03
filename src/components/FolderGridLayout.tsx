@@ -18,7 +18,6 @@ const FolderGridLayout = () => {
       {Demo.items.map((card, index) => (
         <motion.div key={index} variants={fromLeftVariant}>
           <Card
-            isBlurred
             isHoverable
             isPressable
             isFooterBlurred
@@ -26,14 +25,14 @@ const FolderGridLayout = () => {
             className="flex w-full items-center justify-center border border-border bg-transparent shadow-none dark:data-[hover=true]:bg-default/40"
           >
             <Image
-              removeWrapper
               alt={card.title}
               className="mx-auto my-10 h-40 w-full object-contain px-8 pb-8 lg:h-48"
               src={card.img || siteConfig.fallback}
               isBlurred
+              isZoomed
             />
             <CardFooter className="dark:bg-default-40 absolute bottom-0 z-10 flex flex-col border-t-1 border-border bg-default/10 dark:bg-default/30">
-              <Text as="h1" size="line-clamp-1 text-xs" align="text-center">
+              <Text as="h1" size="line-clamp-1 text-sm" align="text-center">
                 {card.title}
               </Text>
             </CardFooter>

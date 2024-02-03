@@ -36,5 +36,6 @@ export type UserType = {
   post?: number
   followers?: number
   following?: number
+  badge?: string[]
   [key: string]: any
 }

@@ -73,6 +73,7 @@ export const Demo = {
       { icon: '/social/telegram.png', link: 'http://www.telegram.com' },
       { icon: '/social/github.png', link: 'http://www.github.com' },
     ],
+    badge: ['Software', 'Hardware', 'Designer'],
   },
   items: [
     {
