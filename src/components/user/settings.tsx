@@ -13,7 +13,6 @@ import {
   DrawerContent,
   Flex,
   Grid,
-  ScrollArea,
   Text,
 } from '®/rdrive/ui'
 import { UserType } from '®/types'
