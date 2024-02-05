@@ -5,7 +5,6 @@ import { FadeContainer } from '®lib/FramerMotionVariants'
 import {
   Command,
   CommandEmpty,
-  CommandGroup,
   CommandInput,
   CommandItem,
   Flex,
@@ -28,7 +27,7 @@ const User: React.FC<{ user?: UserType; post?: FeedsType[] }> = ({
       </Flex>
 
       {/* Card */}
-      <Flex className="md:w-2/3" display="flex-col" gap="gap-3" p="p-1 sm:p-0">
+      <Flex className="md:w-2/3" display="flex-col" gap="gap-3">
         <Command>
           <Flex
             border="rounded-full border border-border"
@@ -39,18 +38,16 @@ const User: React.FC<{ user?: UserType; post?: FeedsType[] }> = ({
             <CommandInput placeholder="Search Post" />
           </Flex>
           <CommandEmpty>No result found</CommandEmpty>
-          <CommandGroup>
-            <Flex className="grid gap-2 sm:grid-cols-2">
-              {post?.map((feed) => (
-                <CommandItem
-                  key={feed.title}
-                  className="aria-selected:bg-transparent"
-                >
-                  <FeedCard feed={feed} />
-                </CommandItem>
-              ))}
-            </Flex>
-          </CommandGroup>
+          <Flex className="grid gap-2 sm:grid-cols-2">
+            {post?.map((feed) => (
+              <CommandItem
+                key={feed.title}
+                className="aria-selected:bg-transparent"
+              >
+                <FeedCard feed={feed} />
+              </CommandItem>
+            ))}
+          </Flex>
         </Command>
       </Flex>
     </Flex>

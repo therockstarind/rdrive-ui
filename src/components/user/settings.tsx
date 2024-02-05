@@ -41,9 +41,9 @@ export default function Settings({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerContent className="p-1">
-        <div className="overflow-y-auto pb-10">
+        <Flex className="flex-col-reverse overflow-y-auto pb-10">
           <SettingTab />
-        </div>
+        </Flex>
       </DrawerContent>
     </Drawer>
   )
@@ -53,13 +53,12 @@ const SettingTab: React.FC<{}> = ({}) => (
   <Tabs
     aria-label="SettingTab"
     classNames={{
-      base: 'fixed bottom-0.5 left-0 right-0 z-30 p-1 sm:relative sm:bottom-auto sm:left-auto sm:right-auto',
-      tab: 'w-auto',
-      tabList: 'border border-border bg-background',
+      base: 'sm:bottom-about fixed inset-x-1 bottom-0.5 z-30 sm:relative sm:inset-x-auto',
+      tabList: 'w-full border border-border bg-background sm:w-auto',
     }}
   >
     <Tab
-      key="photos"
+      key="Account"
       title={
         <Flex align="items-center" gap="gap-1.5">
           <AccountIcon />
@@ -70,7 +69,7 @@ const SettingTab: React.FC<{}> = ({}) => (
       <Account />
     </Tab>
     <Tab
-      key="music"
+      key="Notifications"
       title={
         <Flex align="items-center" gap="gap-1.5">
           <NotificationsIcon />
@@ -81,7 +80,7 @@ const SettingTab: React.FC<{}> = ({}) => (
       Contnet
     </Tab>
     <Tab
-      key="videos"
+      key="Security"
       title={
         <Flex align="items-center" gap="gap-1.5">
           <SecurityIcon />
@@ -126,7 +125,7 @@ const Account: React.FC<{ user?: UserType }> = ({ user }) => (
               Rock Star
             </Text>
             <Text as="p" size="text-xs" color="text-muted-foreground">
-              demo
+              @rockstar
             </Text>
           </Flex>
         </Flex>

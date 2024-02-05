@@ -39,7 +39,7 @@ const Author: React.FC<UserType & { avatar?: string }> = ({
         <User user={userProps} />
       </DrawerTrigger>
       <DrawerContent>
-        <div className="p-1">
+        <div className="p-1 pb-4">
           <UserDetails user={author} />
         </div>
       </DrawerContent>
