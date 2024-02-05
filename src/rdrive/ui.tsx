@@ -79,6 +79,18 @@ import {
 } from '®/components/ui/popover'
 import Preview from '®/components/ui/preview'
 import { ScrollArea, ScrollBar } from '®/components/ui/scroll-area'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from '®/components/ui/select'
 import Skeleton from '®/components/ui/skeleton'
 import { Toaster } from '®/components/ui/sonner'
 import {
@@ -96,6 +108,16 @@ import { Text } from '®/components/ui/text'
 import Tooltip from '®/components/ui/tooltip'
 
 export {
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+  SelectScrollUpButton,
+  SelectScrollDownButton,
   Avatar,
   AnimatedTooltip,
   AspectRatio,

@@ -1,7 +1,6 @@
 'use client'
 import { Image } from '@nextui-org/react'
 import Link from 'next/link'
-import { BsBookmark } from 'react-icons/bs'
 import { Demo } from '®/config/demo'
 import { Counts } from '®/lib/utils'
 import { FeedsType } from '®/types'
@@ -33,7 +32,7 @@ const FeedCard: React.FC<{ feed: FeedsType }> = ({ feed }) => {
         {/* Link to the blog post with title and metadata */}
         <div className="flex w-full flex-col">
           <Link href={feed.href} passHref>
-            <h1 className="line-clamp-2 text-start font-bold leading-tight">
+            <h1 className="line-clamp-2 font-bold leading-tight">
               {feed.title}
             </h1>
             <div className="mt-0.5 flex flex-wrap gap-x-2 text-nowrap">
@@ -49,8 +48,6 @@ const FeedCard: React.FC<{ feed: FeedsType }> = ({ feed }) => {
             </div>
           </Link>
         </div>
-        {/* Bookmark icon */}
-        <BsBookmark size={24} />
       </div>
     </div>
   )

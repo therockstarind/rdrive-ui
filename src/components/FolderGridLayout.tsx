@@ -26,7 +26,7 @@ const FolderGridLayout = () => {
           >
             <Image
               alt={card.title}
-              className="mx-auto my-10 h-40 w-full object-contain px-8 pb-8 lg:h-48"
+              className="mx-auto my-10 h-40 object-contain px-8 pb-8 lg:h-48"
               src={card.img || siteConfig.fallback}
               isBlurred
               isZoomed
