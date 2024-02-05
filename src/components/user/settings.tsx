@@ -13,6 +13,7 @@ import {
   DrawerContent,
   Flex,
   Grid,
+  ScrollArea,
   Text,
 } from '®/rdrive/ui'
 import { UserType } from '®/types'
@@ -31,7 +32,7 @@ export default function Settings({
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-h-[80dvh] max-w-2xl overflow-y-auto">
           <SettingTab />
         </DialogContent>
       </Dialog>
@@ -40,8 +41,8 @@ export default function Settings({
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerContent className="p-1">
-        <Flex className="flex-col-reverse overflow-y-auto pb-10">
+      <DrawerContent>
+        <Flex className="flex-col overflow-y-auto p-2 pb-10 sm:pb-0">
           <SettingTab />
         </Flex>
       </DrawerContent>
@@ -55,6 +56,7 @@ const SettingTab: React.FC<{}> = ({}) => (
     classNames={{
       base: 'sm:bottom-about fixed inset-x-1 bottom-0.5 z-30 sm:relative sm:inset-x-auto',
       tabList: 'w-full border border-border bg-background sm:w-auto',
+      tab: 'w-auto',
     }}
   >
     <Tab
