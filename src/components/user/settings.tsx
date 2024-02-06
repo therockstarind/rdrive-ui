@@ -1,10 +1,19 @@
 'use client'
 
-import { Button, Input, Tab, Tabs, Textarea } from '@nextui-org/react'
+import {
+  Button,
+  Card,
+  Input,
+  Switch,
+  Tab,
+  Tabs,
+  Textarea,
+} from '@nextui-org/react'
 import { Dispatch, SetStateAction } from 'react'
 import { useMediaQuery } from '®/hooks/use-media-query'
 
 import { RiEditLine } from 'react-icons/ri'
+import { cn } from '®/lib/utils'
 import {
   Avatar,
   Dialog,
@@ -55,7 +64,7 @@ const SettingTab: React.FC<{}> = ({}) => (
     classNames={{
       base: 'sm:bottom-about fixed inset-x-1 bottom-0.5 z-30 sm:relative sm:inset-x-auto',
       tabList: 'w-full border border-border bg-background sm:w-auto',
-      tab: 'w-auto',
+      tab: 'w-full',
     }}
   >
     <Tab
@@ -78,7 +87,7 @@ const SettingTab: React.FC<{}> = ({}) => (
         </Flex>
       }
     >
-      Contnet
+      <Notification />
     </Tab>
     <Tab
       key="Security"
@@ -89,7 +98,7 @@ const SettingTab: React.FC<{}> = ({}) => (
         </Flex>
       }
     >
-      Contnet
+      <Security />
     </Tab>
   </Tabs>
 )
@@ -155,7 +164,7 @@ const Account: React.FC<{ user?: UserType }> = ({ user }) => (
           labelPlacement="outside"
         />
         <Input
-          type="number"
+          type="tel"
           label="Phone Number"
           placeholder="Number phone number"
           labelPlacement="outside"
@@ -189,4 +198,148 @@ const Account: React.FC<{ user?: UserType }> = ({ user }) => (
       </Button>
     </Flex>
   </Flex>
+)
+const Notification: React.FC<{ user?: UserType }> = ({ user }) => (
+  <Flex display="flex-col" gap="gap-6">
+    <Flex display="flex-col" font="font-sans" gap="gap-4">
+      <Grid>
+        <Text as="h1" size="text-xl" font="font-bold">
+          Notification Settings
+        </Text>
+        <Text color="text-muted-foreground" size="text-sm">
+          Manage your notification preferences
+        </Text>
+      </Grid>
+      <Flex display="flex-col" gap="gap-2">
+        <NotificationSwitch
+          title="Pause all"
+          des="Temporarily pause all notifications"
+        />
+        <NotificationSwitch
+          title="Followers"
+          des="Get notified when someone follows you"
+        />
+        <NotificationSwitch
+          title="Likes"
+          des="Get notified when someone likes your post"
+        />
+        <NotificationSwitch
+          title="Comments"
+          des="Get notified when someone comments on your post"
+        />
+        <NotificationSwitch
+          title="Mentions"
+          des="Get notified when someone mentions you in a post"
+        />
+      </Flex>
+      <Flex
+        gap="gap-3"
+        justify="justify-end"
+        display="flex-col-reverse sm:flex-row"
+      >
+        <Button variant="light" className="rounded-full border border-border">
+          Reset to Default
+        </Button>
+        <Button radius="full" className="bg-blue-500 !text-white">
+          Save Changes
+        </Button>
+      </Flex>
+    </Flex>
+  </Flex>
+)
+
+const Security: React.FC<{ user?: UserType }> = ({ user }) => (
+  <Flex display="flex-col" gap="gap-6">
+    <Flex display="flex-col" font="font-sans" gap="gap-4">
+      <Grid>
+        <Text as="h1" size="text-xl" font="font-bold">
+          Security Settings
+        </Text>
+        <Text color="text-muted-foreground" size="text-sm">
+          Manage your security preferences
+        </Text>
+      </Grid>
+      <Flex display="flex-col" gap="gap-2">
+        <SecurityCard
+          title="Phone Number"
+          des="The phone number associated with your account."
+          button="Edit"
+        />
+        <SecurityCard
+          title="Password"
+          des=" Set a unique password to protect your account."
+          button="Change"
+        />
+        <NotificationSwitch
+          title="Two-Factor Authentication"
+          des="Add an extra layer of security to your account."
+          border={false}
+        />
+        <SecurityCard
+          title="Deactivate  Account"
+          des="Deactivate your account and delete all your data."
+          button="Deactivate"
+        />
+        <SecurityCard
+          title="Delete Account"
+          des="Permanently remove your account."
+          button="Delete"
+        />
+      </Flex>
+    </Flex>
+  </Flex>
+)
+
+const NotificationSwitch: React.FC<{
+  title: string
+  des: string
+  border?: boolean
+}> = ({ title, des, border = true }) => (
+  <Switch
+    classNames={{
+      base: cn(
+        'flex w-full max-w-full flex-row-reverse items-center bg-content2 hover:bg-content2',
+        'cursor-pointer justify-between gap-2 rounded-lg border-2 border-transparent p-4',
+        `data-[selected=${border}]:border-blue-500`
+      ),
+      wrapper:
+        'h-4 overflow-visible p-0 group-data-[selected=true]:bg-blue-500',
+      thumb: cn(
+        'h-6 w-6 border-2 shadow-lg',
+        'group-data-[hover=true]:border-primary',
+        //selected
+        'group-data-[selected=true]:ml-6',
+        // pressed
+        'group-data-[pressed=true]:w-7',
+        'group-data-[selected]:group-data-[pressed]:ml-4'
+      ),
+    }}
+  >
+    <Flex display="flex-col" gap="gap-1">
+      <Text as="h1" font="text-medium">
+        {title}
+      </Text>
+      <Text size="text-tiny" color="text-default-400">
+        {des}
+      </Text>
+    </Flex>
+  </Switch>
+)
+
+const SecurityCard: React.FC<{
+  title: string
+  des: string
+  button: string
+}> = ({ title, des, button }) => (
+  <Card className="flex flex-row items-center justify-between rounded-md border-none bg-content2 p-4 shadow-none">
+    <Flex display="flex-col" gap="gap-1">
+      <Text as="h1">{title}</Text>
+      <Text size="text-tiny" color="text-default-400">
+        {des}
+      </Text>
+    </Flex>
+    <Button variant="bordered" radius="full">
+      {button}
+    </Button>
+  </Card>
 )
