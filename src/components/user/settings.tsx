@@ -62,7 +62,7 @@ const SettingTab: React.FC<{}> = ({}) => (
   <Tabs
     aria-label="SettingTab"
     classNames={{
-      base: 'sm:bottom-about fixed inset-x-1 bottom-3 z-30 sm:relative sm:inset-x-auto',
+      base: 'fixed inset-x-2 bottom-3 z-30 inline sm:relative sm:inset-x-auto sm:bottom-auto sm:inline-flex',
       tabList: 'border border-border bg-background',
       tab: 'w-auto',
     }}
@@ -276,15 +276,26 @@ const Security: React.FC<{ user?: UserType }> = ({ user }) => (
           border={false}
         />
         <SecurityCard
-          title="Deactivate  Account"
+          title="Deactivate Account"
           des="Deactivate your account and delete all your data."
           button="Deactivate"
         />
-        <SecurityCard
-          title="Delete Account"
-          des="Permanently remove your account."
-          button="Delete"
-        />
+        <Card className="flex flex-row items-center justify-between rounded-md border-none bg-content2 p-4 shadow-none">
+          <Flex display="flex-col" gap="gap-1">
+            <Text as="h1">Delete Account</Text>
+            <Text size="text-tiny" color="text-default-400">
+              Permanently remove your account.
+            </Text>
+          </Flex>
+          <Button
+            variant="flat"
+            color="danger"
+            radius="full"
+            className="text-xs"
+          >
+            Delete
+          </Button>
+        </Card>
       </Flex>
     </Flex>
   </Flex>
@@ -298,21 +309,11 @@ const NotificationSwitch: React.FC<{
   <Switch
     classNames={{
       base: cn(
-        'flex w-full max-w-full touch-auto flex-row-reverse items-center bg-content2 hover:bg-content2',
+        'flex w-full max-w-full touch-auto flex-row-reverse items-center bg-content2',
         'cursor-pointer justify-between gap-2 rounded-lg border-2 border-transparent p-4',
         `data-[selected=${border}]:border-blue-500`
       ),
-      wrapper:
-        'h-4 overflow-visible p-0 group-data-[selected=true]:bg-blue-500',
-      thumb: cn(
-        'h-6 w-6 border-2 shadow-lg',
-        'group-data-[hover=true]:border-primary',
-        //selected
-        'group-data-[selected=true]:ml-6',
-        // pressed
-        'group-data-[pressed=true]:w-7',
-        'group-data-[selected]:group-data-[pressed]:ml-4'
-      ),
+      wrapper: 'group-data-[selected=true]:bg-blue-500',
     }}
   >
     <Flex display="flex-col" gap="gap-1">
