@@ -50,7 +50,7 @@ export default function Settings({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerContent>
-        <Flex className="flex-col overflow-y-auto p-2 pb-10 sm:pb-0">
+        <Flex className="flex-col overflow-y-auto p-2 pb-14 sm:pb-0">
           <SettingTab />
         </Flex>
       </DrawerContent>
@@ -62,9 +62,9 @@ const SettingTab: React.FC<{}> = ({}) => (
   <Tabs
     aria-label="SettingTab"
     classNames={{
-      base: 'sm:bottom-about fixed inset-x-1 bottom-0.5 z-30 sm:relative sm:inset-x-auto',
-      tabList: 'w-full border border-border bg-background sm:w-auto',
-      tab: 'w-full',
+      base: 'sm:bottom-about fixed inset-x-1 bottom-3 z-30 sm:relative sm:inset-x-auto',
+      tabList: 'border border-border bg-background',
+      tab: 'w-auto',
     }}
   >
     <Tab
@@ -72,7 +72,7 @@ const SettingTab: React.FC<{}> = ({}) => (
       title={
         <Flex align="items-center" gap="gap-1.5">
           <AccountIcon />
-          Account
+          <div>Account</div>
         </Flex>
       }
     >
@@ -83,7 +83,7 @@ const SettingTab: React.FC<{}> = ({}) => (
       title={
         <Flex align="items-center" gap="gap-1.5">
           <NotificationsIcon />
-          Notifications
+          <div>Notifications</div>
         </Flex>
       }
     >
@@ -94,7 +94,7 @@ const SettingTab: React.FC<{}> = ({}) => (
       title={
         <Flex align="items-center" gap="gap-1.5">
           <SecurityIcon />
-          Security
+          <Text>Security</Text>
         </Flex>
       }
     >
@@ -298,7 +298,7 @@ const NotificationSwitch: React.FC<{
   <Switch
     classNames={{
       base: cn(
-        'flex w-full max-w-full flex-row-reverse items-center bg-content2 hover:bg-content2',
+        'flex w-full max-w-full touch-auto flex-row-reverse items-center bg-content2 hover:bg-content2',
         'cursor-pointer justify-between gap-2 rounded-lg border-2 border-transparent p-4',
         `data-[selected=${border}]:border-blue-500`
       ),
@@ -338,7 +338,7 @@ const SecurityCard: React.FC<{
         {des}
       </Text>
     </Flex>
-    <Button variant="bordered" radius="full">
+    <Button variant="bordered" radius="full" className="text-xs">
       {button}
     </Button>
   </Card>
