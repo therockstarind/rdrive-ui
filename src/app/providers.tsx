@@ -18,14 +18,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <Theme>
           <div
-            className="flex min-h-dvh flex-col items-center justify-center bg-background"
+            className="flex min-h-screen flex-col items-center justify-center"
             vaul-drawer-wrapper=""
           >
             <main className="flex w-full flex-1 flex-col overflow-clip">
               {children}
             </main>
-            <Footer />
-            <AppBar />
+            {/* <Footer />
+            <AppBar /> */}
           </div>
           <Toaster />
         </Theme>
