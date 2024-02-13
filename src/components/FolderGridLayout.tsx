@@ -21,11 +21,12 @@ import { Text } from '®rdrive/ui'
 import AnimatedDiv from './FramerMotion/AnimatedDiv'
 import AnimatedVariant from './FramerMotion/AnimatedVariant'
 import FeedCard from './blog/feedcard'
+import Discover from './card/discover'
 
 const FolderGridLayout = () => {
   const router = useRouter()
   return (
-    <Card className="overflow-clip p-2 dark:bg-default-100 sm:p-4">
+    <Card className="overflow-clip bg-default-50 p-2 sm:p-4">
       {/* bg-default-100 */}
       <Tabs
         aria-label="Tabs"
@@ -38,14 +39,14 @@ const FolderGridLayout = () => {
         <Tab key="discover" title="Discover">
           <AnimatedDiv
             variants={FadeContainer}
-            className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3"
+            className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
           >
             {Demo.post.map((feed) => (
               <AnimatedVariant
                 variants={fromLeftVariant}
                 mobileVariants={fromTopVariant}
               >
-                <FeedCard feed={feed} />
+                <Discover feed={feed} />
               </AnimatedVariant>
             ))}
           </AnimatedDiv>

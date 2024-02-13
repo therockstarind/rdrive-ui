@@ -9,6 +9,25 @@ export type FeedsType = {
   href: string
 }
 
+export type DiscoverType = {
+  id?: string
+  title?: string
+  desc?: string
+  image: string
+  keywords?: Array<string>
+  tags?: Array<string>
+  author?: string
+  createTime?: Date
+  updateTime?: Date
+  // contentType: 'mobile' |  'windows' | 'post'
+  likes: number
+  dislikes: number
+  views: number
+  commentsNum: number
+  // status: 'draft' | 'publish' | 'trash'
+  follow?: boolean
+}
+
 export type UserDetailsType = {
   coverimg?: string
   img: string
