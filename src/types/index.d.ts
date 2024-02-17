@@ -8,7 +8,13 @@ export type FeedsType = {
   views: number
   href: string
 }
-
+export type AuthorType = {
+  name?: string
+  avatar?: string
+  desc?: string
+  follower?: number
+  following?: number
+}
 export type DiscoverType = {
   id?: string
   title?: string
@@ -16,7 +22,7 @@ export type DiscoverType = {
   image: string
   keywords?: Array<string>
   tags?: Array<string>
-  author?: string
+  author?: AuthorType
   createTime?: Date
   updateTime?: Date
   // contentType: 'mobile' |  'windows' | 'post'
@@ -25,7 +31,7 @@ export type DiscoverType = {
   views: number
   commentsNum: number
   // status: 'draft' | 'publish' | 'trash'
-  follow?: boolean
+  // follow?: boolean
 }
 
 export type UserDetailsType = {

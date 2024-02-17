@@ -3,9 +3,9 @@ import { NextUIProvider } from '@nextui-org/react'
 import { Theme } from '@radix-ui/themes'
 import '@radix-ui/themes/styles.css'
 import { useRouter } from 'next/navigation'
+import { Suspense } from 'react'
 import AppBar from '®/components/AppBar'
 import { ThemeProvider } from '®/components/ThemeProvider'
-import Footer from '®/components/footer'
 import useSmoothScrolling from '®/hooks/useSmoothScrolling'
 import '®/styles/globals.css'
 import { Toaster } from '®ui/sonner'
@@ -21,11 +21,13 @@ export function Providers({ children }: { children: React.ReactNode }) {
             className="flex min-h-screen flex-col items-center justify-center"
             vaul-drawer-wrapper=""
           >
-            <main className="flex w-full flex-1 flex-col overflow-clip">
-              {children}
-            </main>
-            {/* <Footer />
-            <AppBar /> */}
+            <Suspense>
+              <main className="mb-20 flex w-full flex-1 flex-col overflow-clip">
+                {children}
+              </main>
+            </Suspense>
+            {/* <Footer /> */}
+            <AppBar />
           </div>
           <Toaster />
         </Theme>

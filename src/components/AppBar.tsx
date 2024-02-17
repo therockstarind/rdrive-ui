@@ -1,17 +1,16 @@
 'use client'
 
-import { Button } from '@nextui-org/react'
+import { Badge, Button, Image } from '@nextui-org/react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { ReactElement } from 'react'
-import { BsAndroid2 } from 'react-icons/bs'
 import { FaUserCircle } from 'react-icons/fa'
-import { GoSearch } from 'react-icons/go'
-import { IoGameController } from 'react-icons/io5'
-import { SiApple } from 'react-icons/si'
-import { TbApps } from 'react-icons/tb'
+import { siteConfig } from '®/config/site'
 import { cn } from '®/lib/utils'
-import SearchBar from './SearchBar'
+import { Flex, Text } from '®/rdrive/ui'
 import Tooltip from '®ui//tooltip'
+import SearchBar from './SearchBar'
+import { NotificationsIcon } from './icons'
 import Login from './user/login'
 
 type ButtonProps = {
@@ -47,42 +46,36 @@ const AppBar = () => {
   const router = useRouter()
 
   return (
-    <nav className="max-w-auto fixed bottom-3  z-50 mx-auto justify-center sm:bottom-1.5">
-      <div className="flex items-center gap-2 rounded-full border border-border bg-white/70 p-1.5 backdrop-blur-md dark:bg-black/70">
-        <BarButton
-          tooltip="Android"
-          children={<BsAndroid2 />}
-          onPress={() => router.push('/')}
+    <Flex justify="fixed bottom-3 z-50 mx-auto w-full max-w-sm items-center justify-between gap-2 rounded-full border border-border bg-white/70 p-1.5 backdrop-blur-md dark:bg-black/70 sm:bottom-1.5">
+      <Link href="/" passHref className="flex items-center gap-1">
+        <Image
+          src={siteConfig.logo}
+          alt={siteConfig.name}
+          width={40}
+          height={40}
         />
-        <BarButton
-          tooltip="Apps"
-          children={<TbApps />}
-          onPress={() => router.push('/Apps')}
-        />
-        <BarButton
-          tooltip="Games"
-          children={<IoGameController />}
-          onPress={() => router.push('/Games')}
-        />
-        <BarButton
-          tooltip="Apple"
-          children={<SiApple />}
-          onPress={() => router.push('/Apple')}
-        />
-        <BarButton
+        <Text as="h1" size="text-xl" font="font-bold">
+          {siteConfig.name}
+        </Text>
+      </Link>
+      <Flex align="items-center" gap="gap-4">
+        {/* <BarButton
           tooltip="Search"
           children={<GoSearch />}
           onPress={() => setSearchOpen(true)}
-        />
+        /> */}
+        <Badge content="99+" shape="circle" size="sm" color="success">
+          <BarButton tooltip="Notifications" children={<NotificationsIcon />} />
+        </Badge>
         <BarButton
           tooltip="Login"
           children={<FaUserCircle />}
           onPress={() => setLoginOpen(true)}
         />
-        <SearchBar open={openSearch} setOpen={setSearchOpen} />
-        <Login open={openLogin} setOpen={setLoginOpen} />
-      </div>
-    </nav>
+      </Flex>
+      <SearchBar open={openSearch} setOpen={setSearchOpen} />
+      <Login open={openLogin} setOpen={setLoginOpen} />
+    </Flex>
   )
 }
 
