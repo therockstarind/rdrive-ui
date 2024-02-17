@@ -1,6 +1,5 @@
 'use client'
-import { Button, Image } from '@nextui-org/react'
-import { Separator } from '@radix-ui/themes'
+import { Button, Divider, Image } from '@nextui-org/react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
@@ -130,7 +129,7 @@ const UserDetails: React.FC<{ user?: UserType }> = ({ user }) => {
         {/* Buttons linking to user's posts, followers, and following pages with corresponding counts. */}
         {['post', 'followers', 'following'].map((key, index) => (
           <React.Fragment key={key}>
-            {index > 0 && <Separator className="h-8" orientation="vertical" />}
+            {index > 0 && <Divider className="h-8" orientation="vertical" />}
             {/* Button displaying count and type (post, followers, following). */}
             <Button
               radius="sm"

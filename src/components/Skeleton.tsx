@@ -1,5 +1,5 @@
 'use client'
-import { Grid } from '@radix-ui/themes'
+import { Grid } from '®/rdrive/ui'
 import Skeleton from '®ui/skeleton'
 
 const randomWidth = () => {
@@ -13,7 +13,7 @@ const randomCount = (min: number, max: number) => {
 
 export const MarkdownSkeleton = () => {
   return (
-    <Grid gap="4" pt="4" aria-busy="true">
+    <Grid gap="gap-4" p="pt-4" aria-busy="true">
       {/* Simulate a large H1 Title */}
       <Skeleton className="h-12 w-full rounded-md" />
 

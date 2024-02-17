@@ -1,5 +1,4 @@
 'use client'
-import { Avatar, Tabs, TextArea } from '@radix-ui/themes'
 import { BookOpen, MessageSquareText } from 'lucide-react'
 import { useState } from 'react'
 import useSmoothScrolling from '®/hooks/useSmoothScrolling'
@@ -20,7 +19,7 @@ const FolderTab = () => {
 
   return (
     <Card className="bg-background">
-      <Tabs.Root defaultValue="readme" onValueChange={setReadmeTab}>
+      {/* <Tabs.Root defaultValue="readme" onValueChange={setReadmeTab}>
         <div className="sticky top-0 z-50 flex-1 items-center">
           <Flex
             color="bg-background"
@@ -63,7 +62,7 @@ const FolderTab = () => {
             </Flex>
           </Tabs.Content>
         </Grid>
-      </Tabs.Root>
+      </Tabs.Root> */}
     </Card>
   )
 }

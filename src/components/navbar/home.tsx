@@ -8,9 +8,11 @@ import { siteConfig } from '®/config/site'
 import { cn } from '®/lib/utils'
 import { Flex, Text } from '®/rdrive/ui'
 import Tooltip from '®ui//tooltip'
-import SearchBar from './SearchBar'
-import { NotificationsIcon } from './icons'
-import Login from './user/login'
+import { NotificationsIcon } from '../icons'
+import SearchBar from '../SearchBar'
+import Login from '../user/login'
+import { GoSearch } from 'react-icons/go'
+import { usePathname, useRouter } from 'next/navigation'
 
 type ButtonProps = {
   className?: string
@@ -39,9 +41,11 @@ const BarButton: React.FC<ButtonProps> = ({
     </Button>
   </Tooltip>
 )
-const AppBar = () => {
+const HomeNav = () => {
   const [openSearch, setSearchOpen] = React.useState(false)
   const [openLogin, setLoginOpen] = React.useState(false)
+  const pathname = usePathname()
+  const hidden = pathname === '/' ? 'hidden' : 'flex'
 
   return (
     <Flex justify="z-50 mx-auto w-full items-center justify-between bg-white/70 p-4 backdrop-blur-md dark:bg-black/70">
@@ -51,18 +55,21 @@ const AppBar = () => {
           alt={siteConfig.name}
           width={40}
           height={40}
+          disableSkeleton
         />
         <Text as="h1" size="text-xl" font="font-bold">
           {siteConfig.name}
         </Text>
       </Link>
       <Flex align="items-center" gap="gap-4">
-        {/* <BarButton
-          tooltip="Search"
-          children={<GoSearch />}
-          onPress={() => setSearchOpen(true)}
-        /> */}
-        <Badge content="99+" shape="circle" size="sm" color="success">
+        <div className={`${hidden}`}>
+          <BarButton
+            tooltip="Search"
+            children={<GoSearch />}
+            onPress={() => setSearchOpen(true)}
+          />
+        </div>
+        <Badge content="99+" shape="circle" size="sm" color="secondary">
           <BarButton tooltip="Notifications" children={<NotificationsIcon />} />
         </Badge>
         <BarButton
@@ -77,4 +84,4 @@ const AppBar = () => {
   )
 }
 
-export default AppBar
+export default HomeNav

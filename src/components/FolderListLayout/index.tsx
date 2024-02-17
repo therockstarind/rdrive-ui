@@ -1,6 +1,5 @@
 'use client'
 
-import { Separator } from '@radix-ui/themes'
 import { FadeContainer } from '®/lib/FramerMotionVariants'
 import { Flex, Grid } from '®rdrive/ui'
 import AnimatedDiv from '../FramerMotion/AnimatedDiv'
@@ -10,6 +9,7 @@ import FolderList from './FolderList'
 import FolderTab from './FolderTab'
 import Header from './Header'
 import ImageCard from './ImageCard'
+import { Divider } from '@nextui-org/react'
 
 const FolderListLayout = () => {
   return (
@@ -17,7 +17,7 @@ const FolderListLayout = () => {
       {/* Header & LikeShare */}
       <Flex display="hidden flex-col sm:flex" m="mb-4">
         <Header />
-        <Separator size="4" />
+        <Divider />
       </Flex>
       {/* Container */}
       <Flex display="flex-col-reverse sm:flex-row" gap="gap-2 md:gap-3">
